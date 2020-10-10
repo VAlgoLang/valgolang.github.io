@@ -20,6 +20,7 @@ jobs:
       uses: ammaraskar/sphinx-action@master
       with:
           docs-folder: "/"
+          build-command: "sphinx-build source build"
     
     - name: Deploy to GitHub Pages
       uses: ad-m/github-push-action@master
