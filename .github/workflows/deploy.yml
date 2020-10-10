@@ -26,5 +26,5 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         branch: gh-pages
-        directory: "build/html"
+        directory: "build"
         github_token: ${{ secrets.GITHUB_TOKEN }}
