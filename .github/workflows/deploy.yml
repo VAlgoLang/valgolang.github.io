@@ -22,9 +22,9 @@ jobs:
           docs-folder: "source"
           build-command: "sphinx-build . build"
     
-    - name: Deploy to GitHub Pages
-      uses: ad-m/github-push-action@master
+    # Push the book's HTML to github-pages
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.6.1
       with:
-        branch: gh-pages
-        directory: "source/build"
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./source/build   
