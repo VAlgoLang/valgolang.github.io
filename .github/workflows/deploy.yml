@@ -1,0 +1,29 @@
+
+name: "Deploy"
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    
+    
+    - name: Make Sphinx
+      uses: ammaraskar/sphinx-action@master
+      with:
+          docs-folder: "/"
+    
+    - name: Deploy to GitHub Pages
+      uses: ad-m/github-push-action@master
+      with:
+        branch: gh-pages
+        directory: "build/html"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
