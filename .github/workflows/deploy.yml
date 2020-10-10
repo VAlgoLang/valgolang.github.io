@@ -20,11 +20,11 @@ jobs:
       uses: ammaraskar/sphinx-action@master
       with:
           docs-folder: "source"
-          build-command: "sphinx-build . ../build"
+          build-command: "sphinx-build . build"
     
     - name: Deploy to GitHub Pages
       uses: ad-m/github-push-action@master
       with:
         branch: gh-pages
-        directory: "build"
+        directory: "source/build"
         github_token: ${{ secrets.GITHUB_TOKEN }}
