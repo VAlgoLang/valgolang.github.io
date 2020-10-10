@@ -19,8 +19,8 @@ jobs:
     - name: Make Sphinx
       uses: ammaraskar/sphinx-action@master
       with:
-          docs-folder: "/"
-          build-command: "sphinx-build source build"
+          docs-folder: "source"
+          build-command: "sphinx-build . build"
     
     - name: Deploy to GitHub Pages
       uses: ad-m/github-push-action@master
