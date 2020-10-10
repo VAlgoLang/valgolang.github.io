@@ -1,12 +1,9 @@
 
-name: "Deploy"
+name: "Deploy Documentation"
 on: 
   push:
     branches:
-      - main
-  pull_request:
-    branches: 
-      - main
+      - master
 
 jobs:
   docs:
@@ -22,7 +19,7 @@ jobs:
           docs-folder: "source"
           build-command: "sphinx-build . build"
     
-    # Push the book's HTML to github-pages
+    # Push the HTML to github-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
