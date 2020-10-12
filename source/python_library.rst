@@ -4,7 +4,7 @@ Python Library
 We are using manim to create animations for your code. 
 Although we have a standard way of representing datastructures, you are able to modify our functions to represent them the way you want!
 
-All of our utility functions can be found at ```pythonLib/util.py`` <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/util.py>`_, and all of our shapes are in their own class (i.e. Rectangle_block is in ```pythonLib/util.py`` <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/rectangle.py>`_)
+All of our utility functions can be found at `pythonLib/util.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/util.py>`_, and all of our shapes are in their own class (i.e. Rectangle_block is in `pythonLib/rectangle.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/rectangle.py>`_)
 
 Rectangles
 -----------------
