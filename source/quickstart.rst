@@ -11,7 +11,7 @@ and algorithms
 
 Here is an example:
 
-.. code:: js
+.. code:: none
 
     let stack: Stack = new Stack;
     stack.push(5);
