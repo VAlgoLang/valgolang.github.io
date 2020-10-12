@@ -4,12 +4,9 @@ Python Library
 We are using manim to create animations for your code. 
 Although we have a standard way of representing datastructures, you are able to modify our functions to represent them the way you want!
 
-0:
------------------
+All of our utility functions can be found at ```pythonLib/util.py`` <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/util.py>`_, and all of our shapes are in their own class (i.e. Rectangle_block is in ```pythonLib/util.py`` <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/rectangle.py>`_)
 
-All of our utility functions can be found at pythonLib/util.py, and all of our shapes are in their own class (ie Rectangle_block is in pythonLib/rectangle.py)
-
-1: Rectangles
+Rectangles
 -----------------
 
 Our Rectangles take in:
@@ -20,7 +17,7 @@ Our Rectangles take in:
 We create a TextMobject with the text, and a Rectangle, and group these two under a VGroup. 
 To add an additional element, create it, and group it with the VGroup.
 
-.. code :: none
+.. code :: python
 
     def build(self):
         inside_text = TextMobject(self.text)
@@ -28,7 +25,7 @@ To add an additional element, create it, and group it with the VGroup.
         group       = VGroup(inside_text, rectangle)
         return group
 
-2: Text Box
+Text Box
 --------------------
 
 Our Text Box takes in:
@@ -37,7 +34,7 @@ Our Text Box takes in:
 
 If you want to change the way it appears on the screen, you will need to change that in your construct function.
 
-.. code :: none
+.. code :: python
 
     def construct(self):
         ...
@@ -52,7 +49,7 @@ Here, Write could be FadeIn, Flash, FadeToColor...
 The Code Block is your inputed ManimDSL code which appears at the bottom left of your screen.
 If you do not want this code to appear, remove this part from the construct function.
 
-.. code :: none
+.. code :: python
 
     def construct(self):
         # Remove all below lines
@@ -63,10 +60,10 @@ If you do not want this code to appear, remove this part from the construct func
 
 We have decided to keep track of the line executing with an ArrowTip. If you wish to change that shape, color, or scale, change this line in your construct function.
 
-.. code :: none
+.. code :: python
 
     def construct(self):
         ...
         pointer = ArrowTip(color=YELLOW).scale(0.7).flip(TOP)
 
-We are going to the next line by calling the `move_arrow_to_line` function. To change the moment at which you change the line number, you can move this line.
+We are going to the next line by calling the ``move_arrow_to_line`` function. To change the moment at which you change the line number, you can move this line.
