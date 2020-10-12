@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
@@ -8,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Manim DSL  documentation</title>
+  <title>Exit Status &mdash; Manim DSL  documentation</title>
   
 
   
@@ -35,8 +34,10 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quick Start &amp; Installation" href="quickstart.html" />
+    <link rel="prev" title="Welcome to Manim DSL’s documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,8 +83,13 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="exitcodes.html">Exit Status</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Exit Status</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#success">0: Success</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntax-error">100: Syntax Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#semantic-error">200: Semantic Error</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start &amp; Installation</a></li>
 </ul>
 
@@ -131,12 +137,14 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Index</li>
+      <li>Exit Status</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/exitcodes.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -148,11 +156,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="exit-status">
+<h1>Exit Status<a class="headerlink" href="#exit-status" title="Permalink to this headline">¶</a></h1>
+<p>When compiling ManimDSL the compiler can return a variety of informative status codes.</p>
+<div class="section" id="success">
+<h2>0: Success<a class="headerlink" href="#success" title="Permalink to this headline">¶</a></h2>
+<p>The 0 exit status code means that compilation was successful.</p>
+</div>
+<div class="section" id="syntax-error">
+<h2>100: Syntax Error<a class="headerlink" href="#syntax-error" title="Permalink to this headline">¶</a></h2>
+<p>The 100 exit status code means there are one or more syntax errors in the file being compiled.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Errors detected during compilation
+Exit code: 100
+Syntax error at 1:9: missing &#39;;&#39; at &#39;&#39;&lt;EOF&gt;&#39;
+let a = 5
+</pre></div>
+</div>
+</div>
+<div class="section" id="semantic-error">
+<h2>200: Semantic Error<a class="headerlink" href="#semantic-error" title="Permalink to this headline">¶</a></h2>
+<p>The 200 exit status code means there are one or more semantic errors in the file being compiled.</p>
+<p>&lt;- Insert Example -&gt;</p>
+</div>
 </div>
 
 
@@ -160,6 +185,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="Quick Start &amp; Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Manim DSL’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
