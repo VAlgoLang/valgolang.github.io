@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python Library &mdash; Manim DSL  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quick Start &amp; Installation" href="quickstart.html" />
+    <link rel="prev" title="Exit Status" href="exitcodes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Manim DSL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="exitcodes.html">Exit Status</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python Library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rectangles">Rectangles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#text-box">Text Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-block">3: Code Block</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start &amp; Installation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Manim DSL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Python Library</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/python_library.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-library">
+<h1>Python Library<a class="headerlink" href="#python-library" title="Permalink to this headline">¶</a></h1>
+<p>We are using manim to create animations for your code.
+Although we have a standard way of representing datastructures, you are able to modify our functions to represent them the way you want!</p>
+<p>All of our utility functions can be found at <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/util.py">pythonLib/util.py</a>, and all of our shapes are in their own class (i.e. Rectangle_block is in <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/rectangle.py">pythonLib/rectangle.py</a>)</p>
+<div class="section" id="rectangles">
+<h2>Rectangles<a class="headerlink" href="#rectangles" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Our Rectangles take in:</dt><dd><ul class="simple">
+<li><p>A text which is placed inside the rectangle</p></li>
+<li><p>A width and height to for the rectangle dimensions</p></li>
+<li><p>A color for the rectangle outline</p></li>
+</ul>
+</dd>
+</dl>
+<p>We create a TextMobject with the text, and a Rectangle, and group these two under a VGroup.
+To add an additional element, create it, and group it with the VGroup.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">inside_text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">rectangle</span>   <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">group</span>       <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">inside_text</span><span class="p">,</span> <span class="n">rectangle</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">group</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="text-box">
+<h2>Text Box<a class="headerlink" href="#text-box" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Our Text Box takes in:</dt><dd><ul class="simple">
+<li><p>A text</p></li>
+<li><p>A color for the text</p></li>
+</ul>
+</dd>
+</dl>
+<p>If you want to change the way it appears on the screen, you will need to change that in your construct function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">Text_block</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="n">BLUE</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">assignment1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Here, Write could be FadeIn, Flash, FadeToColor…</p>
+</div>
+<div class="section" id="code-block">
+<h2>3: Code Block<a class="headerlink" href="#code-block" title="Permalink to this headline">¶</a></h2>
+<p>The Code Block is your inputed ManimDSL code which appears at the bottom left of your screen.
+If you do not want this code to appear, remove this part from the construct function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Remove all below lines</span>
+    <span class="n">code_block</span> <span class="o">=</span> <span class="n">Code_block</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
+    <span class="n">code_text</span> <span class="o">=</span> <span class="n">code_block</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">place_at</span><span class="p">(</span><span class="n">code_text</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">code_text</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>We have decided to keep track of the line executing with an ArrowTip. If you wish to change that shape, color, or scale, change this line in your construct function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="n">pointer</span> <span class="o">=</span> <span class="n">ArrowTip</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">YELLOW</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">TOP</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We are going to the next line by calling the <code class="docutils literal notranslate"><span class="pre">move_arrow_to_line</span></code> function. To change the moment at which you change the line number, you can move this line.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="Quick Start &amp; Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exitcodes.html" class="btn btn-neutral float-left" title="Exit Status" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Rini Banerjee, Clara Lebbos, Ilona Zhu, Mayank Sharma, Arjun Banerjee, Aditya Goel
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
