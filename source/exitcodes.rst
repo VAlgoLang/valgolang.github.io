@@ -13,7 +13,7 @@ The 0 exit status code means that compilation was successful.
 
 The 100 exit status code means there are one or more syntax errors in the file being compiled.
 
-.. code :: js
+.. code :: none
 
     Errors detected during compilation 
     Exit code: 100
