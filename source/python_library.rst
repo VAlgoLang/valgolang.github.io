@@ -6,6 +6,34 @@ Although the compiler has a standard way of representing datastructures, you are
 
 All of the utility functions can be found at `pythonLib/util.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/util.py>`_, and all the shapes are in their own class (i.e. Rectangle_block is in `pythonLib/rectangle.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/rectangle.py>`_)
 
+Initial Structure
+-----------------
+
+An initial structure represents the empty state for any data structure.
+
+It consists of a line, which can be horizontal or vertical, and a text label indicating the variable name under the line.
+
+An Initial Structure takes in:
+    - A text that is labelled under the line
+    - An angle of rotation (``0`` for horizontal line, ``TAU/4`` for vertical line)
+    - A length for the line *[Optional - default is* ``1.5`` *]*
+    - A color for the line and text label *[Optional - default is* ``WHITE`` *]*
+
+The Line Mobject with length (given or default) rotated by the given angle, and a TextMobject with the label, are grouped under a VGroup.
+To add an additional element, create it, and group it with the VGroup.
+To change the default position of the label and the distance between the label and the line, change ``DOWN`` and ``SMALL_BUFF`` respectively.
+
+.. code :: python
+
+    def build(self):
+        line = Line(color=self.color)
+        line.set_length(self.length)
+        line.set_angle(self.angle)
+        label = TextMobject(self.ident, color=self.color)
+        label.next_to(line, DOWN, SMALL_BUFF)
+        group = VGroup(label, line)
+        return group
+
 Rectangles
 -----------------
 
@@ -43,7 +71,7 @@ If you want to change the way it appears on the screen, you will need to change 
 
 Here, Write could be FadeIn, Flash, FadeToColor...
 
-3: Code Block
+Code Block
 --------------------
 
 The Code Block is your inputed ManimDSL code which appears at the bottom left of your screen.
