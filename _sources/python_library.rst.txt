@@ -1,20 +1,48 @@
 Python Library
 =====================================
 
-We are using manim to create animations for your code. 
-Although we have a standard way of representing datastructures, you are able to modify our functions to represent them the way you want!
+The compiler uses manim to create animations for your code.
+Although the compiler has a standard way of representing datastructures, you are able to modify our functions to represent them the way you want!
 
-All of our utility functions can be found at `pythonLib/util.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/util.py>`_, and all of our shapes are in their own class (i.e. Rectangle_block is in `pythonLib/rectangle.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/rectangle.py>`_)
+All of the utility functions can be found at `pythonLib/util.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/util.py>`_, and all the shapes are in their own class (i.e. Rectangle_block is in `pythonLib/rectangle.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/rectangle.py>`_)
 
-Rectangles
+Initial Structure
 -----------------
 
-Our Rectangles take in:
-    - A text which is placed inside the rectangle 
+An initial structure represents the empty state for any data structure.
+
+It consists of a line, which can be horizontal or vertical, and a text label indicating the variable name under the line.
+
+An Initial Structure takes in:
+    - A text that is labelled under the line
+    - An angle of rotation (``0`` for horizontal line, ``TAU/4`` for vertical line)
+    - A length for the line *[Optional - default is* ``1.5`` *]*
+    - A color for the line and text label *[Optional - default is* ``WHITE`` *]*
+
+The Line Mobject with length (given or default) rotated by the given angle, and a TextMobject with the label, are grouped under a VGroup.
+To add an additional element, create it, and group it with the VGroup.
+To change the default position of the label and the distance between the label and the line, change ``DOWN`` and ``SMALL_BUFF`` respectively.
+
+.. code :: python
+
+    def build(self):
+        line = Line(color=self.color)
+        line.set_length(self.length)
+        line.set_angle(self.angle)
+        label = TextMobject(self.ident, color=self.color)
+        label.next_to(line, DOWN, SMALL_BUFF)
+        group = VGroup(label, line)
+        return group
+
+Rectangle
+-----------------
+
+Rectangles take in:
+    - A text which is placed inside the rectangle
     - A width and height to for the rectangle dimensions
     - A color for the rectangle outline
 
-We create a TextMobject with the text, and a Rectangle, and group these two under a VGroup. 
+A TextMobject with the text, and a Rectangle, are grouped under a VGroup.
 To add an additional element, create it, and group it with the VGroup.
 
 .. code :: python
@@ -28,7 +56,7 @@ To add an additional element, create it, and group it with the VGroup.
 Text Box
 --------------------
 
-Our Text Box takes in:
+Text Boxes take in:
     - A text
     - A color for the text
 
@@ -43,7 +71,7 @@ If you want to change the way it appears on the screen, you will need to change 
 
 Here, Write could be FadeIn, Flash, FadeToColor...
 
-3: Code Block
+Code Block
 --------------------
 
 The Code Block is your inputed ManimDSL code which appears at the bottom left of your screen.
@@ -58,7 +86,7 @@ If you do not want this code to appear, remove this part from the construct func
         self.place_at(code_text, -1, 0)
         self.play(FadeIn(code_text))
 
-We have decided to keep track of the line executing with an ArrowTip. If you wish to change that shape, color, or scale, change this line in your construct function.
+Tracking the line that is currently executing is done with an ArrowTip. If you wish to change that shape, color, or scale, change this line in your construct function.
 
 .. code :: python
 
@@ -66,4 +94,4 @@ We have decided to keep track of the line executing with an ArrowTip. If you wis
         ...
         pointer = ArrowTip(color=YELLOW).scale(0.7).flip(TOP)
 
-We are going to the next line by calling the ``move_arrow_to_line`` function. To change the moment at which you change the line number, you can move this line.
+The ``move_arrow_to_line`` function is used to move the arrow to a specific line number. To change the moment at which you change the line number, you can move this line.

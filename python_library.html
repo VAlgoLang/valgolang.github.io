@@ -86,9 +86,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="exitcodes.html">Exit Status</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Python Library</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#rectangles">Rectangles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initial-structure">Initial Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rectangle">Rectangle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#text-box">Text Box</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#code-block">3: Code Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-block">Code Block</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start &amp; Installation</a></li>
@@ -159,20 +160,47 @@
             
   <div class="section" id="python-library">
 <h1>Python Library<a class="headerlink" href="#python-library" title="Permalink to this headline">¶</a></h1>
-<p>We are using manim to create animations for your code.
-Although we have a standard way of representing datastructures, you are able to modify our functions to represent them the way you want!</p>
-<p>All of our utility functions can be found at <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/util.py">pythonLib/util.py</a>, and all of our shapes are in their own class (i.e. Rectangle_block is in <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/rectangle.py">pythonLib/rectangle.py</a>)</p>
-<div class="section" id="rectangles">
-<h2>Rectangles<a class="headerlink" href="#rectangles" title="Permalink to this headline">¶</a></h2>
+<p>The compiler uses manim to create animations for your code.
+Although the compiler has a standard way of representing datastructures, you are able to modify our functions to represent them the way you want!</p>
+<p>All of the utility functions can be found at <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/util.py">pythonLib/util.py</a>, and all the shapes are in their own class (i.e. Rectangle_block is in <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/rectangle.py">pythonLib/rectangle.py</a>)</p>
+<div class="section" id="initial-structure">
+<h2>Initial Structure<a class="headerlink" href="#initial-structure" title="Permalink to this headline">¶</a></h2>
+<p>An initial structure represents the empty state for any data structure.</p>
+<p>It consists of a line, which can be horizontal or vertical, and a text label indicating the variable name under the line.</p>
 <dl class="simple">
-<dt>Our Rectangles take in:</dt><dd><ul class="simple">
+<dt>An Initial Structure takes in:</dt><dd><ul class="simple">
+<li><p>A text that is labelled under the line</p></li>
+<li><p>An angle of rotation (<code class="docutils literal notranslate"><span class="pre">0</span></code> for horizontal line, <code class="docutils literal notranslate"><span class="pre">TAU/4</span></code> for vertical line)</p></li>
+<li><p>A length for the line <em>[Optional - default is</em> <code class="docutils literal notranslate"><span class="pre">1.5</span></code> <em>]</em></p></li>
+<li><p>A color for the line and text label <em>[Optional - default is</em> <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> <em>]</em></p></li>
+</ul>
+</dd>
+</dl>
+<p>The Line Mobject with length (given or default) rotated by the given angle, and a TextMobject with the label, are grouped under a VGroup.
+To add an additional element, create it, and group it with the VGroup.
+To change the default position of the label and the distance between the label and the line, change <code class="docutils literal notranslate"><span class="pre">DOWN</span></code> and <code class="docutils literal notranslate"><span class="pre">SMALL_BUFF</span></code> respectively.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_length</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">)</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_angle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">angle</span><span class="p">)</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ident</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">label</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">DOWN</span><span class="p">,</span> <span class="n">SMALL_BUFF</span><span class="p">)</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">group</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rectangle">
+<h2>Rectangle<a class="headerlink" href="#rectangle" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Rectangles take in:</dt><dd><ul class="simple">
 <li><p>A text which is placed inside the rectangle</p></li>
 <li><p>A width and height to for the rectangle dimensions</p></li>
 <li><p>A color for the rectangle outline</p></li>
 </ul>
 </dd>
 </dl>
-<p>We create a TextMobject with the text, and a Rectangle, and group these two under a VGroup.
+<p>A TextMobject with the text, and a Rectangle, are grouped under a VGroup.
 To add an additional element, create it, and group it with the VGroup.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">inside_text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
@@ -185,7 +213,7 @@ To add an additional element, create it, and group it with the VGroup.</p>
 <div class="section" id="text-box">
 <h2>Text Box<a class="headerlink" href="#text-box" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Our Text Box takes in:</dt><dd><ul class="simple">
+<dt>Text Boxes take in:</dt><dd><ul class="simple">
 <li><p>A text</p></li>
 <li><p>A color for the text</p></li>
 </ul>
@@ -201,7 +229,7 @@ To add an additional element, create it, and group it with the VGroup.</p>
 <p>Here, Write could be FadeIn, Flash, FadeToColor…</p>
 </div>
 <div class="section" id="code-block">
-<h2>3: Code Block<a class="headerlink" href="#code-block" title="Permalink to this headline">¶</a></h2>
+<h2>Code Block<a class="headerlink" href="#code-block" title="Permalink to this headline">¶</a></h2>
 <p>The Code Block is your inputed ManimDSL code which appears at the bottom left of your screen.
 If you do not want this code to appear, remove this part from the construct function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -212,13 +240,13 @@ If you do not want this code to appear, remove this part from the construct func
     <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">code_text</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>We have decided to keep track of the line executing with an ArrowTip. If you wish to change that shape, color, or scale, change this line in your construct function.</p>
+<p>Tracking the line that is currently executing is done with an ArrowTip. If you wish to change that shape, color, or scale, change this line in your construct function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="o">...</span>
     <span class="n">pointer</span> <span class="o">=</span> <span class="n">ArrowTip</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">YELLOW</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">TOP</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We are going to the next line by calling the <code class="docutils literal notranslate"><span class="pre">move_arrow_to_line</span></code> function. To change the moment at which you change the line number, you can move this line.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">move_arrow_to_line</span></code> function is used to move the arrow to a specific line number. To change the moment at which you change the line number, you can move this line.</p>
 </div>
 </div>
 
