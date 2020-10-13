@@ -34,7 +34,7 @@ To change the default position of the label and the distance between the label a
         group = VGroup(label, line)
         return group
 
-Rectangles
+Rectangle
 -----------------
 
 Rectangles take in:
