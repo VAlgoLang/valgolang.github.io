@@ -9,7 +9,7 @@ All of the utility functions can be found at `pythonLib/util.py <https://github.
 Rectangles
 -----------------
 
-Rectangles's take in:
+Rectangles take in:
     - A text which is placed inside the rectangle
     - A width and height to for the rectangle dimensions
     - A color for the rectangle outline
@@ -28,7 +28,7 @@ To add an additional element, create it, and group it with the VGroup.
 Text Box
 --------------------
 
-Text Box's takes in:
+Text Boxes takes in:
     - A text
     - A color for the text
 
