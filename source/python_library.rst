@@ -28,7 +28,7 @@ To add an additional element, create it, and group it with the VGroup.
 Text Box
 --------------------
 
-Text Boxes takes in:
+Text Boxes take in:
     - A text
     - A color for the text
 
