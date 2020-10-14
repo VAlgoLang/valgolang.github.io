@@ -25,6 +25,12 @@ The 100 exit status code means there are one or more syntax errors in the file b
 
 The 200 exit status code means there are one or more semantic errors in the file being compiled.
 
+An invalid declaration like below will lead to a semantic error.
+
+.. code :: none
+
+    let x: number = new Stack;
+
 .. code :: none
 
     Errors detected during compilation 
