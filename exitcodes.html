@@ -177,7 +177,15 @@ let a = 5
 <div class="section" id="semantic-error">
 <h2>200: Semantic Error<a class="headerlink" href="#semantic-error" title="Permalink to this headline">¶</a></h2>
 <p>The 200 exit status code means there are one or more semantic errors in the file being compiled.</p>
-<p>&lt;- Insert Example -&gt;</p>
+<p>An invalid declaration like below will lead to a semantic error.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let x: number = new Stack;
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Errors detected during compilation
+Exit code: 200
+Semantic error at 1:0: Cannot assign expression of type Stack&lt;number&gt; to x, which is of type number
+</pre></div>
+</div>
 </div>
 </div>
 
