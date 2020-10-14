@@ -25,4 +25,8 @@ The 100 exit status code means there are one or more syntax errors in the file b
 
 The 200 exit status code means there are one or more semantic errors in the file being compiled.
 
-<- Insert Example ->
+.. code :: none
+
+    Errors detected during compilation 
+    Exit code: 200
+    Semantic error at 1:0: Cannot assign expression of type Stack<number> to x, which is of type number
