@@ -4,7 +4,7 @@ Python Library
 The compiler uses manim to create animations for your code.
 Although the compiler has a standard way of representing datastructures, you are able to modify our functions to represent them the way you want!
 
-All of the utility functions can be found at `pythonLib/util.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/util.py>`_, and all the shapes are in their own class (i.e. Rectangle_block is in `pythonLib/rectangle.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/pythonLib/rectangle.py>`_)
+All of the utility functions can be found at `src/main/resources/python/util.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/src/main/resources/python/util.py>`_, and all the shapes are in their own class (i.e. Rectangle_block is in `src/main/resources/python/rectangle.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/src/main/resources/python/rectangle.py>`_)
 
 Initial Structure
 -----------------
