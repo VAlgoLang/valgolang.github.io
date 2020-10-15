@@ -5,6 +5,7 @@ Welcome to Manim DSL's documentation!
    :caption: Contents:
    :glob:
 
+   quickstart
    *
 
 
