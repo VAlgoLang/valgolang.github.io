@@ -14,7 +14,6 @@ Here is an example:
 .. code:: javascript
 
     let stack: Stack = new Stack;
-    asdklj asdasd = asdas;
     stack.push(5);
     stack.pop();
 
