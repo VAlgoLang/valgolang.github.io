@@ -6,22 +6,22 @@ Introduction
 
 Welcome to Manim DSL's documentation!
 
-Manim DSL is a Domain Specific Language that is made to help lecturers make animations for teaching data structures
-and algorithms
+Manim DSL is a domain specific language that helps educators create animations for teaching students about data structures
+and algorithms.
 
 Here is an example:
 
-.. code:: none
+.. code:: javascript
 
     let stack: Stack = new Stack;
     stack.push(5);
     stack.pop();
 
-Which would produce the video:
+This would produce the video:
 
+.. raw:: html
 
-<-- INSERT VIDEO -->
-
+        <video src="_static/intro.mp4" frameborder="0" allowfullscreen style=" width: 80%; height: 80%;" controls></video>
 
 Quick start
 -----------
