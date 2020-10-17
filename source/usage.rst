@@ -26,8 +26,8 @@ Command Line Arguments
 -o=<output>, --output=<output>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - The path to where the MP4 file should be saved (defaults to ``out.mp4``)
- - If the path does not exist, all the subdirectories will be created
+ - The path to where the MP4 file should be saved (defaults to ``out.mp4`` in the same directory the compiler is called)
+ - All the subdirectories specified in the path will be created
 
 -p, --python
 ~~~~~~~~~~~~~~~~~~~~~
