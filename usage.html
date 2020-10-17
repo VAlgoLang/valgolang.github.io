@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Usage &mdash; Manim DSL  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exit Status" href="exitcodes.html" />
+    <link rel="prev" title="Quick Start &amp; Installation" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Manim DSL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start &amp; Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#command-line-arguments">Command Line Arguments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#file">&lt;file&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#o-output-output-output">-o=&lt;output&gt;, –output=&lt;output&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#p-python">-p, –python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#q-quality-quality-quality">-q=&lt;quality&gt;, –quality=&lt;quality&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#h-help">-h, –help</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exitcodes.html">Exit Status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_library.html">Python Library</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Manim DSL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<p>The Compiler has some command line options:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage: manimdsl <span class="o">[</span>-hpV<span class="o">]</span> <span class="o">[</span>-o<span class="o">=</span>&lt;output&gt;<span class="o">]</span> <span class="o">[</span>-q<span class="o">=</span>&lt;quality&gt;<span class="o">]</span> &lt;file&gt;
+ManimDSL compiler to produce manim animations
+      &lt;file&gt;                The manimdsl file to compile and animate
+  -h, --help                Show this <span class="nb">help</span> message and exit.
+  -o, --output<span class="o">=</span>&lt;output&gt;     The animated mp4 file location <span class="o">(</span>default: out.mp4<span class="o">)</span>
+  -p, --python              Output generated python <span class="p">&amp;</span> manim code <span class="o">(</span>optional<span class="o">)</span>
+  -q, --quality<span class="o">=</span>&lt;quality&gt;   Quality of animation. <span class="o">[</span>low, high<span class="o">]</span> <span class="o">(</span>default: low<span class="o">)</span>
+  -V, --version             Print version information and exit.
+</pre></div>
+</div>
+<div class="section" id="command-line-arguments">
+<h2>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="file">
+<h3>&lt;file&gt;<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">.manimdsl</span></code> file to compile</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="o-output-output-output">
+<h3>-o=&lt;output&gt;, –output=&lt;output&gt;<a class="headerlink" href="#o-output-output-output" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>The path to where the MP4 file should be saved (defaults to <code class="docutils literal notranslate"><span class="pre">out.mp4</span></code> in the same directory the compiler is called)</p></li>
+<li><p>All the subdirectories specified in the path will be created</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="p-python">
+<h3>-p, –python<a class="headerlink" href="#p-python" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Flag to output the Manim and Python generated code</p></li>
+<li><p>The Python file will be saved with the same name as the output MP4 file (and so is defaulted to <code class="docutils literal notranslate"><span class="pre">out.py</span></code>)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="q-quality-quality-quality">
+<h3>-q=&lt;quality&gt;, –quality=&lt;quality&gt;<a class="headerlink" href="#q-quality-quality-quality" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Quality of the generated animation (default: low)</p></li>
+<li><p>Available options: <code class="docutils literal notranslate"><span class="pre">high</span></code> and <code class="docutils literal notranslate"><span class="pre">low</span></code></p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="h-help">
+<h3>-h, –help<a class="headerlink" href="#h-help" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Produce the help message shown above</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="exitcodes.html" class="btn btn-neutral float-right" title="Exit Status" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quick Start &amp; Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Rini Banerjee, Clara Lebbos, Ilona Zhu, Mayank Sharma, Arjun Banerjee, Aditya Goel
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

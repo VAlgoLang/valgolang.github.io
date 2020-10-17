@@ -3,9 +3,11 @@ Welcome to Manim DSL's documentation!
 
 .. toctree::
    :caption: Contents:
+   :maxdepth: 2
    :glob:
 
    quickstart
+   usage
    *
 
 
