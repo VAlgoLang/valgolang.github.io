@@ -9,7 +9,6 @@ Welcome to Manim DSL's documentation!
    quickstart
    tutorial
    usage
-   exitcodes
    *
 
 

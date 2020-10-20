@@ -20,7 +20,7 @@ Declaring and assigning a variable looks a lot like it does in any other languag
 
 Note that depending on your code style during declaration you may choose to omit or specify the type of the variable.
 
-.. code-block :: python
+.. code :: javascript
     
     let x = 4;
     let y : number = 4;
@@ -31,10 +31,10 @@ Arithmetic
 
 Arithmetic expressions also look a lot like in any other programming language (for good reason!). 
 
-.. code-block :: python
+.. code:: javascript
     
     let x = 4.5;
-    x = (x * 2) + 3; # x = 12
+    x = (x * 2) + 3; // x = 12
   
     
 Constructors
@@ -44,7 +44,7 @@ Data structures baked into the language have constructors. These can be invoked 
 
 Note that if a data structure (as below) takes generic type arguments in their constructor they must not be omitted.
 
-.. code-block :: python
+.. code:: javascript
     
     let stack = new Stack<number>;
 
@@ -72,10 +72,10 @@ Sleep
 
 The sleep command allows you to pause the animation at any code line for as many seconds as you would like. If you are constructing an online lecture this can give you some time to do a voice over.
 
-.. code-block :: python
+.. code:: javascript
     
     ...
-    sleep(2.5); # pauses the animation for 2.5 seconds before stepping onto the next line
+    sleep(2.5); // pauses the animation for 2.5 seconds before stepping onto the next line
     ...
 
 
