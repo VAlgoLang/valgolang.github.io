@@ -60,7 +60,7 @@ Functions
 ``TODO``
 
 
-How to control your animation
+Controlling your animation
 -----------------------------
 
 To make dynamic changes to the end animation, you can insert special commands which won't show up in the code visualisation.
@@ -79,7 +79,7 @@ The sleep command allows you to pause the animation at any code line for as many
     ...
 
 
-How to structure your program
+Structuring your program
 -----------------------------
 
 Once functions and stylesheet exist we can write this out.
