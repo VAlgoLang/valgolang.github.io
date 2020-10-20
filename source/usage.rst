@@ -19,30 +19,30 @@ Command Line Arguments
 ----------------------
 
 <file>
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^
 
  - The ``.manimdsl`` file to compile
 
 -o=<output>, --output=<output>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
  - The path to where the MP4 file should be saved (defaults to ``out.mp4`` in the same directory the compiler is called)
  - All the subdirectories specified in the path will be created
 
 -p, --python
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
  - Flag to output the Manim and Python generated code
  - The Python file will be saved with the same name as the output MP4 file (and so is defaulted to ``out.py``)
 
 -q=<quality>, --quality=<quality>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
  - Quality of the generated animation (default: low)
  - Available options: ``high`` and ``low``
 
 -h, --help
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
  - Produce the help message shown above
  

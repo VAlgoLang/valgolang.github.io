@@ -14,7 +14,7 @@ The Basics
 ----------
 
 Variables
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 Declaring and assigning a variable looks a lot like it does in any other language. 
 
@@ -27,7 +27,7 @@ Note that depending on your code style during declaration you may choose to omit
 
 
 Arithmetic
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 Arithmetic expressions also look a lot like in any other programming language (for good reason!). 
 
@@ -38,7 +38,7 @@ Arithmetic expressions also look a lot like in any other programming language (f
   
     
 Constructors
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 Data structures baked into the language have constructors. These can be invoked using the ``new`` keyword.
 
@@ -50,12 +50,12 @@ Note that if a data structure (as below) takes generic type arguments in their c
 
 
 Control structures
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 ``TODO``
 
 Functions
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 ``TODO``
 
@@ -68,7 +68,7 @@ To make dynamic changes to the end animation, you can insert special commands wh
 Customisations to things such as colours, fonts and other attributes can be made through an external stylesheet described `over here <#>`_.
 
 Sleep
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 The sleep command allows you to pause the animation at any code line for as many seconds as you would like. If you are constructing an online lecture this can give you some time to do a voice over.
 
