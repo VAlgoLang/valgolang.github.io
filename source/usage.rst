@@ -26,17 +26,16 @@ Command Line Arguments
 
  - The ``.manimdsl`` file to compile
 
--f, --show_file_in_finder
+-f, --open_file_manager_to_generated_files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - Flag to show the output file in finder automatically
- - The Python file will be saved with the same name as the output MP4 file (and so is defaulted to ``out.py``)
+ - Flag to automatically open the saved file once its done
 
 -m, --manim
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  - Flag to only output generated python & manim code, and not create the animation
- - The path defaults to ``out.mp4`` in the same directory the compiler is called. Use -o (description below) to specifiy the path.
+ - The path defaults to ``out.py`` in the same directory the compiler is called. Use -o (description below) to specifiy the path.
 
 -o=<output>, --output=<output>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
