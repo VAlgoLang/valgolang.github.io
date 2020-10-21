@@ -8,12 +8,12 @@ The Compiler has some command line options:
     Usage: manimdsl [-hpV] [-o=<output>] [-q=<quality>] <file>
     ManimDSL compiler to produce manim animations
           <file>                The manimdsl file to compile and animate.
-      -f, --show_file_in_finder Show the output file in finder.
+      -f, --open_file           Show the output file in file manager (optional).
       -h, --help                Show this help message and exit.
-      -m, --manim               Only output generated python & manim code.
+      -m, --manim               Only output generated python & manim code (optional).
       -o, --output=<output>     The animated mp4 file location (default: out.mp4).
       -p, --python              Output generated python & manim code (optional).
-          --preview             Automatically open the saved file once its done.
+          --preview             Automatically open the saved file once its done (optional).
       -q, --quality=<quality>   Quality of animation. [low, high] (default: low).
       -V, --version             Print version information and exit.
 
@@ -26,16 +26,16 @@ Command Line Arguments
 
  - The ``.manimdsl`` file to compile
 
--f, --open_file_manager_to_generated_files
+-f, --open_file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - Flag to automatically open the saved file once its done
+ - Flag to show the output file in file manager
 
 -m, --manim
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  - Flag to only output generated python & manim code, and not create the animation
- - The path defaults to ``out.py`` in the same directory the compiler is called. Use -o (description below) to specifiy the path.
+ - The path defaults to ``out.py`` in the same directory the compiler is called. Use -o (description below) to specifiy the path
 
 -o=<output>, --output=<output>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
