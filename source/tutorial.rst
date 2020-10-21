@@ -1,9 +1,9 @@
 Language Tour
 =====================================
 
-ManimDSL is a small, statically typed language designed to leverage the Manim visualisation library to enable educators to succinctly express and visualise algorithms. The core language is small by design.
+ManimDSL is a statically typed language designed to leverage the Manim visualisation library to enable educators to succinctly express and visualise algorithms. The core language is small by design.
 
-This tour of the language will take you through some of the basic constructs of the language, many of which will be familiar to those with any programming background.
+This tour will take you through some of the basic constructs of the language, many of which will be familiar to those with any programming background.
 It is assumed you have at least very basic knowledge of programming in any other language (such as Python, JavaScript or Java). 
 
 
@@ -52,12 +52,12 @@ Note that if a data structure (as below) takes generic type arguments in their c
 Control structures
 ^^^^^^^^^^^^^^^^^^
 
-``TODO``
+``Work in progress!``
 
 Functions
 ^^^^^^^^^^^^
 
-``TODO``
+``Work in progress!``
 
 
 Controlling your animation
@@ -82,7 +82,7 @@ The sleep command allows you to pause the animation at any code line for as many
 Structuring your program
 -----------------------------
 
-Once functions and stylesheet exist we can write this out.
+``Work in progress!``
 
 
 Data Structures and Primitives
