@@ -88,8 +88,11 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#command-line-arguments">Command Line Arguments</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#file">&lt;file&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#f-open-file">-f, –open_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m-manim">-m, –manim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#o-output-output-output">-o=&lt;output&gt;, –output=&lt;output&gt;</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#p-python">-p, –python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preview">–preview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#q-quality-quality-quality">-q=&lt;quality&gt;, –quality=&lt;quality&gt;</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#h-help">-h, –help</a></li>
 </ul>
@@ -168,11 +171,14 @@
 <p>The Compiler has some command line options:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage: manimdsl <span class="o">[</span>-hpV<span class="o">]</span> <span class="o">[</span>-o<span class="o">=</span>&lt;output&gt;<span class="o">]</span> <span class="o">[</span>-q<span class="o">=</span>&lt;quality&gt;<span class="o">]</span> &lt;file&gt;
 ManimDSL compiler to produce manim animations
-      &lt;file&gt;                The manimdsl file to compile and animate
+      &lt;file&gt;                The manimdsl file to compile and animate.
+  -f, --open_file           Show the output file in file manager <span class="o">(</span>optional<span class="o">)</span>.
   -h, --help                Show this <span class="nb">help</span> message and exit.
-  -o, --output<span class="o">=</span>&lt;output&gt;     The animated mp4 file location <span class="o">(</span>default: out.mp4<span class="o">)</span>
-  -p, --python              Output generated python <span class="p">&amp;</span> manim code <span class="o">(</span>optional<span class="o">)</span>
-  -q, --quality<span class="o">=</span>&lt;quality&gt;   Quality of animation. <span class="o">[</span>low, high<span class="o">]</span> <span class="o">(</span>default: low<span class="o">)</span>
+  -m, --manim               Only output generated python <span class="p">&amp;</span> manim code <span class="o">(</span>optional<span class="o">)</span>.
+  -o, --output<span class="o">=</span>&lt;output&gt;     The animated mp4 file location <span class="o">(</span>default: out.mp4<span class="o">)</span>.
+  -p, --python              Output generated python <span class="p">&amp;</span> manim code <span class="o">(</span>optional<span class="o">)</span>.
+      --preview             Automatically open the saved file once its <span class="k">done</span> <span class="o">(</span>optional<span class="o">)</span>.
+  -q, --quality<span class="o">=</span>&lt;quality&gt;   Quality of animation. <span class="o">[</span>low, high<span class="o">]</span> <span class="o">(</span>default: low<span class="o">)</span>.
   -V, --version             Print version information and exit.
 </pre></div>
 </div>
@@ -183,6 +189,23 @@ ManimDSL compiler to produce manim animations
 <blockquote>
 <div><ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">.manimdsl</span></code> file to compile</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="f-open-file">
+<h3>-f, –open_file<a class="headerlink" href="#f-open-file" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Flag to show the output file in file manager</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="m-manim">
+<h3>-m, –manim<a class="headerlink" href="#m-manim" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Flag to only output generated python &amp; manim code, and not create the animation</p></li>
+<li><p>The path defaults to <code class="docutils literal notranslate"><span class="pre">out.py</span></code> in the same directory the compiler is called. Use -o (description below) to specifiy the path</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -201,6 +224,14 @@ ManimDSL compiler to produce manim animations
 <div><ul class="simple">
 <li><p>Flag to output the Manim and Python generated code</p></li>
 <li><p>The Python file will be saved with the same name as the output MP4 file (and so is defaulted to <code class="docutils literal notranslate"><span class="pre">out.py</span></code>)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="preview">
+<h3>–preview<a class="headerlink" href="#preview" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Flag to open the generated animation automatically</p></li>
 </ul>
 </div></blockquote>
 </div>
