@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Language Tour &mdash; Manim DSL  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage" href="usage.html" />
+    <link rel="prev" title="Quick Start &amp; Installation" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Manim DSL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start &amp; Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Language Tour</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-basics">The Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arithmetic">Arithmetic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constructors">Constructors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#control-structures">Control structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#controlling-your-animation">Controlling your animation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sleep">Sleep</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#structuring-your-program">Structuring your program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-structures-and-primitives">Data Structures and Primitives</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_library.html">Python Library</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Manim DSL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Language Tour</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="language-tour">
+<h1>Language Tour<a class="headerlink" href="#language-tour" title="Permalink to this headline">¶</a></h1>
+<p>ManimDSL is a statically typed language designed to leverage the Manim visualisation library to enable educators to succinctly express and visualise algorithms. The core language is small by design.</p>
+<p>This tour will take you through some of the basic constructs of the language, many of which will be familiar to those with any programming background.
+It is assumed you have at least very basic knowledge of programming in any other language (such as Python, JavaScript or Java).</p>
+<p>Note that this is an open source project and we welcome suggestions and improvements! If you would like to make a contribution feel free to submit a pull request <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/tree/master/">here</a>.</p>
+<div class="section" id="the-basics">
+<h2>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<p>Declaring and assigning a variable looks a lot like it does in any other language.</p>
+<p>Note that depending on your code style during declaration you may choose to omit or specify the type of the variable.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="arithmetic">
+<h3>Arithmetic<a class="headerlink" href="#arithmetic" title="Permalink to this headline">¶</a></h3>
+<p>Arithmetic expressions also look a lot like in any other programming language (for good reason!).</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">4.5</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// x = 12</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="constructors">
+<h3>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h3>
+<p>Data structures baked into the language have constructors. These can be invoked using the <code class="docutils literal notranslate"><span class="pre">new</span></code> keyword.</p>
+<p>Note that if a data structure (as below) takes generic type arguments in their constructor they must not be omitted.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Stack</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="control-structures">
+<h3>Control structures<a class="headerlink" href="#control-structures" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Work</span> <span class="pre">in</span> <span class="pre">progress!</span></code></p>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Work</span> <span class="pre">in</span> <span class="pre">progress!</span></code></p>
+</div>
+</div>
+<div class="section" id="controlling-your-animation">
+<h2>Controlling your animation<a class="headerlink" href="#controlling-your-animation" title="Permalink to this headline">¶</a></h2>
+<p>To make dynamic changes to the end animation, you can insert special commands which won’t show up in the code visualisation.</p>
+<p>Customisations to things such as colours, fonts and other attributes can be made through an external stylesheet described <a class="reference external" href="#">over here</a>.</p>
+<div class="section" id="sleep">
+<h3>Sleep<a class="headerlink" href="#sleep" title="Permalink to this headline">¶</a></h3>
+<p>The sleep command allows you to pause the animation at any code line for as many seconds as you would like. If you are constructing an online lecture this can give you some time to do a voice over.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="nx">sleep</span><span class="p">(</span><span class="mf">2.5</span><span class="p">);</span> <span class="c1">// pauses the animation for 2.5 seconds before stepping onto the next line</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="structuring-your-program">
+<h2>Structuring your program<a class="headerlink" href="#structuring-your-program" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Work</span> <span class="pre">in</span> <span class="pre">progress!</span></code></p>
+</div>
+<div class="section" id="data-structures-and-primitives">
+<h2>Data Structures and Primitives<a class="headerlink" href="#data-structures-and-primitives" title="Permalink to this headline">¶</a></h2>
+<p>There are only two “kinds” of types in this language at the moment.</p>
+<ul class="simple">
+<li><p>Primitives, such as <code class="docutils literal notranslate"><span class="pre">number</span></code>.</p></li>
+<li><p>Data structures, such as <code class="docutils literal notranslate"><span class="pre">Stack&lt;number&gt;</span></code>. Data structures may define restrictions on the type parameters they permit.</p></li>
+</ul>
+<p>A rule of thumb is that data structures are the types of things you might have learnt in a CS class (trees, lists, and so on) and which you might find interesting to animate.
+All primitives begin with a lower case letter while data structures will begin with a capitalised letter.</p>
+<p>A comprehensive list of data structures “baked in” to the language is as follows:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Stack&lt;T&gt;</span></code></p></li>
+</ol>
+<p>For those of you interested in the nuts and bolts, this distinction was made to make it clear in the type system what sorts of variables should be centre-stage in the animation.</p>
+<p>To make this more concrete, note how the <code class="docutils literal notranslate"><span class="pre">Stack&lt;number&gt;</span></code> in the following animation is the focus of the attention as it is the primary data structure being used.</p>
+<video src="_static/intro.mp4" frameborder="0" allowfullscreen style=" width: 80%; height: 80%;" controls></video></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="usage.html" class="btn btn-neutral float-right" title="Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quick Start &amp; Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Rini Banerjee, Clara Lebbos, Ilona Zhu, Mayank Sharma, Arjun Banerjee, Aditya Goel
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

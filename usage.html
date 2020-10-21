@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Exit Status" href="exitcodes.html" />
-    <link rel="prev" title="Quick Start &amp; Installation" href="quickstart.html" /> 
+    <link rel="next" title="Python Library" href="python_library.html" />
+    <link rel="prev" title="Language Tour" href="tutorial.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,21 +85,31 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start &amp; Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Language Tour</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#command-line-arguments">Command Line Arguments</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#file">&lt;file&gt;</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#f-open-file">-f, –open_file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m-manim">-m, –manim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file">&lt;file&gt;</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#f-open-file">-f, –open_file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#m-manim">-m, –manim</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#o-output-output-output">-o=&lt;output&gt;, –output=&lt;output&gt;</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#p-python">-p, –python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#preview">–preview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#p-python">-p, –python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#preview">–preview</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#q-quality-quality-quality">-q=&lt;quality&gt;, –quality=&lt;quality&gt;</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#h-help">-h, –help</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#program-exit-status">Program Exit Status</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#success">0: Success</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#syntax-error">100: Syntax Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#semantic-error">200: Semantic Error</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="exitcodes.html">Exit Status</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="python_library.html">Python Library</a></li>
 </ul>
 
@@ -191,9 +201,8 @@ ManimDSL compiler to produce manim animations
 <li><p>The <code class="docutils literal notranslate"><span class="pre">.manimdsl</span></code> file to compile</p></li>
 </ul>
 </div></blockquote>
-</div>
 <div class="section" id="f-open-file">
-<h3>-f, –open_file<a class="headerlink" href="#f-open-file" title="Permalink to this headline">¶</a></h3>
+<h4>-f, –open_file<a class="headerlink" href="#f-open-file" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p>Flag to show the output file in file manager</p></li>
@@ -201,13 +210,14 @@ ManimDSL compiler to produce manim animations
 </div></blockquote>
 </div>
 <div class="section" id="m-manim">
-<h3>-m, –manim<a class="headerlink" href="#m-manim" title="Permalink to this headline">¶</a></h3>
+<h4>-m, –manim<a class="headerlink" href="#m-manim" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p>Flag to only output generated python &amp; manim code, and not create the animation</p></li>
 <li><p>The path defaults to <code class="docutils literal notranslate"><span class="pre">out.py</span></code> in the same directory the compiler is called. Use -o (description below) to specifiy the path</p></li>
 </ul>
 </div></blockquote>
+</div>
 </div>
 <div class="section" id="o-output-output-output">
 <h3>-o=&lt;output&gt;, –output=&lt;output&gt;<a class="headerlink" href="#o-output-output-output" title="Permalink to this headline">¶</a></h3>
@@ -226,14 +236,14 @@ ManimDSL compiler to produce manim animations
 <li><p>The Python file will be saved with the same name as the output MP4 file (and so is defaulted to <code class="docutils literal notranslate"><span class="pre">out.py</span></code>)</p></li>
 </ul>
 </div></blockquote>
-</div>
 <div class="section" id="preview">
-<h3>–preview<a class="headerlink" href="#preview" title="Permalink to this headline">¶</a></h3>
+<h4>–preview<a class="headerlink" href="#preview" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p>Flag to open the generated animation automatically</p></li>
 </ul>
 </div></blockquote>
+</div>
 </div>
 <div class="section" id="q-quality-quality-quality">
 <h3>-q=&lt;quality&gt;, –quality=&lt;quality&gt;<a class="headerlink" href="#q-quality-quality-quality" title="Permalink to this headline">¶</a></h3>
@@ -253,6 +263,37 @@ ManimDSL compiler to produce manim animations
 </div></blockquote>
 </div>
 </div>
+<div class="section" id="program-exit-status">
+<h2>Program Exit Status<a class="headerlink" href="#program-exit-status" title="Permalink to this headline">¶</a></h2>
+<p>When compiling ManimDSL the compiler can return a variety of informative status codes.</p>
+<div class="section" id="success">
+<h3>0: Success<a class="headerlink" href="#success" title="Permalink to this headline">¶</a></h3>
+<p>The 0 exit status code means that compilation was successful.</p>
+</div>
+<div class="section" id="syntax-error">
+<h3>100: Syntax Error<a class="headerlink" href="#syntax-error" title="Permalink to this headline">¶</a></h3>
+<p>The 100 exit status code means there are one or more syntax errors in the file being compiled.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Errors detected during compilation
+Exit code: 100
+Syntax error at 1:9: missing &#39;;&#39; at &#39;&#39;&lt;EOF&gt;&#39;
+let a = 5
+</pre></div>
+</div>
+</div>
+<div class="section" id="semantic-error">
+<h3>200: Semantic Error<a class="headerlink" href="#semantic-error" title="Permalink to this headline">¶</a></h3>
+<p>The 200 exit status code means there are one or more semantic errors in the file being compiled.</p>
+<p>An invalid declaration like below will lead to a semantic error.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let x: number = new Stack;
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Errors detected during compilation
+Exit code: 200
+Semantic error at 1:0: Cannot assign expression of type Stack&lt;number&gt; to x, which is of type number
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -263,10 +304,10 @@ ManimDSL compiler to produce manim animations
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="exitcodes.html" class="btn btn-neutral float-right" title="Exit Status" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="python_library.html" class="btn btn-neutral float-right" title="Python Library" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quick Start &amp; Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tutorial.html" class="btn btn-neutral float-left" title="Language Tour" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
