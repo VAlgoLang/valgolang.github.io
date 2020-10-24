@@ -57,6 +57,8 @@ Control structures
 Functions
 ^^^^^^^^^^^^
 
+In order to compile a program with functions, please define all the functions at the top of the file before the statements.
+
 The way to define functions is similar as it is in other languages.
 
 Note that the return type must be defined if you intend to return anything from the function. If the return type is not specified, the function is assumed to be of type ``void``, so no ``return`` statement is allowed inside the function.
