@@ -65,7 +65,7 @@ Note that the return type must be defined if you intend to return anything from 
 
 Also note that the arguments passed into any function are passed by reference, meaning that the changes made to the parameters inside the function will affect the originals.
 
-.. code:: kotlin
+.. code :: kotlin
     
     fun func1(number x): number {
         return x + 1;
@@ -74,8 +74,9 @@ Also note that the arguments passed into any function are passed by reference, m
     fun func2(Stack<number> stack) {  // function assumed to be void as no return type is specified
         stack.push(5);
     }
+.. code :: javascript
 
-    let x : number = func1(3);
+    let x : number = func1(5);
 
 Controlling your animation
 -----------------------------
