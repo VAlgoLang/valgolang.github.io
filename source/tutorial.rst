@@ -59,7 +59,7 @@ Functions
 
 In order to compile a program with functions, please define all the functions at the top of the file before the statements.
 
-The way to define functions is similar as it is in other languages.
+The ways to define functions and make function calls are similar as they are in other languages.
 
 Note that the return type must be defined if you intend to return anything from the function. If the return type is not specified, the function is assumed to be of type ``void``, so no ``return`` statement is allowed inside the function.
 
@@ -74,6 +74,8 @@ Also note that the arguments passed into any function are passed by reference, m
     fun func2(Stack<number> stack) {  // function assumed to be void as no return type is specified
         stack.push(5);
     }
+
+    x = func1(3);
 
 Controlling your animation
 -----------------------------
