@@ -57,8 +57,19 @@ Control structures
 Functions
 ^^^^^^^^^^^^
 
-``Work in progress!``
+The way to define functions is similar as it is in other languages.
 
+Note that the return type must be defined if you intend to return anything from the function. If the return type is not specified, the function is assumed to be of type ``void``, so no ``return`` statement is allowed inside the function.
+
+.. code:: kotlin
+    
+    fun func1(number x): number {
+        return x + 1;
+    }
+
+    fun func2(Stack<number> stack) {  // function assumed to be void as no return type is specified
+        stack.push(5);
+    }
 
 Controlling your animation
 -----------------------------
