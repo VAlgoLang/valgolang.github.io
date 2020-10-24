@@ -61,6 +61,8 @@ The way to define functions is similar as it is in other languages.
 
 Note that the return type must be defined if you intend to return anything from the function. If the return type is not specified, the function is assumed to be of type ``void``, so no ``return`` statement is allowed inside the function.
 
+Also note that the arguments passed into any function are passed by reference, meaning that the changes made to the parameters inside the function will affect the originals.
+
 .. code:: kotlin
     
     fun func1(number x): number {
