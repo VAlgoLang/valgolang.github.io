@@ -75,7 +75,7 @@ Also note that the arguments passed into any function are passed by reference, m
         stack.push(5);
     }
 
-    x = func1(3);
+    let x : number = func1(3);
 
 Controlling your animation
 -----------------------------
