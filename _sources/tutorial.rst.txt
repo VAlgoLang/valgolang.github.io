@@ -23,20 +23,80 @@ Note that depending on your code style during declaration you may choose to omit
 .. code :: javascript
     
     let x = 4;
-    let y : number = 4;
+    let y: number = 4;
+    let x: boolean = false; 
 
 
-Arithmetic
-^^^^^^^^^^^^
+Arithmetic Expressions
+^^^^^^^^^^^^^^^^^^^^^^
 
 Arithmetic expressions also look a lot like in any other programming language (for good reason!). 
 
-.. code:: javascript
+.. code :: javascript
     
     let x = 4.5;
     x = (x * 2) + 3; // x = 12
-  
+
+
+Boolean Expressions
+^^^^^^^^^^^^^^^^^^^
+Boolean expressions for many are quite familiar, as we have taken inspiration from other programming languages.
+
+**Equality**
+
+For equality we have two binary operators: equals ``==``, not equals ``!=``. 
+
+.. code :: javascript
+
+    let x = 5;
+    let y = x == 5; // y = true
+    let z = x != 6; // z = true
+
+**Comparison**
+
+For comparison we have the following binary operators: less than ``<``, greater than ``>``, less than or equal ``<=`` and greater than or equal ``>=``.
+
+.. code :: javascript
     
+    let x = 5;
+    let y = x < 3;  // y = false
+    let z = x > 4;  // z = true
+    let a = x <= 5; // a = true
+    let b = x >= 6; // b = false
+
+**Logical Operators**
+
+These have been implemented with the following binary operators: logical and ``&&``, logical or ``||`` and the unary not operator ``!``.
+
+.. code :: javascript
+
+    let x = true;
+    let y = x && false; // y = false
+    let z = x || y;     // z = true
+    let y = !x;         // y = false
+
+
+*Precedence*
+
+The precedence for the boolean logical operators is as follows:
+
+=========  ============ 
+Operator    Precedence
+---------  ------------
+  ``!``        High 
+  ``&&``       Medium
+  ``||``       Low 
+=========  ============
+
+Examples
+
+===================== ========= ==========================
+ ``A || B && C``        means     ``A || (B && C)``
+``A && B || C && D``    means    ``(A && B) || (C && D)``
+``A && B && C || D``    means    ``((A && B) && C) || D``
+``!A && B || C``        means    ``((!A) && B) || C``
+===================== ========= ==========================
+
 Constructors
 ^^^^^^^^^^^^
 
@@ -44,7 +104,7 @@ Data structures baked into the language have constructors. These can be invoked 
 
 Note that if a data structure (as below) takes generic type arguments in their constructor they must not be omitted.
 
-.. code:: javascript
+.. code :: javascript
     
     let stack = new Stack<number>;
 
@@ -52,7 +112,61 @@ Note that if a data structure (as below) takes generic type arguments in their c
 Control structures
 ^^^^^^^^^^^^^^^^^^
 
-``Work in progress!``
+**The if-then and if-then-else Statements**
+
+The ``if-then`` statement is the most basic of all control flow statements. It tells your program to execute a section of code **only if** a condition evaluates
+to true. Otherwise the program will jump to the end of the ``if-then`` statement. For example:
+
+.. code :: javascript
+
+    let x = 3;
+
+    if(x < 5) {
+        x = 5;
+    }
+
+    let y = x;
+
+In the above example the condition ``x < 5`` is true as 3 is less than 5. So the program will execute the section of code inside the ``if-then`` and y will evaluate to 5.
+
+The ``if-then-else`` statement provides another path of execution when the ``if-then`` condition evaluates to false. For example:
+
+.. code :: javascript
+
+    let x = 6;
+
+    if(x < 5) {
+        x = 5;
+    } else {
+        x = 10;
+    }
+
+    let y = x;
+
+In the above example the ``if-then`` condition evaluates to false as 6 is greater than 5. So the program will execute the section of code inside the ``else`` block.
+
+We can extend this even further by introducing ``else-if`` conditions where we can chain ``if-then-else`` statements together. This has the effect of going through the 
+conditions in order and upon reaching the first condition that evaluates to true, that section of code is executed and then the program will jump to the end of the whole statement.
+For example.
+
+.. code :: javascript
+
+    let x = 10;
+
+    if(x < 4) {
+        x = 5;
+    } else if(x < 8) {
+        x = 10;
+    } else if(x < 12) {
+        x = 15;
+    } else {
+        x = 20;
+    }
+
+    let y = x;
+
+In the above example first the ``x < 4`` condition will evaluate to false, then the ``x < 8`` condition evaluates to false and finally the ``x < 12`` condition evaluates to true. The program
+will then execute the section of code corresponding to the second ``else-if`` and ``y`` will evaluate to 15.
 
 Functions
 ^^^^^^^^^^^^
