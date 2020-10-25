@@ -165,7 +165,7 @@ For example.
 
     let y = x;
 
-In the above example first the ``x < 4`` condition will be evaluated to false, then the ``x < 8`` which is also false and then the ``x < 12`` which evaluates to true. The program
+In the above example first the ``x < 4`` condition will evaluate to false, then the ``x < 8`` condition evaluates to false and finally the ``x < 12`` condition evaluates to true. The program
 will then execute the section of code corresponding to the second ``else-if`` and ``y`` will evaluate to 15.
 
 Functions
