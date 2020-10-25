@@ -52,7 +52,61 @@ Note that if a data structure (as below) takes generic type arguments in their c
 Control structures
 ^^^^^^^^^^^^^^^^^^
 
-``Work in progress!``
+**The if-then and if-then-else Statements**
+
+The `if-then` statement is the most basic of all control flow statements. It tells your program to execute a section of code **only if** a condition evaluates
+to true. Otherwise the program will jump to the end of the `if-then` statement. For example:
+
+.. code :: javascript
+
+    let x = 3;
+
+    if(x < 5) {
+        x = 5;
+    }
+
+    let y = x;
+
+In the above example the condition `x < 5` is true as 3 is less than 5. So the program will execute the section of code inside the `if-then` and y will evaluate to 5.
+
+The `if-then-else` statement provides another path of execution when the `if-then` condition evaluates to false. For example:
+
+.. code :: javascript
+
+    let x = 6;
+
+    if(x < 5) {
+        x = 5;
+    } else {
+        x = 10;
+    }
+
+    let y = x;
+
+In the above example the `if-then` condition evaluates to false as 6 is greater than 5. So the program will execute the section of code inside the `else` block.
+
+We can extend this even further by introducing `else-if` conditions where we can chain `if-then-else` statements together. This has the effect of going through the 
+conditions in order and upon reaching the first condition that evaluates to true, that section of code is executed and then the program will jump to the end of the whole statement.
+For example.
+
+.. code :: javascript
+
+    let x = 10;
+
+    if(x < 4) {
+        x = 5;
+    } else if(x < 8) {
+        x = 10;
+    } else if(x < 12) {
+        x = 15;
+    } else {
+        x = 20;
+    }
+
+    let y = x;
+
+In the above example first the `x < 4` condition will be evaluated to false, then the `x < 8` which is also false and then the `x < 12` which evaluates to true. The program
+will then execute the section of code corresponding to the second `else-if` and `y` will evaluate to 15.
 
 Functions
 ^^^^^^^^^^^^
