@@ -208,7 +208,22 @@ It is assumed you have at least very basic knowledge of programming in any other
 </div>
 <div class="section" id="functions">
 <h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Work</span> <span class="pre">in</span> <span class="pre">progress!</span></code></p>
+<p>In order to compile a program with functions, please define all the functions at the top of the file before the statements.</p>
+<p>The ways to define functions and make function calls are similar as they are in other languages.</p>
+<p>Note that the return type must be defined if you intend to return anything from the function. If the return type is not specified, the function is assumed to be of type <code class="docutils literal notranslate"><span class="pre">void</span></code>, so no <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is allowed inside the function.</p>
+<p>Also note that the arguments passed into any function are passed by reference, meaning that the changes made to the parameters inside the function will affect the original variables passed in.</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">fun</span> <span class="nf">func1</span><span class="p">(</span><span class="n">number</span> <span class="n">x</span><span class="p">):</span> <span class="n">number</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">func2</span><span class="p">(</span><span class="n">Stack</span><span class="p">&lt;</span><span class="n">number</span><span class="p">&gt;</span> <span class="n">stack</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// function assumed to be void as no return type is specified</span>
+    <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span> <span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="nx">func1</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="controlling-your-animation">
