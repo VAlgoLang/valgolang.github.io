@@ -44,7 +44,7 @@ Boolean expressions for many are quite familiar, as we have taken inspiration fr
 
 **Equality**
 
-We have for equality two binary operators: equals ``==``, not equals ``!=``. 
+For equality we have two binary operators: equals ``==``, not equals ``!=``. 
 
 .. code :: javascript
 
@@ -64,27 +64,19 @@ For comparison we have the following binary operators: less than ``<``, greater 
     let a = x <= 5; // a = true
     let b = x >= 6; // b = false
 
-**Logical And and Or**
+**Logical Operators**
 
-These have been implemented with the following binary operators: logical and ``&&``, logical or ``||``.
+These have been implemented with the following binary operators: logical and ``&&``, logical or ``||`` and the unary not operator ``!``.
 
 .. code :: javascript
 
     let x = true;
     let y = x && false; // y = false
     let z = x || y;     // z = true
-
-**Logical Not**
-
-This is implemented as the standard ``!`` unary operator.
-
-..  code :: javascript
-
-    let x = true;
-    let y = !x;  // y = false
+    let y = !x;         // y = false
 
 
-**Precedence**
+*Precedence*
 
 The precedence for the boolean logical operators is as follows:
 
