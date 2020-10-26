@@ -104,3 +104,21 @@ An invalid declaration like below will lead to a semantic error.
     Errors detected during compilation 
     Exit code: 200
     Semantic error at 1:0: Cannot assign expression of type Stack<number> to x, which is of type number
+    
+300: Runtime Error
+^^^^^^^^^^^^^^^^^^^
+
+The 300 exit status code means there was an error during the excution of the program.
+
+For instance "popping" from an empty stack will cause a Runtime Error.
+
+.. code :: none
+
+    let x = new Stack<number>;
+    x.pop();
+
+.. code :: none
+
+    Error detected during program execution. Animation could not be generated. 
+    Exit code: 300
+    Your program failed at line 2: Attempted to pop from empty stack x
