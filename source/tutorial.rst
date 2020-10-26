@@ -197,7 +197,7 @@ Controlling your animation
 
 To make dynamic changes to the end animation, you can insert special commands which won't show up in the code visualisation.
 
-Customisations to things such as colours, fonts and other attributes can be made through an external stylesheet described `over here <#>`_.
+Customisations to things such as colours, fonts and other attributes can be made through an external stylesheet described `over here <stylesheet>`_.
 
 Sleep
 ^^^^^^^^^^^^
