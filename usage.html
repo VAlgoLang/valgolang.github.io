@@ -106,6 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#success">0: Success</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#syntax-error">100: Syntax Error</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#semantic-error">200: Semantic Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#runtime-error">300: Runtime Error</a></li>
 </ul>
 </li>
 </ul>
@@ -290,6 +291,20 @@ let a = 5
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Errors detected during compilation
 Exit code: 200
 Semantic error at 1:0: Cannot assign expression of type Stack&lt;number&gt; to x, which is of type number
+</pre></div>
+</div>
+</div>
+<div class="section" id="runtime-error">
+<h3>300: Runtime Error<a class="headerlink" href="#runtime-error" title="Permalink to this headline">¶</a></h3>
+<p>The 300 exit status code means there was an error during the excution of the program.</p>
+<p>For instance “popping” from an empty stack will cause a Runtime Error.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>let x = new Stack&lt;number&gt;;
+x.pop();
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Error detected during program execution. Animation could not be generated.
+Exit code: 300
+Your program failed at line 2: Attempted to pop from empty stack x
 </pre></div>
 </div>
 </div>
