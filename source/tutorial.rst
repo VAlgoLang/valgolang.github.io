@@ -217,13 +217,18 @@ Structuring your program
 ``Work in progress!``
 
 
-Data Structures and Primitives
+Types
 ------------------------------
 
 There are only two "kinds" of types in this language at the moment. 
 
 * Primitives, such as ``number``.
 * Data structures, such as ``Stack<number>``. Data structures may define restrictions on the type parameters they permit.
+
+.. _data_structures:
+
+Data Structures
+^^^^^^^^^^^^^^^
 
 A rule of thumb is that data structures are the types of things you might have learnt in a CS class (trees, lists, and so on) and which you might find interesting to animate.
 All primitives begin with a lower case letter while data structures will begin with a capitalised letter.
