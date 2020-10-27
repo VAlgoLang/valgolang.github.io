@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python Library" href="python_library.html" />
+    <link rel="next" title="Customising Your Animation" href="customisation.html" />
     <link rel="prev" title="Language Tour" href="tutorial.html" /> 
 </head>
 
@@ -99,6 +99,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#q-quality-quality-quality">-q=&lt;quality&gt;, –quality=&lt;quality&gt;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s-stylesheet-stylesheet">-s, –stylesheet=&lt;stylesheet&gt;</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#h-help">-h, –help</a></li>
 </ul>
 </li>
@@ -111,6 +112,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="customisation.html">Customising Your Animation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_library.html">Python Library</a></li>
 </ul>
 
@@ -178,19 +180,20 @@
            <div itemprop="articleBody">
             
   <div class="section" id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
-<p>The Compiler has some command line options:</p>
+<span id="id1"></span><h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<p>The compiler has some command line options:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage: manimdsl <span class="o">[</span>-hpV<span class="o">]</span> <span class="o">[</span>-o<span class="o">=</span>&lt;output&gt;<span class="o">]</span> <span class="o">[</span>-q<span class="o">=</span>&lt;quality&gt;<span class="o">]</span> &lt;file&gt;
 ManimDSL compiler to produce manim animations
-      &lt;file&gt;                The manimdsl file to compile and animate.
-  -f, --open_file           Show the output file in file manager <span class="o">(</span>optional<span class="o">)</span>.
-  -h, --help                Show this <span class="nb">help</span> message and exit.
-  -m, --manim               Only output generated python <span class="p">&amp;</span> manim code <span class="o">(</span>optional<span class="o">)</span>.
-  -o, --output<span class="o">=</span>&lt;output&gt;     The animated mp4 file location <span class="o">(</span>default: out.mp4<span class="o">)</span>.
-  -p, --python              Output generated python <span class="p">&amp;</span> manim code <span class="o">(</span>optional<span class="o">)</span>.
-      --preview             Automatically open the saved file once its <span class="k">done</span> <span class="o">(</span>optional<span class="o">)</span>.
-  -q, --quality<span class="o">=</span>&lt;quality&gt;   Quality of animation. <span class="o">[</span>low, high<span class="o">]</span> <span class="o">(</span>default: low<span class="o">)</span>.
-  -V, --version             Print version information and exit.
+      &lt;file&gt;                     The manimdsl file to compile and animate.
+  -f, --open_file                Show the output file in file manager <span class="o">(</span>optional<span class="o">)</span>.
+  -h, --help                     Show this <span class="nb">help</span> message and exit.
+  -m, --manim                    Only output generated python <span class="p">&amp;</span> manim code <span class="o">(</span>optional<span class="o">)</span>.
+  -o, --output<span class="o">=</span>&lt;output&gt;          The animated mp4 file location <span class="o">(</span>default: out.mp4<span class="o">)</span>.
+  -p, --python                   Output generated python <span class="p">&amp;</span> manim code <span class="o">(</span>optional<span class="o">)</span>.
+      --preview                  Automatically open the saved file once it is <span class="k">done</span> <span class="o">(</span>optional<span class="o">)</span>.
+  -q, --quality<span class="o">=</span>&lt;quality&gt;        Quality of animation. <span class="o">[</span>low, high<span class="o">]</span> <span class="o">(</span>default: low<span class="o">)</span>.
+  -s, --stylesheet<span class="o">=</span>&lt;stylesheet&gt;  The JSON stylesheet associated with your code
+  -V, --version                  Print version information and exit.
 </pre></div>
 </div>
 <div class="section" id="command-line-arguments">
@@ -199,7 +202,7 @@ ManimDSL compiler to produce manim animations
 <h3>&lt;file&gt;<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">.manimdsl</span></code> file to compile</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">.manimdsl</span></code> file to compile (required)</p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="f-open-file">
@@ -252,6 +255,15 @@ ManimDSL compiler to produce manim animations
 <div><ul class="simple">
 <li><p>Quality of the generated animation (default: low)</p></li>
 <li><p>Available options: <code class="docutils literal notranslate"><span class="pre">high</span></code> and <code class="docutils literal notranslate"><span class="pre">low</span></code></p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="s-stylesheet-stylesheet">
+<h3>-s, –stylesheet=&lt;stylesheet&gt;<a class="headerlink" href="#s-stylesheet-stylesheet" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>The path to your stylesheet JSON file that can apply custom styling to your generated animation</p></li>
+<li><p>For more information on how to create a stylesheet for your program, click <a class="reference internal" href="customisation.html#stylesheet"><span class="std std-ref">here</span></a></p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -319,7 +331,7 @@ Your program failed at line 2: Attempted to pop from empty stack x
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="python_library.html" class="btn btn-neutral float-right" title="Python Library" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="customisation.html" class="btn btn-neutral float-right" title="Customising Your Animation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="tutorial.html" class="btn btn-neutral float-left" title="Language Tour" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Customising Your Animation &mdash; Manim DSL  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python Library" href="python_library.html" />
+    <link rel="prev" title="Usage" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Manim DSL
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start &amp; Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Language Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Customising Your Animation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#stylesheet">Stylesheet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#style-properties">Style Properties</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#colors">Colors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#animation-properties">Animation Properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#precedence">Precedence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_library.html">Python Library</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Manim DSL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Customising Your Animation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/customisation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="customising-your-animation">
+<h1>Customising Your Animation<a class="headerlink" href="#customising-your-animation" title="Permalink to this headline">¶</a></h1>
+<p>If you would like to customise the stylistic attributes of your generated animation (for example, the colors of particular variables or data structures), you can create a <strong>stylesheet JSON file</strong> containing your choices.
+You can then pass this stylesheet into the compiler using the <code class="docutils literal notranslate"><span class="pre">-s</span></code> or <code class="docutils literal notranslate"><span class="pre">--stylesheet</span></code> flag. For more on command-line arguments, see the <a class="reference internal" href="usage.html#usage"><span class="std std-ref">Usage section</span></a>.</p>
+<div class="section" id="stylesheet">
+<span id="id1"></span><h2>Stylesheet<a class="headerlink" href="#stylesheet" title="Permalink to this headline">¶</a></h2>
+<p>A typical stylesheet may look something like this:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;stack1&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;BLUE&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;animate&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;BLUE&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;Stack&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;YELLOW&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;animate&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;RED&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;RED&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here, we define two name-value pairs: <code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Stack&quot;</span></code>, which both map to their respective style properties.</p>
+<p>The style properties for <code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code> are applied to <em>all</em> variables in the program <em>named ``stack1``</em>, whether in global or local scope. This logic can be extended to all variables throughout the program.</p>
+<p>Meanwhile, the style properties for <code class="docutils literal notranslate"><span class="pre">&quot;Stack&quot;</span></code> are applied to <em>all</em> variables in the program that are <em>of the type ``Stack``</em>, and this again applies throughout all scopes. This works similarly for other data structures. (For a full list of the data structures available in ManimDSL, see <a class="reference internal" href="tutorial.html#data-structures"><span class="std std-ref">here</span></a>).</p>
+<div class="section" id="style-properties">
+<h3>Style Properties<a class="headerlink" href="#style-properties" title="Permalink to this headline">¶</a></h3>
+<p>Here is a definitive list of the style properties you can define in a stylesheet. Currently, style properties can only be applied to data structures.</p>
+<div class="section" id="colors">
+<h4>Colors<a class="headerlink" href="#colors" title="Permalink to this headline">¶</a></h4>
+<p>The following properties take Manim colors* as their values.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">textColor</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">borderColor</span></code></p></li>
+</ul>
+<p>These colors can be written in upper case or lower case. The default for both is <code class="docutils literal notranslate"><span class="pre">&quot;WHITE&quot;</span></code>.</p>
+<p>*For a full list of colors available in Manim, see <a class="reference external" href="https://github.com/3b1b/manim/blob/99952067c1a399e15a197310d35a39bb2864b1af/manimlib/constants.py#L199">here</a>. Please note that any color ending in <code class="docutils literal notranslate"><span class="pre">_C</span></code> can be replaced with just the name of the color (for example, <code class="docutils literal notranslate"><span class="pre">BLUE_C</span></code> can be written as <code class="docutils literal notranslate"><span class="pre">BLUE</span></code>).</p>
+</div>
+<div class="section" id="animation-properties">
+<h4>Animation Properties<a class="headerlink" href="#animation-properties" title="Permalink to this headline">¶</a></h4>
+<p>Animation properties (denoted by <code class="docutils literal notranslate"><span class="pre">&quot;animate&quot;</span></code>) are a subset of standard style properties. They define the stylistic attributes of data structures while they are being animated - for example, the color of any item being popped off the stack.</p>
+<p>These take the properties listed in the <a class="reference external" href="#colors">Colors</a> section.</p>
+</div>
+</div>
+<div class="section" id="precedence">
+<h3>Precedence<a class="headerlink" href="#precedence" title="Permalink to this headline">¶</a></h3>
+<p>The stylesheet for a <code class="docutils literal notranslate"><span class="pre">.manimdsl</span></code> program prioritises style properties associated with <strong>variables</strong> over those associated with <strong>types</strong>.</p>
+<p>This can best be demonstrated using an example stylesheet:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;stack1&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;animate&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;BLUE&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;GREEN&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;Stack&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;YELLOW&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;animate&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;RED&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;RED&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In a program where <code class="docutils literal notranslate"><span class="pre">stack1</span></code> is a variable of type <code class="docutils literal notranslate"><span class="pre">Stack</span></code>, <code class="docutils literal notranslate"><span class="pre">stack1</span></code> would have the following style properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">borderColor</span></code> : <code class="docutils literal notranslate"><span class="pre">&quot;YELLOW&quot;</span></code> (defined for variables of type <code class="docutils literal notranslate"><span class="pre">Stack</span></code>, and undefined for <code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">textColor</span></code> : <code class="docutils literal notranslate"><span class="pre">&quot;WHITE&quot;</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">&quot;WHITE&quot;</span></code> as <code class="docutils literal notranslate"><span class="pre">textColor</span></code> is undefined for both <code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Stack&quot;</span></code>)</p></li>
+<li><p>Animation properties (<code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code> properties override <code class="docutils literal notranslate"><span class="pre">&quot;Stack&quot;</span></code> properties)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">borderColor</span></code> : <code class="docutils literal notranslate"><span class="pre">&quot;BLUE&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">textColor</span></code> : <code class="docutils literal notranslate"><span class="pre">&quot;GREEN&quot;</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python_library.html" class="btn btn-neutral float-right" title="Python Library" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Rini Banerjee, Clara Lebbos, Ilona Zhu, Mayank Sharma, Arjun Banerjee, Aditya Goel
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

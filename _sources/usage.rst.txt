@@ -1,21 +1,24 @@
+.. _usage:
+
 Usage
 ===========
 
-The Compiler has some command line options:
+The compiler has some command line options:
 
 .. code:: bash
 
     Usage: manimdsl [-hpV] [-o=<output>] [-q=<quality>] <file>
     ManimDSL compiler to produce manim animations
-          <file>                The manimdsl file to compile and animate.
-      -f, --open_file           Show the output file in file manager (optional).
-      -h, --help                Show this help message and exit.
-      -m, --manim               Only output generated python & manim code (optional).
-      -o, --output=<output>     The animated mp4 file location (default: out.mp4).
-      -p, --python              Output generated python & manim code (optional).
-          --preview             Automatically open the saved file once its done (optional).
-      -q, --quality=<quality>   Quality of animation. [low, high] (default: low).
-      -V, --version             Print version information and exit.
+          <file>                     The manimdsl file to compile and animate.
+      -f, --open_file                Show the output file in file manager (optional).
+      -h, --help                     Show this help message and exit.
+      -m, --manim                    Only output generated python & manim code (optional).
+      -o, --output=<output>          The animated mp4 file location (default: out.mp4).
+      -p, --python                   Output generated python & manim code (optional).
+          --preview                  Automatically open the saved file once it is done (optional).
+      -q, --quality=<quality>        Quality of animation. [low, high] (default: low).
+      -s, --stylesheet=<stylesheet>  The JSON stylesheet associated with your code
+      -V, --version                  Print version information and exit.
 
 
 Command Line Arguments
@@ -24,7 +27,7 @@ Command Line Arguments
 <file>
 ^^^^^^^^^^^^
 
- - The ``.manimdsl`` file to compile
+ - The ``.manimdsl`` file to compile (required)
 
 -f, --open_file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,12 +63,19 @@ Command Line Arguments
  - Quality of the generated animation (default: low)
  - Available options: ``high`` and ``low``
 
+-s, --stylesheet=<stylesheet>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ - The path to your stylesheet JSON file that can apply custom styling to your generated animation
+ - For more information on how to create a stylesheet for your program, click :ref:`here <stylesheet>`
+
+
 -h, --help
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
  - Produce the help message shown above
- 
- 
+
+
 Program Exit Status
 -------------------
 

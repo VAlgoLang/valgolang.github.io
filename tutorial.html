@@ -100,10 +100,14 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#structuring-your-program">Structuring your program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-structures-and-primitives">Data Structures and Primitives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#types">Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-structures">Data Structures</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customisation.html">Customising Your Animation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_library.html">Python Library</a></li>
 </ul>
 
@@ -352,7 +356,7 @@ will then execute the section of code corresponding to the second <code class="d
 <div class="section" id="controlling-your-animation">
 <h2>Controlling your animation<a class="headerlink" href="#controlling-your-animation" title="Permalink to this headline">¶</a></h2>
 <p>To make dynamic changes to the end animation, you can insert special commands which won’t show up in the code visualisation.</p>
-<p>Customisations to things such as colours, fonts and other attributes can be made through an external stylesheet described <a class="reference external" href="#">over here</a>.</p>
+<p>Customisations to things such as colours, fonts and other attributes can be made through an external stylesheet described <a class="reference external" href="stylesheet">over here</a>.</p>
 <div class="section" id="sleep">
 <h3>Sleep<a class="headerlink" href="#sleep" title="Permalink to this headline">¶</a></h3>
 <p>The sleep command allows you to pause the animation at any code line for as many seconds as you would like. If you are constructing an online lecture this can give you some time to do a voice over.</p>
@@ -367,13 +371,15 @@ will then execute the section of code corresponding to the second <code class="d
 <h2>Structuring your program<a class="headerlink" href="#structuring-your-program" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Work</span> <span class="pre">in</span> <span class="pre">progress!</span></code></p>
 </div>
-<div class="section" id="data-structures-and-primitives">
-<h2>Data Structures and Primitives<a class="headerlink" href="#data-structures-and-primitives" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="types">
+<h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
 <p>There are only two “kinds” of types in this language at the moment.</p>
 <ul class="simple">
 <li><p>Primitives, such as <code class="docutils literal notranslate"><span class="pre">number</span></code>.</p></li>
 <li><p>Data structures, such as <code class="docutils literal notranslate"><span class="pre">Stack&lt;number&gt;</span></code>. Data structures may define restrictions on the type parameters they permit.</p></li>
 </ul>
+<div class="section" id="data-structures">
+<span id="id1"></span><h3>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h3>
 <p>A rule of thumb is that data structures are the types of things you might have learnt in a CS class (trees, lists, and so on) and which you might find interesting to animate.
 All primitives begin with a lower case letter while data structures will begin with a capitalised letter.</p>
 <p>A comprehensive list of data structures “baked in” to the language is as follows:</p>
@@ -383,6 +389,7 @@ All primitives begin with a lower case letter while data structures will begin w
 <p>For those of you interested in the nuts and bolts, this distinction was made to make it clear in the type system what sorts of variables should be centre-stage in the animation.</p>
 <p>To make this more concrete, note how the <code class="docutils literal notranslate"><span class="pre">Stack&lt;number&gt;</span></code> in the following animation is the focus of the attention as it is the primary data structure being used.</p>
 <video src="_static/intro.mp4" frameborder="0" allowfullscreen style=" width: 80%; height: 80%;" controls></video></div>
+</div>
 </div>
 
 
