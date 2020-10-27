@@ -31,9 +31,9 @@ A typical stylesheet may look something like this:
 
 Here, we define two name-value pairs: ``"stack1"`` and ``"Stack"``, which both map to their respective style properties. 
 
-The style properties for ``"stack1"`` are applied to *all* variables in the program *named ``stack1``*, whether in global or local scope. This logic can be extended to all variables throughout the program. 
+The style properties for ``"stack1"`` are applied to *all* variables in the program named ``stack1``, whether in global or local scope. This logic can be extended to all variables throughout the program. 
 
-Meanwhile, the style properties for ``"Stack"`` are applied to *all* variables in the program that are *of the type ``Stack``*, and this again applies throughout all scopes. This works similarly for other data structures. (For a full list of the data structures available in ManimDSL, see :ref:`here <data_structures>`).
+Meanwhile, the style properties for ``"Stack"`` are applied to *all* variables in the program that are of the type ``Stack``, and this again applies throughout all scopes. This works similarly for other data structures. (For a full list of the data structures available in ManimDSL, see :ref:`here <data_structures>`).
 
 
 Style Properties
