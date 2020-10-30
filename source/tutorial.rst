@@ -210,6 +210,25 @@ The sleep command allows you to pause the animation at any code line for as many
     sleep(2.5); // pauses the animation for 2.5 seconds before stepping onto the next line
     ...
 
+.. _code_tracking:
+
+Code Tracking
+^^^^^^^^^^^^^^
+
+On a statement level you can choose during code tracking to animate stepping into statements or stepping over them using the ``stepInto`` and ``stepOver`` blocks.
+
+.. code:: javascript
+    
+    ...
+    stepInto {
+    let x = f(y);       // This will animate the execution of statements inside the function
+    }
+
+    stepOver {
+    let z = f(y);       // This will simply step over the statement
+    }
+    ...
+
 
 Structuring your program
 -----------------------------

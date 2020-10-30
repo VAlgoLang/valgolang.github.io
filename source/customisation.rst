@@ -14,22 +14,26 @@ A typical stylesheet may look something like this:
 .. code:: json
 
     {
-      "stack1": {
-        "textColor": "BLUE",
-        "animate": {
-            "borderColor": "BLUE"
+      "variables": {
+        "stack1": {
+          "textColor": "blue",
+          "animate": {
+              "borderColor": "blue"
+          }
         }
       },
-      "Stack": {
-        "borderColor": "YELLOW",
-        "animate": {
-            "borderColor": "RED",
-            "textColor": "RED"
+      "dataStructures": {
+        "Stack": {
+          "borderColor": "yellow",
+          "animate": {
+              "borderColor": "red",
+              "textColor": "red"
+          }
         }
       }
     }
 
-Here, we define two name-value pairs: ``"stack1"`` and ``"Stack"``, which both map to their respective style properties. 
+Here, we define styles for the variable ``"stack1"`` and the data structure ``"Stack"``, which both map to their respective style properties. 
 
 The style properties for ``"stack1"`` are applied to *all* variables in the program named ``stack1``, whether in global or local scope. This logic can be extended to all variables throughout the program. 
 
@@ -41,6 +45,21 @@ Style Properties
 
 Here is a definitive list of the style properties you can define in a stylesheet. Currently, style properties can only be applied to data structures.
 
+Code Tracking
+^^^^^^^^^^^^^^
+
+To set the default code tracking of the program you can modify the ``codeTracking`` property. This controls if the code tracking animation will step into function
+calls by default. 
+
+.. code:: json
+
+    {
+      "codeTracking": "stepInto"
+    }
+
+The values accepted for this are `stepInto` and `stepOver`, with a default value of `stepInto`. This default means all function calls will be stepped into and animated. This attribute can be 
+overwritten in code by using ``stepInto`` and ``stepOver`` statement blocks described :ref:`over here <code_tracking>`. 
+
 Colors
 ~~~~~~~
 
@@ -49,9 +68,9 @@ The following properties take Manim colors* as their values.
 * ``textColor``
 * ``borderColor``
 
-These colors can be written in upper case or lower case. The default for both is ``"WHITE"``.
+These colors can be written in upper case or lower case named format or as their hexadecimal value. The default for both is ``"white"``.
 
-\*For a full list of colors available in Manim, see `here <https://github.com/3b1b/manim/blob/99952067c1a399e15a197310d35a39bb2864b1af/manimlib/constants.py#L199>`_. Please note that any color ending in ``_C`` can be replaced with just the name of the color (for example, ``BLUE_C`` can be written as ``BLUE``).
+\*For a full list of compatible named colors available in Manim, see `here <https://github.com/3b1b/manim/blob/99952067c1a399e15a197310d35a39bb2864b1af/manimlib/constants.py#L199>`_. Please note that any color ending in ``_C`` can be replaced with just the name of the color (for example, ``BLUE_C`` can be written as ``BLUE``).
 
 Animation Properties
 ~~~~~~~~~~~~~~~~~~~~~
@@ -63,34 +82,38 @@ These take the properties listed in the `Colors <#colors>`_ section.
 Precedence
 ^^^^^^^^^^^
 
-The stylesheet for a ``.manimdsl`` program prioritises style properties associated with **variables** over those associated with **types**.
+The stylesheet for a ``.manimdsl`` program prioritises style properties associated with **variables** over those associated with **data structures**.
 
 This can best be demonstrated using an example stylesheet:
 
-.. code:: json
+.. code :: json
 
     {
-      "stack1": {
-        "animate": {
-            "borderColor": "BLUE",
-            "textColor": "GREEN"
+      "variables": {
+        "stack1": {
+          "animate": {
+              "borderColor": "blue",
+              "textColor": "green"
+          }
         }
       },
-      "Stack": {
-        "borderColor": "YELLOW",
-        "animate": {
-            "borderColor": "RED",
-            "textColor": "RED"
+      "dataStructures": {
+        "Stack": {
+          "borderColor": "yellow",
+          "animate": {
+              "borderColor": "red",
+              "textColor": "red"
+          }
         }
       }
     }
 
 In a program where ``stack1`` is a variable of type ``Stack``, ``stack1`` would have the following style properties:
 
-* ``borderColor`` : ``"YELLOW"`` (defined for variables of type ``Stack``, and undefined for ``"stack1"``)
-* ``textColor`` : ``"WHITE"`` (defaults to ``"WHITE"`` as ``textColor`` is undefined for both ``"stack1"`` and ``"Stack"``)
+* ``borderColor`` : ``"yellow"`` (defined for variables of type ``Stack``, and undefined for ``"stack1"``)
+* ``textColor`` : ``"white"`` (defaults to ``"WHITE"`` as ``textColor`` is undefined for both ``"stack1"`` and ``"Stack"``)
 * Animation properties (``"stack1"`` properties override ``"Stack"`` properties)
 
-  * ``borderColor`` : ``"BLUE"``
-  * ``textColor`` : ``"GREEN"``
+  * ``borderColor`` : ``"blue"``
+  * ``textColor`` : ``"green"``
 
