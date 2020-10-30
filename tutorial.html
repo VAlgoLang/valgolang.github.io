@@ -97,6 +97,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#controlling-your-animation">Controlling your animation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#sleep">Sleep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-tracking">Code Tracking</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#structuring-your-program">Structuring your program</a></li>
@@ -366,6 +367,21 @@ will then execute the section of code corresponding to the second <code class="d
 </pre></div>
 </div>
 </div>
+<div class="section" id="code-tracking">
+<span id="id1"></span><h3>Code Tracking<a class="headerlink" href="#code-tracking" title="Permalink to this headline">¶</a></h3>
+<p>On a statement level you can choose during code tracking to animate stepping into statements or stepping over them using the <code class="docutils literal notranslate"><span class="pre">stepInto</span></code> and <code class="docutils literal notranslate"><span class="pre">stepOver</span></code> blocks.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="nx">stepInto</span> <span class="p">{</span>
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">f</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>       <span class="c1">// This will animate the execution of statements inside the function</span>
+<span class="p">}</span>
+
+<span class="nx">stepOver</span> <span class="p">{</span>
+<span class="kd">let</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">f</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>       <span class="c1">// This will simply step over the statement</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="structuring-your-program">
 <h2>Structuring your program<a class="headerlink" href="#structuring-your-program" title="Permalink to this headline">¶</a></h2>
@@ -379,7 +395,7 @@ will then execute the section of code corresponding to the second <code class="d
 <li><p>Data structures, such as <code class="docutils literal notranslate"><span class="pre">Stack&lt;number&gt;</span></code>. Data structures may define restrictions on the type parameters they permit.</p></li>
 </ul>
 <div class="section" id="data-structures">
-<span id="id1"></span><h3>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h3>
+<span id="id2"></span><h3>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h3>
 <p>A rule of thumb is that data structures are the types of things you might have learnt in a CS class (trees, lists, and so on) and which you might find interesting to animate.
 All primitives begin with a lower case letter while data structures will begin with a capitalised letter.</p>
 <p>A comprehensive list of data structures “baked in” to the language is as follows:</p>

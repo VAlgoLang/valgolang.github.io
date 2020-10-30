@@ -89,7 +89,8 @@
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Customising Your Animation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#stylesheet">Stylesheet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#style-properties">Style Properties</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#style-properties">Style Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-tracking">Code Tracking</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#colors">Colors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#animation-properties">Animation Properties</a></li>
 </ul>
@@ -173,28 +174,44 @@ You can then pass this stylesheet into the compiler using the <code class="docut
 <span id="id1"></span><h2>Stylesheet<a class="headerlink" href="#stylesheet" title="Permalink to this headline">¶</a></h2>
 <p>A typical stylesheet may look something like this:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;stack1&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;BLUE&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;animate&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;BLUE&quot;</span>
+  <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;stack1&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;animate&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">},</span>
-  <span class="nt">&quot;Stack&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;YELLOW&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;animate&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;RED&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;RED&quot;</span>
+  <span class="nt">&quot;dataStructures&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;Stack&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;animate&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Here, we define two name-value pairs: <code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Stack&quot;</span></code>, which both map to their respective style properties.</p>
+<p>Here, we define styles for the variable <code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code> and the data structure <code class="docutils literal notranslate"><span class="pre">&quot;Stack&quot;</span></code>, which both map to their respective style properties.</p>
 <p>The style properties for <code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code> are applied to <em>all</em> variables in the program named <code class="docutils literal notranslate"><span class="pre">stack1</span></code>, whether in global or local scope. This logic can be extended to all variables throughout the program.</p>
 <p>Meanwhile, the style properties for <code class="docutils literal notranslate"><span class="pre">&quot;Stack&quot;</span></code> are applied to <em>all</em> variables in the program that are of the type <code class="docutils literal notranslate"><span class="pre">Stack</span></code>, and this again applies throughout all scopes. This works similarly for other data structures. (For a full list of the data structures available in ManimDSL, see <a class="reference internal" href="tutorial.html#data-structures"><span class="std std-ref">here</span></a>).</p>
 <div class="section" id="style-properties">
 <h3>Style Properties<a class="headerlink" href="#style-properties" title="Permalink to this headline">¶</a></h3>
 <p>Here is a definitive list of the style properties you can define in a stylesheet. Currently, style properties can only be applied to data structures.</p>
+</div>
+<div class="section" id="code-tracking">
+<h3>Code Tracking<a class="headerlink" href="#code-tracking" title="Permalink to this headline">¶</a></h3>
+<p>To set the default code tracking of the program you can modify the <code class="docutils literal notranslate"><span class="pre">codeTracking</span></code> property. This controls if the code tracking animation will step into function
+calls by default.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;codeTracking&quot;</span><span class="p">:</span> <span class="s2">&quot;stepInto&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The values accepted for this are <cite>stepInto</cite> and <cite>stepOver</cite>, with a default value of <cite>stepInto</cite>. This default means all function calls will be stepped into and animated. This attribute can be
+overwritten in code by using <code class="docutils literal notranslate"><span class="pre">stepInto</span></code> and <code class="docutils literal notranslate"><span class="pre">stepOver</span></code> statement blocks described <a class="reference internal" href="tutorial.html#code-tracking"><span class="std std-ref">over here</span></a>.</p>
 <div class="section" id="colors">
 <h4>Colors<a class="headerlink" href="#colors" title="Permalink to this headline">¶</a></h4>
 <p>The following properties take Manim colors* as their values.</p>
@@ -202,8 +219,8 @@ You can then pass this stylesheet into the compiler using the <code class="docut
 <li><p><code class="docutils literal notranslate"><span class="pre">textColor</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">borderColor</span></code></p></li>
 </ul>
-<p>These colors can be written in upper case or lower case. The default for both is <code class="docutils literal notranslate"><span class="pre">&quot;WHITE&quot;</span></code>.</p>
-<p>*For a full list of colors available in Manim, see <a class="reference external" href="https://github.com/3b1b/manim/blob/99952067c1a399e15a197310d35a39bb2864b1af/manimlib/constants.py#L199">here</a>. Please note that any color ending in <code class="docutils literal notranslate"><span class="pre">_C</span></code> can be replaced with just the name of the color (for example, <code class="docutils literal notranslate"><span class="pre">BLUE_C</span></code> can be written as <code class="docutils literal notranslate"><span class="pre">BLUE</span></code>).</p>
+<p>These colors can be written in upper case or lower case named format or as their hexadecimal value. The default for both is <code class="docutils literal notranslate"><span class="pre">&quot;white&quot;</span></code>.</p>
+<p>*For a full list of compatible named colors available in Manim, see <a class="reference external" href="https://github.com/3b1b/manim/blob/99952067c1a399e15a197310d35a39bb2864b1af/manimlib/constants.py#L199">here</a>. Please note that any color ending in <code class="docutils literal notranslate"><span class="pre">_C</span></code> can be replaced with just the name of the color (for example, <code class="docutils literal notranslate"><span class="pre">BLUE_C</span></code> can be written as <code class="docutils literal notranslate"><span class="pre">BLUE</span></code>).</p>
 </div>
 <div class="section" id="animation-properties">
 <h4>Animation Properties<a class="headerlink" href="#animation-properties" title="Permalink to this headline">¶</a></h4>
@@ -213,20 +230,24 @@ You can then pass this stylesheet into the compiler using the <code class="docut
 </div>
 <div class="section" id="precedence">
 <h3>Precedence<a class="headerlink" href="#precedence" title="Permalink to this headline">¶</a></h3>
-<p>The stylesheet for a <code class="docutils literal notranslate"><span class="pre">.manimdsl</span></code> program prioritises style properties associated with <strong>variables</strong> over those associated with <strong>types</strong>.</p>
+<p>The stylesheet for a <code class="docutils literal notranslate"><span class="pre">.manimdsl</span></code> program prioritises style properties associated with <strong>variables</strong> over those associated with <strong>data structures</strong>.</p>
 <p>This can best be demonstrated using an example stylesheet:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;stack1&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;animate&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;BLUE&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;GREEN&quot;</span>
+  <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;stack1&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;animate&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">},</span>
-  <span class="nt">&quot;Stack&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;YELLOW&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;animate&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;RED&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;RED&quot;</span>
+  <span class="nt">&quot;dataStructures&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;Stack&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;animate&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;borderColor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;textColor&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -234,12 +255,12 @@ You can then pass this stylesheet into the compiler using the <code class="docut
 </div>
 <p>In a program where <code class="docutils literal notranslate"><span class="pre">stack1</span></code> is a variable of type <code class="docutils literal notranslate"><span class="pre">Stack</span></code>, <code class="docutils literal notranslate"><span class="pre">stack1</span></code> would have the following style properties:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">borderColor</span></code> : <code class="docutils literal notranslate"><span class="pre">&quot;YELLOW&quot;</span></code> (defined for variables of type <code class="docutils literal notranslate"><span class="pre">Stack</span></code>, and undefined for <code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">textColor</span></code> : <code class="docutils literal notranslate"><span class="pre">&quot;WHITE&quot;</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">&quot;WHITE&quot;</span></code> as <code class="docutils literal notranslate"><span class="pre">textColor</span></code> is undefined for both <code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Stack&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">borderColor</span></code> : <code class="docutils literal notranslate"><span class="pre">&quot;yellow&quot;</span></code> (defined for variables of type <code class="docutils literal notranslate"><span class="pre">Stack</span></code>, and undefined for <code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">textColor</span></code> : <code class="docutils literal notranslate"><span class="pre">&quot;white&quot;</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">&quot;WHITE&quot;</span></code> as <code class="docutils literal notranslate"><span class="pre">textColor</span></code> is undefined for both <code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Stack&quot;</span></code>)</p></li>
 <li><p>Animation properties (<code class="docutils literal notranslate"><span class="pre">&quot;stack1&quot;</span></code> properties override <code class="docutils literal notranslate"><span class="pre">&quot;Stack&quot;</span></code> properties)</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">borderColor</span></code> : <code class="docutils literal notranslate"><span class="pre">&quot;BLUE&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">textColor</span></code> : <code class="docutils literal notranslate"><span class="pre">&quot;GREEN&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">borderColor</span></code> : <code class="docutils literal notranslate"><span class="pre">&quot;blue&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">textColor</span></code> : <code class="docutils literal notranslate"><span class="pre">&quot;green&quot;</span></code></p></li>
 </ul>
 </li>
 </ul>
