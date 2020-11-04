@@ -252,11 +252,75 @@ Data Structures
 A rule of thumb is that data structures are the types of things you might have learnt in a CS class (trees, lists, and so on) and which you might find interesting to animate.
 All primitives begin with a lower case letter while data structures will begin with a capitalised letter.
 
-A comprehensive list of data structures "baked in" to the language is as follows:
-
-1) ``Stack<T>``
-
 For those of you interested in the nuts and bolts, this distinction was made to make it clear in the type system what sorts of variables should be centre-stage in the animation.
+
+A comprehensive list of data structures "baked in" to the language is detailed below.
+
+Stack<T>
+###############
+
+This has the following inbuilt methods:
+
+``push``
+~~~~~~~~~
+
+*Arguments:* ``item: T``; *Return type:* ``void``
+
+Pushes an item onto the top of the stack.
+
+``pop``
+~~~~~~~~~
+
+*Arguments:* None; *Return type:* ``T``
+
+Pops off the top element of the stack and returns this value.
+
+``peek``
+~~~~~~~~~
+
+*Arguments:* None; *Return type:* ``T``
+
+Returns the element on top of the stack without removing it.
+
+``size``
+~~~~~~~~~
+
+*Arguments:* None; *Return type:* ``number``
+
+Returns the current size of the stack.
+
+``isEmpty``
+~~~~~~~~~~~~~~
+
+*Arguments:* None; *Return type:* ``boolean``
+
+Returns ``true`` if the stack is currently empty.
+
+
+Array<T>
+###############
+
+This has the following inbuilt methods:
+
+
+``swap``
+~~~~~~~~~
+
+*Arguments:* ``index1: number``, ``index2: number``, (optional) ``longSwap: boolean``; *Return type:* ``void``
+
+Swaps the elements at ``index1`` and ``index2`` in the array. The optional ``longSwap`` argument can be set to ``true`` in order to make the animation slightly longer, with a visualisation of the ``temp`` variable often seen when swapping array elements programmatically. The default value is ``false``, resulting in a 'quick swap'.
+
+
+``size``
+~~~~~~~~~
+
+*Arguments:* None; *Return type:* ``number``
+
+Returns the fixed size of the array.
+
+Examples
+############
+
 
 To make this more concrete, note how the ``Stack<number>`` in the following animation is the focus of the attention as it is the primary data structure being used.
 

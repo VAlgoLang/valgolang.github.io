@@ -102,7 +102,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#structuring-your-program">Structuring your program</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#types">Types</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#data-structures">Data Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-structures">Data Structures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#stack-t">Stack&lt;T&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#array-t">Array&lt;T&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -398,13 +403,56 @@ will then execute the section of code corresponding to the second <code class="d
 <span id="id2"></span><h3>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h3>
 <p>A rule of thumb is that data structures are the types of things you might have learnt in a CS class (trees, lists, and so on) and which you might find interesting to animate.
 All primitives begin with a lower case letter while data structures will begin with a capitalised letter.</p>
-<p>A comprehensive list of data structures “baked in” to the language is as follows:</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Stack&lt;T&gt;</span></code></p></li>
-</ol>
 <p>For those of you interested in the nuts and bolts, this distinction was made to make it clear in the type system what sorts of variables should be centre-stage in the animation.</p>
+<p>A comprehensive list of data structures “baked in” to the language is detailed below.</p>
+<div class="section" id="stack-t">
+<h4>Stack&lt;T&gt;<a class="headerlink" href="#stack-t" title="Permalink to this headline">¶</a></h4>
+<p>This has the following inbuilt methods:</p>
+<div class="section" id="push">
+<h5><code class="docutils literal notranslate"><span class="pre">push</span></code><a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">item:</span> <span class="pre">T</span></code>; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Pushes an item onto the top of the stack.</p>
+</div>
+<div class="section" id="pop">
+<h5><code class="docutils literal notranslate"><span class="pre">pop</span></code><a class="headerlink" href="#pop" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> None; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">T</span></code></p>
+<p>Pops off the top element of the stack and returns this value.</p>
+</div>
+<div class="section" id="peek">
+<h5><code class="docutils literal notranslate"><span class="pre">peek</span></code><a class="headerlink" href="#peek" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> None; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">T</span></code></p>
+<p>Returns the element on top of the stack without removing it.</p>
+</div>
+<div class="section" id="size">
+<h5><code class="docutils literal notranslate"><span class="pre">size</span></code><a class="headerlink" href="#size" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> None; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
+<p>Returns the current size of the stack.</p>
+</div>
+<div class="section" id="isempty">
+<h5><code class="docutils literal notranslate"><span class="pre">isEmpty</span></code><a class="headerlink" href="#isempty" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> None; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the stack is currently empty.</p>
+</div>
+</div>
+<div class="section" id="array-t">
+<h4>Array&lt;T&gt;<a class="headerlink" href="#array-t" title="Permalink to this headline">¶</a></h4>
+<p>This has the following inbuilt methods:</p>
+<div class="section" id="swap">
+<h5><code class="docutils literal notranslate"><span class="pre">swap</span></code><a class="headerlink" href="#swap" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">index1:</span> <span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">index2:</span> <span class="pre">number</span></code>, (optional) <code class="docutils literal notranslate"><span class="pre">longSwap:</span> <span class="pre">boolean</span></code>; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Swaps the elements at <code class="docutils literal notranslate"><span class="pre">index1</span></code> and <code class="docutils literal notranslate"><span class="pre">index2</span></code> in the array. The optional <code class="docutils literal notranslate"><span class="pre">longSwap</span></code> argument can be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> in order to make the animation slightly longer, with a visualisation of the <code class="docutils literal notranslate"><span class="pre">temp</span></code> variable often seen when swapping array elements programmatically. The default value is <code class="docutils literal notranslate"><span class="pre">false</span></code>, resulting in a ‘quick swap’.</p>
+</div>
+<div class="section" id="id3">
+<h5><code class="docutils literal notranslate"><span class="pre">size</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> None; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
+<p>Returns the fixed size of the array.</p>
+</div>
+</div>
+<div class="section" id="examples">
+<h4>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h4>
 <p>To make this more concrete, note how the <code class="docutils literal notranslate"><span class="pre">Stack&lt;number&gt;</span></code> in the following animation is the focus of the attention as it is the primary data structure being used.</p>
 <video src="_static/intro.mp4" frameborder="0" allowfullscreen style=" width: 80%; height: 80%;" controls></video></div>
+</div>
 </div>
 </div>
 
