@@ -17,6 +17,7 @@ A typical stylesheet may look something like this:
       "variables": {
         "stack1": {
           "textColor": "blue",
+          "creationStyle": "Write",
           "animate": {
               "borderColor": "blue"
           }
@@ -27,7 +28,8 @@ A typical stylesheet may look something like this:
           "borderColor": "yellow",
           "animate": {
               "borderColor": "red",
-              "textColor": "red"
+              "textColor": "red",
+              "animationStyle": "CircleIndicate"
           }
         }
       }
@@ -38,12 +40,6 @@ Here, we define styles for the variable ``"stack1"`` and the data structure ``"S
 The style properties for ``"stack1"`` are applied to *all* variables in the program named ``stack1``, whether in global or local scope. This logic can be extended to all variables throughout the program. 
 
 Meanwhile, the style properties for ``"Stack"`` are applied to *all* variables in the program that are of the type ``Stack``, and this again applies throughout all scopes. This works similarly for other data structures. (For a full list of the data structures available in ManimDSL, see :ref:`here <data_structures>`).
-
-
-Style Properties
-^^^^^^^^^^^^^^^^
-
-Here is a definitive list of the style properties you can define in a stylesheet. Currently, style properties can only be applied to data structures.
 
 Code Tracking
 ^^^^^^^^^^^^^^
@@ -60,6 +56,11 @@ calls by default.
 The values accepted for this are `stepInto` and `stepOver`, with a default value of `stepInto`. This default means all function calls will be stepped into and animated. This attribute can be 
 overwritten in code by using ``stepInto`` and ``stepOver`` statement blocks described :ref:`over here <code_tracking>`. 
 
+Style Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Here is a definitive list of the style properties you can define in a stylesheet. Please note that style properties can only be applied to data structures.
+
 Colors
 ~~~~~~~
 
@@ -72,15 +73,38 @@ These colors can be written in upper case or lower case named format or as their
 
 \*For a full list of compatible named colors available in Manim, see `here <https://github.com/3b1b/manim/blob/99952067c1a399e15a197310d35a39bb2864b1af/manimlib/constants.py#L199>`_. Please note that any color ending in ``_C`` can be replaced with just the name of the color (for example, ``BLUE_C`` can be written as ``BLUE``).
 
+Creation style
+~~~~~~~~~~~~~~~
+
+You can specify the type of Manim ``Transform`` you would like to apply to data structures when they are being created, using the ``creationStyle`` property. The following options are available:
+
+* ``FadeIn``
+* ``FadeInFromLarge``
+* ``Write``
+* ``GrowFromCenter``
+* ``ShowCreation``
+* ``DrawBorderThenFill``
+
+The default creation style is ``FadeIn``.
+
 Animation Properties
 ~~~~~~~~~~~~~~~~~~~~~
 
 Animation properties (denoted by ``"animate"``) are a subset of standard style properties. They define the stylistic attributes of data structures while they are being animated - for example, the color of any item being popped off the stack.
 
-These take the properties listed in the `Colors <#colors>`_ section.
+These take the ``textColor`` and ``borderColor`` properties listed in the `Colors <#colors>`_ section. You can also specify the type of Manim ``Transform`` you would like to apply to data structures when they are being animated, using the ``animationStyle`` property. The following options are available:
+
+* ``FadeToColor``
+* ``Indicate``
+* ``ApplyWave``
+* ``WiggleOutThenIn``
+* ``CircleIndicate``
+* ``TurnInsideOut``
+
+The default animation style is ``FadeToColor``.
 
 Precedence
-^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 The stylesheet for a ``.manimdsl`` program prioritises style properties associated with **variables** over those associated with **data structures**.
 
