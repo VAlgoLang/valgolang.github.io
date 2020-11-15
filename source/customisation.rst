@@ -45,6 +45,21 @@ Style Properties
 
 Here is a definitive list of the style properties you can define in a stylesheet. Currently, style properties can only be applied to data structures.
 
+Hide Code
+^^^^^^^^^^^^^^
+
+The ``hideCode`` property controls if the the input program code and variable state will be displayed on the left hand side of the generated animation.
+
+.. code:: json
+
+    {
+      "hideCode": true
+    }
+
+The values accepted for this are ``true`` and ``false``, with a default value of ``false``. This default means that code and variable state will be rendered.
+
+If ``hideCode`` is set to ``true``, the code and variable state will not appear on the left hand side and the animation takes up the entire frame. However, you can still use ``stepInto`` and ``stepOver`` statement blocks to specify code tracking (implicit) that the animation reflects.
+
 Code Tracking
 ^^^^^^^^^^^^^^
 
