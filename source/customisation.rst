@@ -76,26 +76,32 @@ These colors can be written in upper case or lower case named format or as their
 Creation style
 ~~~~~~~~~~~~~~~
 
-You can specify the type of Manim ``Transform`` you would like to apply to data structures when they are being created, using the ``creationStyle`` property. The default is ``FadeIn``, and the following options are available:
+You can specify the type of Manim ``Transform`` you would like to apply to data structures when they are being created, using the ``creationStyle`` property. The following options are available:
 
+* ``FadeIn``
 * ``FadeInFromLarge``
 * ``Write``
 * ``GrowFromCenter``
 * ``ShowCreation``
 * ``DrawBorderThenFill``
 
+The default creation style is ``FadeIn``.
+
 Animation Properties
 ~~~~~~~~~~~~~~~~~~~~~
 
 Animation properties (denoted by ``"animate"``) are a subset of standard style properties. They define the stylistic attributes of data structures while they are being animated - for example, the color of any item being popped off the stack.
 
-These take the ``textColor`` and ``borderColor`` properties listed in the `Colors <#colors>`_ section. You can also specify the type of Manim ``Transform`` you would like to apply to data structures when they are being animated. The default is ``FadeToColor``, and the following options are available:
+These take the ``textColor`` and ``borderColor`` properties listed in the `Colors <#colors>`_ section. You can also specify the type of Manim ``Transform`` you would like to apply to data structures when they are being animated, using the ``animationStyle`` property. The following options are available:
 
+* ``FadeToColor``
 * ``Indicate``
 * ``ApplyWave``
 * ``WiggleOutThenIn``
 * ``CircleIndicate``
 * ``TurnInsideOut``
+
+The default animation style is ``FadeToColor``.
 
 Precedence
 ~~~~~~~~~~~~~
