@@ -45,7 +45,7 @@ Meanwhile, the style properties for ``"Stack"`` are applied to *all* variables i
 Hide Code
 ^^^^^^^^^^^^^^
 
-The ``hideCode`` property controls if the the input program code and variable state will be displayed on the left hand side of the generated animation.
+The ``hideCode`` property controls if the input program code and variable state will be displayed on the left hand side of the generated animation.
 
 .. code:: json
 
