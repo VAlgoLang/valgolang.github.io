@@ -41,6 +41,22 @@ The style properties for ``"stack1"`` are applied to *all* variables in the prog
 
 Meanwhile, the style properties for ``"Stack"`` are applied to *all* variables in the program that are of the type ``Stack``, and this again applies throughout all scopes. This works similarly for other data structures. (For a full list of the data structures available in ManimDSL, see :ref:`here <data_structures>`).
 
+
+Hide Code
+^^^^^^^^^^^^^^
+
+The ``hideCode`` property controls if the input program code and variable state will be displayed on the left hand side of the generated animation.
+
+.. code:: json
+
+    {
+      "hideCode": true
+    }
+
+The values accepted for this are ``true`` and ``false``, with a default value of ``false``. This default means that code and variable state will be rendered.
+
+If ``hideCode`` is set to ``true``, the code and variable state will not appear on the left hand side and the animation takes up the entire frame. However, you can still use ``stepInto`` and ``stepOver`` statement blocks to specify implicit code tracking that the animation reflects.
+
 Code Tracking
 ^^^^^^^^^^^^^^
 
