@@ -168,6 +168,31 @@ For example.
 In the above example first the ``x < 4`` condition will evaluate to false, then the ``x < 8`` condition evaluates to false and finally the ``x < 12`` condition evaluates to true. The program
 will then execute the section of code corresponding to the second ``else-if`` and ``y`` will evaluate to 15.
 
+Loops
+^^^^^^^
+
+Loops in ManimDSL work much the same as they do in other programming languages. ManimDSL has two types of loops: for loops and while loops. They are best demonstrated using the following examples.
+
+For loops
+###############
+
+``Work in progress!``
+
+While loops
+#############
+
+.. code :: javascript
+
+    let stack1 = Stack<number>(){1, 2, 3, 4, 5};
+    let stack2 = Stack<number>();
+    let i = 0;
+
+    while (i < 3) {
+        stack2.push(stack1.pop());
+        i = i + 1;
+    }
+
+
 Functions
 ^^^^^^^^^^^^
 
@@ -191,6 +216,7 @@ Also note that the arguments passed into any function are passed by reference, m
 .. code :: javascript
 
     let x : number = func1(5);
+
 
 Controlling your animation
 -----------------------------
