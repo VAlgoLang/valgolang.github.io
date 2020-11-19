@@ -157,3 +157,38 @@ In a program where ``stack1`` is a variable of type ``Stack``, ``stack1`` would 
   * ``borderColor`` : ``"blue"``
   * ``textColor`` : ``"green"``
 
+Positioning
+^^^^^^^^^^^
+
+The compiler runs an algorithm to automatically allocate space and position for each data structure defined as a variable in the program. However, you can manually define these positioning and sizes using the ``positions`` block.
+
+The way to do this is by specifying a rectangular boundary where the data structure will always stay within. There are 4 compulsory fields to define a valid boundary:
+
+* ``x`` - the bottom left x-coordinate of the boundary
+* ``y`` - the bottom left y-coordinate of the boundary
+* ``width`` - the width of the boundary
+* ``height`` - the height of the boundary
+
+The calculated coordinates will then be used to scale and place the data structure in the Manim coordinate system. By default, the scene in Manim is made up of an 8 x 14 grid, giving the possible ranges for each coordinate as follows:
+
+* -7 ≤ ``x`` ≤ 7
+* -4 ≤ ``y`` ≤ 4
+
+Any data structure placed outside the above range will not be rendered and thus not show up in the animation. Note that if you choose to manually define the positioning for each data structure, then you have to make sure that the boundaries defined do not go out of the scene.
+
+Below is an example of how you can define the positioning of a stack with the variable name ``stack1``:
+
+.. code:: json
+
+    {
+      "positions": {
+        "stack1": {
+          "x": 1,
+          "y": -3,
+          "width": 2,
+          "height": 6
+        }
+      }
+    }
+
+Another thing to note is that if you determine any positioning, the auto-allocation algorithm will not run. This means that if you choose to define the positioning of any variable of a data structure type, you need to do the same for all the variables of any data structure type defined in the program (including the ones defined inside called functions).
