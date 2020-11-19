@@ -188,6 +188,10 @@ While loops
     let i = 0;
 
     while (i < 3) {
+        if (i == 1) {
+            stack2.pop();
+            break;
+        }
         stack2.push(stack1.pop());
         i = i + 1;
     }
