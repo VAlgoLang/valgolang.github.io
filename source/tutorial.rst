@@ -218,6 +218,8 @@ While loops
         i = i + 1;
     }
 
+Within for loops and while loops, you can use the ``break`` keyword to terminate the loop at that point and resume execution after the loop, or the ``continue`` keyword to run the next iteration of the loop immediately.
+
 
 Functions
 ^^^^^^^^^^^^
