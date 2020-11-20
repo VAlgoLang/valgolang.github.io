@@ -75,7 +75,7 @@ overwritten in code by using ``stepInto`` and ``stepOver`` statement blocks desc
 Code Syntax Highlighting
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Syntax highlighting has been enabled as a default. To switch off the syntax highlighting, you can add the ``syntaxHighlightingOn`` property to your stylesheet.
+Syntax highlighting has been enabled as a default. To switch off the syntax highlighting, you can add the ``syntaxHighlightingOn`` property to your stylesheet and set it to `false`.
 
 .. code:: json
 
@@ -88,7 +88,7 @@ The values accepted for this are `true` and `false`, with a default value of `tr
 Code Syntax Highlighting Style
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Syntax highlighting utlizes `Pygment <https://pygments.org/demo/>`_. To default syntax highlighting style is ``inkpot``, and you can modify the ``syntaxHighlightingStyle`` property in your stylesheet.
+Syntax highlighting utlizes the `Pygment <https://pygments.org/demo/>`_ library. The default syntax highlighting style is ``inkpot``, and you can modify the ``syntaxHighlightingStyle`` property in your stylesheet.
 
 .. code:: json
 
@@ -97,13 +97,13 @@ Syntax highlighting utlizes `Pygment <https://pygments.org/demo/>`_. To default 
     }
 
 The values accepted for this are the following:
-- "inkpot"
-- "solarized-dark"
-- "paraiso-dark"
-- "vim"
-- "fruity"
-- "native"
-- "monokai" 
+ * "inkpot"
+ * "solarized-dark"
+ * "paraiso-dark"
+ * "vim"
+ * "fruity"
+ * "native"
+ * "monokai" 
 
 Style Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
