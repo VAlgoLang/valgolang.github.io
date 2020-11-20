@@ -112,7 +112,8 @@ Note that if a data structure (as below) takes generic type arguments in their c
 Control structures
 ^^^^^^^^^^^^^^^^^^
 
-**The if-then and if-then-else Statements**
+The if-then and if-then-else Statements
+#############################################
 
 The ``if-then`` statement is the most basic of all control flow statements. It tells your program to execute a section of code **only if** a condition evaluates
 to true. Otherwise the program will jump to the end of the ``if-then`` statement. For example:
@@ -168,6 +169,58 @@ For example.
 In the above example first the ``x < 4`` condition will evaluate to false, then the ``x < 8`` condition evaluates to false and finally the ``x < 12`` condition evaluates to true. The program
 will then execute the section of code corresponding to the second ``else-if`` and ``y`` will evaluate to 15.
 
+Loops
+###############
+
+Loops in ManimDSL work much the same as they do in other programming languages. ManimDSL has two types of loops: for loops and while loops. They are best demonstrated using the following examples.
+
+For loops
+~~~~~~~~~
+
+.. code :: javascript
+
+    let array = Array<number>(){4, 2, 1, 3};
+    let n = array.size();
+
+    for i in range(n) {
+        if (i == 2) {
+            continue;
+        }
+        for j in range(n - 1 - i) {
+            if (array[j] > array[j + 1]) {
+                array.swap(j, j + 1);
+            }
+        }
+    }
+
+The ``range`` keyword specifies the index value sequence that the loop iterates over. Similar to Python, ``range`` in ManimDSL takes at most 3 arguments:
+
+* ``start`` - (inclusive) start index value *[Optional - default is* ``0`` *]*
+* ``end`` - (exclusive) end index value
+* ``step`` - numeric difference between each number/character in the range sequence *[Optional - default is* ``1`` *]*
+
+
+While loops
+~~~~~~~~~~~~
+
+.. code :: javascript
+
+    let stack1 = Stack<number>(){1, 2, 3, 4, 5};
+    let stack2 = Stack<number>();
+    let i = 0;
+
+    while (i < 3) {
+        if (i == 1) {
+            stack2.pop();
+            break;
+        }
+        stack2.push(stack1.pop());
+        i = i + 1;
+    }
+
+Within for loops and while loops, you can use the ``break`` keyword to terminate the loop at that point and resume execution after the loop, or the ``continue`` keyword to run the next iteration of the loop immediately.
+
+
 Functions
 ^^^^^^^^^^^^
 
@@ -191,6 +244,7 @@ Also note that the arguments passed into any function are passed by reference, m
 .. code :: javascript
 
     let x : number = func1(5);
+
 
 Controlling your animation
 -----------------------------
