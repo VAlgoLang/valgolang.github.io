@@ -91,7 +91,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#arithmetic-expressions">Arithmetic Expressions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#boolean-expressions">Boolean Expressions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#constructors">Constructors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#control-structures">Control structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#control-structures">Control structures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-if-then-and-if-then-else-statements">The if-then and if-then-else Statements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loops">Loops</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
 </ul>
 </li>
@@ -292,7 +296,8 @@ It is assumed you have at least very basic knowledge of programming in any other
 </div>
 <div class="section" id="control-structures">
 <h3>Control structures<a class="headerlink" href="#control-structures" title="Permalink to this headline">¶</a></h3>
-<p><strong>The if-then and if-then-else Statements</strong></p>
+<div class="section" id="the-if-then-and-if-then-else-statements">
+<h4>The if-then and if-then-else Statements<a class="headerlink" href="#the-if-then-and-if-then-else-statements" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">if-then</span></code> statement is the most basic of all control flow statements. It tells your program to execute a section of code <strong>only if</strong> a condition evaluates
 to true. Otherwise the program will jump to the end of the <code class="docutils literal notranslate"><span class="pre">if-then</span></code> statement. For example:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
@@ -338,6 +343,53 @@ For example.</p>
 </div>
 <p>In the above example first the <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">4</span></code> condition will evaluate to false, then the <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">8</span></code> condition evaluates to false and finally the <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">12</span></code> condition evaluates to true. The program
 will then execute the section of code corresponding to the second <code class="docutils literal notranslate"><span class="pre">else-if</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> will evaluate to 15.</p>
+</div>
+<div class="section" id="loops">
+<h4>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h4>
+<p>Loops in ManimDSL work much the same as they do in other programming languages. ManimDSL has two types of loops: for loops and while loops. They are best demonstrated using the following examples.</p>
+<div class="section" id="for-loops">
+<h5>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">array</span> <span class="o">=</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">(){</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+<span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">size</span><span class="p">();</span>
+
+<span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="nx">j</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+            <span class="nx">array</span><span class="p">.</span><span class="nx">swap</span><span class="p">(</span><span class="nx">j</span><span class="p">,</span> <span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">range</span></code> keyword specifies the index value sequence that the loop iterates over. Similar to Python, <code class="docutils literal notranslate"><span class="pre">range</span></code> in ManimDSL takes at most 3 arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> - (inclusive) start index value <em>[Optional - default is</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">end</span></code> - (exclusive) end index value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step</span></code> - numeric difference between each number/character in the range sequence <em>[Optional - default is</em> <code class="docutils literal notranslate"><span class="pre">1</span></code> <em>]</em></p></li>
+</ul>
+</div>
+<div class="section" id="while-loops">
+<h5>While loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">stack1</span> <span class="o">=</span> <span class="nx">Stack</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">(){</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+<span class="kd">let</span> <span class="nx">stack2</span> <span class="o">=</span> <span class="nx">Stack</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">stack2</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">stack2</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">stack1</span><span class="p">.</span><span class="nx">pop</span><span class="p">());</span>
+    <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Within for loops and while loops, you can use the <code class="docutils literal notranslate"><span class="pre">break</span></code> keyword to terminate the loop at that point and resume execution after the loop, or the <code class="docutils literal notranslate"><span class="pre">continue</span></code> keyword to run the next iteration of the loop immediately.</p>
+</div>
+</div>
 </div>
 <div class="section" id="functions">
 <h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
