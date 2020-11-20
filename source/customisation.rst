@@ -72,6 +72,39 @@ calls by default.
 The values accepted for this are `stepInto` and `stepOver`, with a default value of `stepInto`. This default means all function calls will be stepped into and animated. This attribute can be 
 overwritten in code by using ``stepInto`` and ``stepOver`` statement blocks described :ref:`over here <code_tracking>`. 
 
+Code Syntax Highlighting
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Syntax highlighting has been enabled as a default. To switch off the syntax highlighting, you can add the ``syntaxHighlightingOn`` property to your stylesheet and set it to `false`.
+
+.. code:: json
+
+    {
+      "syntaxHighlightingOn": true
+    }
+
+The values accepted for this are `true` and `false`, with a default value of `true`. 
+
+Code Syntax Highlighting Style
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Syntax highlighting utlizes the `Pygment <https://pygments.org/demo/>`_ library. The default syntax highlighting style is ``inkpot``, and you can modify the ``syntaxHighlightingStyle`` property in your stylesheet.
+
+.. code:: json
+
+    {
+      "syntaxHighlightingStyle": "inkpot"
+    }
+
+The values accepted for this are the following:
+ * "inkpot"
+ * "solarized-dark"
+ * "paraiso-dark"
+ * "vim"
+ * "fruity"
+ * "native"
+ * "monokai" 
+
 Style Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
