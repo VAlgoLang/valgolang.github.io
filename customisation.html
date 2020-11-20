@@ -91,6 +91,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#stylesheet">Stylesheet</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#hide-code">Hide Code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-tracking">Code Tracking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-syntax-highlighting">Code Syntax Highlighting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-syntax-highlighting-style">Code Syntax Highlighting Style</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#style-properties">Style Properties</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#colors">Colors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#creation-style">Creation style</a></li>
@@ -224,6 +226,37 @@ calls by default.</p>
 </div>
 <p>The values accepted for this are <cite>stepInto</cite> and <cite>stepOver</cite>, with a default value of <cite>stepInto</cite>. This default means all function calls will be stepped into and animated. This attribute can be
 overwritten in code by using <code class="docutils literal notranslate"><span class="pre">stepInto</span></code> and <code class="docutils literal notranslate"><span class="pre">stepOver</span></code> statement blocks described <a class="reference internal" href="tutorial.html#code-tracking"><span class="std std-ref">over here</span></a>.</p>
+</div>
+<div class="section" id="code-syntax-highlighting">
+<h3>Code Syntax Highlighting<a class="headerlink" href="#code-syntax-highlighting" title="Permalink to this headline">¶</a></h3>
+<p>Syntax highlighting has been enabled as a default. To switch off the syntax highlighting, you can add the <code class="docutils literal notranslate"><span class="pre">syntaxHighlightingOn</span></code> property to your stylesheet and set it to <cite>false</cite>.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;syntaxHighlightingOn&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The values accepted for this are <cite>true</cite> and <cite>false</cite>, with a default value of <cite>true</cite>.</p>
+</div>
+<div class="section" id="code-syntax-highlighting-style">
+<h3>Code Syntax Highlighting Style<a class="headerlink" href="#code-syntax-highlighting-style" title="Permalink to this headline">¶</a></h3>
+<p>Syntax highlighting utlizes the <a class="reference external" href="https://pygments.org/demo/">Pygment</a> library. The default syntax highlighting style is <code class="docutils literal notranslate"><span class="pre">inkpot</span></code>, and you can modify the <code class="docutils literal notranslate"><span class="pre">syntaxHighlightingStyle</span></code> property in your stylesheet.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;syntaxHighlightingStyle&quot;</span><span class="p">:</span> <span class="s2">&quot;inkpot&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>The values accepted for this are the following:</dt><dd><ul class="simple">
+<li><p>“inkpot”</p></li>
+<li><p>“solarized-dark”</p></li>
+<li><p>“paraiso-dark”</p></li>
+<li><p>“vim”</p></li>
+<li><p>“fruity”</p></li>
+<li><p>“native”</p></li>
+<li><p>“monokai”</p></li>
+</ul>
+</dd>
+</dl>
 </div>
 <div class="section" id="style-properties">
 <h3>Style Properties<a class="headerlink" href="#style-properties" title="Permalink to this headline">¶</a></h3>
