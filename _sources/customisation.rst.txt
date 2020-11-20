@@ -105,6 +105,29 @@ The values accepted for this are the following:
  * "native"
  * "monokai" 
 
+ Code Line Separation
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Displaying new lines entered in your DSL is enabled as a default. To switch off the display of new lines, you can add the ``displayNewLinesInCode`` property to your stylesheet and set it to `false`.
+
+.. code:: json
+
+    {
+      "displayNewLinesInCode": false
+    }
+
+ Code Syntax Highlighting Tabulation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When syntax highlighting is switched on, tabulation is defaulted to 2. To modify the size of tabulation within your code, you can modify the ``tabSpacing`` property in your stylesheet.
+
+.. code:: json
+
+    {
+      "tabSpacing": 2
+    }
+
+
 Style Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
