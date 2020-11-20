@@ -197,7 +197,7 @@ The ``range`` keyword specifies the index value sequence that the loop iterates 
 
 * ``start`` - (inclusive) start index value *[Optional - default is* ``0`` *]*
 * ``end`` - (exclusive) end index value
-* ``step`` - numeric difference between each number in the range sequence *[Optional - default is* ``1`` *]*
+* ``step`` - numeric difference between each number/character in the range sequence *[Optional - default is* ``1`` *]*
 
 
 While loops
