@@ -196,7 +196,7 @@ For loops
 The ``range`` keyword specifies the index value sequence that the loop iterates over. Similar to Python, ``range`` in ManimDSL takes at most 3 arguments:
 
 * ``start`` - (inclusive) start index value *[Optional - default is* ``0`` *]*
-* ``end`` - (exclusve) end index value
+* ``end`` - (exclusive) end index value
 * ``step`` - numeric difference between each number in the range sequence *[Optional - default is* ``1`` *]*
 
 
