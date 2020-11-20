@@ -112,7 +112,8 @@ Note that if a data structure (as below) takes generic type arguments in their c
 Control structures
 ^^^^^^^^^^^^^^^^^^
 
-**The if-then and if-then-else Statements**
+The if-then and if-then-else Statements
+#############################################
 
 The ``if-then`` statement is the most basic of all control flow statements. It tells your program to execute a section of code **only if** a condition evaluates
 to true. Otherwise the program will jump to the end of the ``if-then`` statement. For example:
@@ -169,17 +170,38 @@ In the above example first the ``x < 4`` condition will evaluate to false, then 
 will then execute the section of code corresponding to the second ``else-if`` and ``y`` will evaluate to 15.
 
 Loops
-^^^^^^^
+###############
 
 Loops in ManimDSL work much the same as they do in other programming languages. ManimDSL has two types of loops: for loops and while loops. They are best demonstrated using the following examples.
 
 For loops
-###############
+~~~~~~~~~
 
-``Work in progress!``
+.. code :: javascript
+
+    let array = Array<number>(){4, 2, 1, 3};
+    let n = array.size();
+
+    for i in range(n) {
+        if (i == 2) {
+            continue;
+        }
+        for j in range(n - 1 - i) {
+            if (array[j] > array[j + 1]) {
+                array.swap(j, j + 1);
+            }
+        }
+    }
+
+The ``range`` keyword specifies the index value sequence that the loop iterates over. Similar to Python, ``range`` in ManimDSL takes at most 3 arguments:
+
+* ``start`` - (inclusive) start index value *[Optional - default is* ``0`` *]*
+* ``end`` - (exclusve) end index value
+* ``step`` - numeric difference between each number in the range sequence *[Optional - default is* ``1`` *]*
+
 
 While loops
-#############
+~~~~~~~~~~~~
 
 .. code :: javascript
 
