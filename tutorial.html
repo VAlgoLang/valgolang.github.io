@@ -106,6 +106,13 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#structuring-your-program">Structuring your program</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#types">Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#primitive-types">Primitive Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#number">number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#char">char</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boolean">boolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conversion-functions">Conversion Functions</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#data-structures">Data Structures</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#stack-t">Stack&lt;T&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#array-t">Array&lt;T&gt;</a></li>
@@ -448,11 +455,58 @@ will then execute the section of code corresponding to the second <code class="d
 <h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
 <p>There are only two “kinds” of types in this language at the moment.</p>
 <ul class="simple">
-<li><p>Primitives, such as <code class="docutils literal notranslate"><span class="pre">number</span></code>.</p></li>
+<li><p>Primitives, such as <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <code class="docutils literal notranslate"><span class="pre">char</span></code> and <code class="docutils literal notranslate"><span class="pre">number</span></code>.</p></li>
 <li><p>Data structures, such as <code class="docutils literal notranslate"><span class="pre">Stack&lt;number&gt;</span></code>. Data structures may define restrictions on the type parameters they permit.</p></li>
 </ul>
+<div class="section" id="primitive-types">
+<span id="id2"></span><h3>Primitive Types<a class="headerlink" href="#primitive-types" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="number">
+<h4>number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h4>
+<p>A number is an arbitrary representation of a numeric value that in our transpiler is represented using Double precision.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="mf">4.5</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="char">
+<h4>char<a class="headerlink" href="#char" title="Permalink to this headline">¶</a></h4>
+<p>Represents a 16-bit Unicode character.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span><span class="o">:</span> <span class="kr">char</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span><span class="o">:</span> <span class="kr">char</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="boolean">
+<h4>boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h4>
+<p>Represents boolean values true or false.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span><span class="o">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span><span class="o">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="conversion-functions">
+<h4>Conversion Functions<a class="headerlink" href="#conversion-functions" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="tochar">
+<h5><code class="docutils literal notranslate"><span class="pre">toChar</span></code><a class="headerlink" href="#tochar" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">value:</span> <span class="pre">number</span> <span class="pre">|</span> <span class="pre">char</span></code>; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">char</span></code></p>
+<p>This method converts a <code class="docutils literal notranslate"><span class="pre">number</span></code> to its ASCII <code class="docutils literal notranslate"><span class="pre">char</span></code> value. It acts as an identity function when a <code class="docutils literal notranslate"><span class="pre">char</span></code> is given as input.
+The number is rounded to the nearest integer to perform the conversion.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">toChar</span><span class="p">(</span><span class="mi">97</span><span class="p">);</span> <span class="c1">// will return &#39;a&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tonumber">
+<h5><code class="docutils literal notranslate"><span class="pre">toNumber</span></code><a class="headerlink" href="#tonumber" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">value:</span> <span class="pre">number</span> <span class="pre">|</span> <span class="pre">char</span></code>; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
+<p>This method converts a <code class="docutils literal notranslate"><span class="pre">char</span></code> to its ASCII code value. It acts as an identity function when a <code class="docutils literal notranslate"><span class="pre">number</span></code> is given as input.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">toNumber</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span> <span class="c1">// will return 97</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="data-structures">
-<span id="id2"></span><h3>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h3>
+<span id="id3"></span><h3>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h3>
 <p>A rule of thumb is that data structures are the types of things you might have learnt in a CS class (trees, lists, and so on) and which you might find interesting to animate.
 All primitives begin with a lower case letter while data structures will begin with a capitalised letter.</p>
 <p>For those of you interested in the nuts and bolts, this distinction was made to make it clear in the type system what sorts of variables should be centre-stage in the animation.</p>
@@ -494,8 +548,8 @@ All primitives begin with a lower case letter while data structures will begin w
 <p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">index1:</span> <span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">index2:</span> <span class="pre">number</span></code>, (optional) <code class="docutils literal notranslate"><span class="pre">longSwap:</span> <span class="pre">boolean</span></code>; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 <p>Swaps the elements at <code class="docutils literal notranslate"><span class="pre">index1</span></code> and <code class="docutils literal notranslate"><span class="pre">index2</span></code> in the array. The optional <code class="docutils literal notranslate"><span class="pre">longSwap</span></code> argument can be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> in order to make the animation slightly longer, with a visualisation of the <code class="docutils literal notranslate"><span class="pre">temp</span></code> variable often seen when swapping array elements programmatically. The default value is <code class="docutils literal notranslate"><span class="pre">false</span></code>, resulting in a ‘quick swap’.</p>
 </div>
-<div class="section" id="id3">
-<h5><code class="docutils literal notranslate"><span class="pre">size</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id4">
+<h5><code class="docutils literal notranslate"><span class="pre">size</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
 <p><em>Arguments:</em> None; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
 <p>Returns the fixed size of the array.</p>
 </div>
