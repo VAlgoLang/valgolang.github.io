@@ -96,6 +96,7 @@ Syntax highlighting utlizes the `Pygment <https://pygments.org/demo/>`_ library.
       "syntaxHighlightingStyle": "inkpot"
     }
 
+
 The values accepted for this are the following:
  * "inkpot"
  * "solarized-dark"
@@ -105,8 +106,8 @@ The values accepted for this are the following:
  * "native"
  * "monokai" 
 
- Code Line Separation
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Code Line Separation
+^^^^^^^^^^^^^^^^^^^^^^
 
 Displaying new lines entered in your DSL is enabled as a default. To switch off the display of new lines, you can add the ``displayNewLinesInCode`` property to your stylesheet and set it to `false`.
 
@@ -116,7 +117,7 @@ Displaying new lines entered in your DSL is enabled as a default. To switch off 
       "displayNewLinesInCode": false
     }
 
- Code Syntax Highlighting Tabulation
+Code Syntax Highlighting Tabulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When syntax highlighting is switched on, tabulation is defaulted to 2. To modify the size of tabulation within your code, you can modify the ``tabSpacing`` property in your stylesheet.
