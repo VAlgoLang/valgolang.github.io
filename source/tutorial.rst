@@ -295,8 +295,70 @@ Types
 
 There are only two "kinds" of types in this language at the moment. 
 
-* Primitives, such as ``number``.
+* Primitives, such as ``boolean``, ``char`` and ``number``.
 * Data structures, such as ``Stack<number>``. Data structures may define restrictions on the type parameters they permit.
+
+.. _primitive_types:
+
+Primitive Types
+^^^^^^^^^^^^^^^
+
+number
+###############
+
+A number is an arbitrary representation of a numeric value that in our transpiler is represented using Double precision.
+
+.. code:: javascript
+
+    let x: number = 5;
+    let y: number = 4.5;
+
+char
+###############
+
+Represents a 16-bit Unicode character.
+
+.. code:: javascript
+
+    let x: char = 'a';
+    let y: char = '+';
+
+boolean
+###############
+
+Represents a boolean values true or false.
+
+.. code:: javascript
+
+    let x: boolean = true;
+    let y: boolean = false;
+
+
+Conversion Functions
+####################
+
+``toChar``
+~~~~~~~~~~
+
+*Arguments:* ``value: number | char``; *Return type:* ``char``
+
+This method converts a ``number`` to its ASCII ``char`` value. It acts as an identity function when a ``char`` is given as input. 
+The number is rounded to the nearest integer to perform the conversion.
+
+.. code:: javascript
+
+    toChar(97) // will return 'a';
+
+``toNumber``
+~~~~~~~~~~~~
+
+*Arguments:* ``value: number | char``; *Return type:* ``number``
+
+This method converts a ``char`` to its ASCII code value. It acts as an identity function when a ``number`` is given as input. 
+
+.. code:: javascript
+
+    toNumber('a') // will return 97;
 
 .. _data_structures:
 
