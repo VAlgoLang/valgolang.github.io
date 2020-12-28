@@ -326,7 +326,7 @@ Represents a 16-bit Unicode character.
 boolean
 ###############
 
-Represents a boolean values true or false.
+Represents boolean values true or false.
 
 .. code:: javascript
 
@@ -347,7 +347,7 @@ The number is rounded to the nearest integer to perform the conversion.
 
 .. code:: javascript
 
-    toChar(97) // will return 'a';
+    toChar(97); // will return 'a'
 
 ``toNumber``
 ~~~~~~~~~~~~
@@ -358,7 +358,7 @@ This method converts a ``char`` to its ASCII code value. It acts as an identity 
 
 .. code:: javascript
 
-    toNumber('a') // will return 97;
+    toNumber('a'); // will return 97
 
 .. _data_structures:
 
