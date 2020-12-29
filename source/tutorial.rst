@@ -286,7 +286,7 @@ On a statement level you can choose during code tracking to animate stepping int
 Subtitles
 ^^^^^^^^^^^^^^
 
-A subtitle annotation will allow you to add descriptive text to you animation. There are two types of subtitles:
+A subtitle annotation allows you to add descriptive text to your animation. There are two types of subtitles:
 
 ``@subtitle`` - Whenever code execution reaches this annotation it will evaluate it.
 
@@ -296,7 +296,7 @@ A subtitle annotation will allow you to add descriptive text to you animation. T
 
 ``text`` - Subtitle text that will be displayed in the animation
 
-``duration`` - Time in seconds that the subtitle will be displayed for. Defaults to 5 seconds. A subtitle will be displayed for its specified duration or less if another subtitle needs to be shown.
+``duration`` - Time in seconds that the subtitle will be displayed for (defaults to 5 seconds). A subtitle will be displayed for its specified duration or less if another subtitle needs to be shown.
  
 ``condition`` - The conditions for which when met, the subtitle will be displayed.
 
