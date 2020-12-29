@@ -102,6 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#controlling-your-animation">Controlling your animation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#sleep">Sleep</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-tracking">Code Tracking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subtitles">Subtitles</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#structuring-your-program">Structuring your program</a></li>
@@ -434,13 +435,33 @@ will then execute the section of code corresponding to the second <code class="d
 <div class="section" id="code-tracking">
 <span id="id1"></span><h3>Code Tracking<a class="headerlink" href="#code-tracking" title="Permalink to this headline">¶</a></h3>
 <p>On a statement level you can choose during code tracking to animate stepping into statements or stepping over them using the <code class="docutils literal notranslate"><span class="pre">stepInto</span></code> and <code class="docutils literal notranslate"><span class="pre">stepOver</span></code> blocks.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
-<span class="nx">stepInto</span> <span class="p">{</span>
-<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">f</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>       <span class="c1">// This will animate the execution of statements inside the function</span>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="n">@stepInto</span> <span class="p">{</span>
+<span class="n">let</span> <span class="n">x</span> <span class="p">=</span> <span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>       <span class="c1">// This will animate the execution of statements inside the function</span>
 <span class="p">}</span>
 
-<span class="nx">stepOver</span> <span class="p">{</span>
-<span class="kd">let</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">f</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>       <span class="c1">// This will simply step over the statement</span>
+<span class="n">@stepOver</span> <span class="p">{</span>
+<span class="n">let</span> <span class="n">z</span> <span class="p">=</span> <span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>       <span class="c1">// This will simply step over the statement</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="subtitles">
+<h3>Subtitles<a class="headerlink" href="#subtitles" title="Permalink to this headline">¶</a></h3>
+<p>A subtitle annotation allows you to add descriptive text to your animation. There are two types of subtitles:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;subtitle</span></code> - Whenever code execution reaches this annotation it will evaluate it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;subtitleOnce</span></code> - This subtitle will only show once.</p>
+<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">text:</span> <span class="pre">string,</span> <span class="pre">duration:</span> <span class="pre">number,</span> <span class="pre">condition:</span> <span class="pre">boolean</span></code>;</p>
+<p><code class="docutils literal notranslate"><span class="pre">text</span></code> - Subtitle text that will be displayed in the animation</p>
+<p><code class="docutils literal notranslate"><span class="pre">duration</span></code> - Time in seconds that the subtitle will be displayed for (defaults to 5 seconds). A subtitle will be displayed for its specified duration or less if another subtitle needs to be shown.</p>
+<p><code class="docutils literal notranslate"><span class="pre">condition</span></code> - The conditions for which when met, the subtitle will be displayed.</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="n">let</span> <span class="n">x</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+
+<span class="k">while</span><span class="p">(</span><span class="n">x</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">x</span> <span class="p">=</span> <span class="n">x</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span>
+    <span class="n">@subtitleOnce</span><span class="p">(</span><span class="s">&quot;x is now 3&quot;</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="n">x</span> <span class="p">==</span> <span class="m">3</span><span class="p">)</span>  <span class="c1">// When x is equal to 3 &quot;x is now 3&quot; will be displayed in the animation for 3 seconds.</span>
 <span class="p">}</span>
 <span class="p">...</span>
 </pre></div>
