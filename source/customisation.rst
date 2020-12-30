@@ -214,8 +214,10 @@ In a program where ``stack1`` is a variable of type ``Stack``, ``stack1`` would 
   * ``textColor`` : ``"green"``
 
 Positioning
-^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
+Data structures
+^^^^^^^^^^^^^^^
 The compiler runs an algorithm to automatically allocate space and position for each data structure defined as a variable in the program. However, you can manually define these positioning and sizes using the ``positions`` block.
 
 The way to do this is by specifying a rectangular boundary where the data structure will always stay within. There are 4 compulsory fields to define a valid boundary:
@@ -248,3 +250,30 @@ Below is an example of how you can define the positioning of a stack with the va
     }
 
 Another thing to note is that if you determine any positioning, the auto-allocation algorithm will not run. This means that if you choose to define the positioning of any variable of a data structure type, you need to do the same for all the variables of any data structure type defined in the program (including the ones defined inside called functions).
+
+Code And Variable Blocks
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Code and Variable blocks have a predetermined default positioning: Variable block is positioned at ``x = -7`` and ``y = 1.3`` with ``width = 5`` and ``height = 2.6``, and Code block at ``x = -7`` and ``y = -4`` with ``width = 5`` and ``height = 5.3``. This positions them at the very left of the screen, with the Variable Block taking up the top third and the Code Block taking up the bottom two thirds.
+However, similar to Data Structures, it is possible to manually define these positioning and sizes using the ``positions`` block.
+
+Below is an example of how you can define the positioning of the code and variable blocks with the variable name ``_variables`` and ``_code``:
+
+.. code:: json
+
+    {
+      "positions": {
+        "_variables": {
+          "x": 0,
+          "y": -3,
+          "width": 4,
+          "height": 4
+        },
+        "_code": {
+          "x": 0,
+          "y": -2,
+          "width": 4,
+          "height": 4
+        }
+      }
+    }
