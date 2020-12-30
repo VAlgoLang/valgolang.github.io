@@ -254,10 +254,10 @@ Another thing to note is that if you determine any positioning, the auto-allocat
 Code And Variable Blocks
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Code and Variable blocks have a predetermined default positioning: Variable block is positioned at ``x = -7`` and ``y = 1.3`` with ``width = 5`` and ``height = 2.6``, and Code block at ``x = -7`` and ``y = -4`` with ``width = 5`` and ``height = 5.3``. This positions them at the very left of the screen, with the Variable Block taking up the top third and the Code Block taking up the bottom two thirds.
-However, similar to Data Structures, it is possible to manually define these positioning and sizes using the ``positions`` block.
+The code and variable blocks have a predetermined default positioning: The variable block is positioned at ``x = -7`` and ``y = 1.3`` with ``width = 5`` and ``height = 2.6``, and the code block at ``x = -7`` and ``y = -4`` with ``width = 5`` and ``height = 5.3``. This positions them at the very left of the screen, with the variable block taking up the top third and the code block taking up the bottom two thirds.
+However, similar to data structures, it is possible to manually define these positioning and sizes using the ``positions`` attribute in the stylesheet.
 
-Below is an example of how you can define the positioning of the code and variable blocks with the variable name ``_variables`` and ``_code``:
+Below is an example of how you can define the positioning of the code and variable blocks using the names ``_variables`` and ``_code`` respectively:
 
 .. code:: json
 
