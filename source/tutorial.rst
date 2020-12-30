@@ -271,18 +271,45 @@ Code Tracking
 
 On a statement level you can choose during code tracking to animate stepping into statements or stepping over them using the ``stepInto`` and ``stepOver`` blocks.
 
-.. code:: javascript
+.. code:: kotlin
     
     ...
-    stepInto {
+    @stepInto {
     let x = f(y);       // This will animate the execution of statements inside the function
     }
 
-    stepOver {
+    @stepOver {
     let z = f(y);       // This will simply step over the statement
     }
     ...
 
+Subtitles
+^^^^^^^^^^^^^^
+
+A subtitle annotation allows you to add descriptive text to your animation. There are two types of subtitles:
+
+``@subtitle`` - Whenever code execution reaches this annotation it will evaluate it.
+
+``@subtitleOnce`` - This subtitle will only show once.
+
+*Arguments:* ``text: string, duration: number, condition: boolean``;
+
+``text`` - Subtitle text that will be displayed in the animation
+
+``duration`` - Time in seconds that the subtitle will be displayed for (defaults to 5 seconds). A subtitle will be displayed for its specified duration or less if another subtitle needs to be shown.
+ 
+``condition`` - The conditions for which when met, the subtitle will be displayed.
+
+.. code:: kotlin
+    
+    ...
+    let x = 5;
+
+    while(x > 0) {
+        x = x - 1;
+        @subtitleOnce("x is now 3", 3, x == 3)  // When x is equal to 3 "x is now 3" will be displayed in the animation for 3 seconds.
+    }
+    ...
 
 Structuring your program
 -----------------------------
@@ -295,8 +322,70 @@ Types
 
 There are only two "kinds" of types in this language at the moment. 
 
-* Primitives, such as ``number``.
+* Primitives, such as ``boolean``, ``char`` and ``number``.
 * Data structures, such as ``Stack<number>``. Data structures may define restrictions on the type parameters they permit.
+
+.. _primitive_types:
+
+Primitive Types
+^^^^^^^^^^^^^^^
+
+number
+###############
+
+A number is an arbitrary representation of a numeric value that in our transpiler is represented using Double precision.
+
+.. code:: javascript
+
+    let x: number = 5;
+    let y: number = 4.5;
+
+char
+###############
+
+Represents a 16-bit Unicode character.
+
+.. code:: javascript
+
+    let x: char = 'a';
+    let y: char = '+';
+
+boolean
+###############
+
+Represents boolean values true or false.
+
+.. code:: javascript
+
+    let x: boolean = true;
+    let y: boolean = false;
+
+
+Conversion Functions
+####################
+
+``toChar``
+~~~~~~~~~~
+
+*Arguments:* ``value: number | char``; *Return type:* ``char``
+
+This method converts a ``number`` to its ASCII ``char`` value. It acts as an identity function when a ``char`` is given as input. 
+The number is rounded to the nearest integer to perform the conversion.
+
+.. code:: javascript
+
+    toChar(97); // will return 'a'
+
+``toNumber``
+~~~~~~~~~~~~
+
+*Arguments:* ``value: number | char``; *Return type:* ``number``
+
+This method converts a ``char`` to its ASCII code value. It acts as an identity function when a ``number`` is given as input. 
+
+.. code:: javascript
+
+    toNumber('a'); // will return 97
 
 .. _data_structures:
 
