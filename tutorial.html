@@ -117,6 +117,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#data-structures">Data Structures</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#stack-t">Stack&lt;T&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#array-t">Array&lt;T&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tree-t">Tree&lt;T&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#node-t">Node&lt;T&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
@@ -530,7 +532,7 @@ The number is rounded to the nearest integer to perform the conversion.</p>
 <span id="id3"></span><h3>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h3>
 <p>A rule of thumb is that data structures are the types of things you might have learnt in a CS class (trees, lists, and so on) and which you might find interesting to animate.
 All primitives begin with a lower case letter while data structures will begin with a capitalised letter.</p>
-<p>For those of you interested in the nuts and bolts, this distinction was made to make it clear in the type system what sorts of variables should be centre-stage in the animation.</p>
+<p>For those of you interested in the nuts and bolts, this distinction was made to make it clear in the type system for the programmer what sorts of variables should be centre-stage in the animation.</p>
 <p>A comprehensive list of data structures “baked in” to the language is detailed below.</p>
 <div class="section" id="stack-t">
 <h4>Stack&lt;T&gt;<a class="headerlink" href="#stack-t" title="Permalink to this headline">¶</a></h4>
@@ -573,6 +575,52 @@ All primitives begin with a lower case letter while data structures will begin w
 <h5><code class="docutils literal notranslate"><span class="pre">size</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
 <p><em>Arguments:</em> None; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
 <p>Returns the fixed size of the array.</p>
+</div>
+</div>
+<div class="section" id="tree-t">
+<h4>Tree&lt;T&gt;<a class="headerlink" href="#tree-t" title="Permalink to this headline">¶</a></h4>
+<p>The tree type encapsulates an underlying Node&lt;T&gt; object. The distinction between the Node and Tree types exist to allow you to specify exactly which nodes in a subtree should be animated.
+To animate a Node simply construct a Tree from it as defined below.</p>
+<p>This has the following inbuilt methods:</p>
+<div class="section" id="constructor">
+<h5><code class="docutils literal notranslate"><span class="pre">constructor</span></code><a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">root:</span> <span class="pre">Node&lt;T&gt;?</span></code>;</p>
+<p>Constructs a Tree from a Root node, marking the node and all current and future children to be able to be animated as a data structure.</p>
+</div>
+<div class="section" id="root">
+<h5><code class="docutils literal notranslate"><span class="pre">root</span></code><a class="headerlink" href="#root" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> None; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">Node&lt;T&gt;?</span></code></p>
+<p>Accesses underlying Root node of tree.</p>
+</div>
+</div>
+<div class="section" id="node-t">
+<h4>Node&lt;T&gt;<a class="headerlink" href="#node-t" title="Permalink to this headline">¶</a></h4>
+<p>This has the following inbuilt methods:</p>
+<div class="section" id="id5">
+<h5><code class="docutils literal notranslate"><span class="pre">constructor</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">root:</span> <span class="pre">T</span></code>;</p>
+<p>Constructs a Node from the value it will contain.</p>
+</div>
+<div class="section" id="left">
+<h5><code class="docutils literal notranslate"><span class="pre">left</span></code><a class="headerlink" href="#left" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> None; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">Node&lt;T&gt;?</span></code></p>
+<p>Accesses left subtree. Returns null if no left subtree.</p>
+</div>
+<div class="section" id="right">
+<h5><code class="docutils literal notranslate"><span class="pre">right</span></code><a class="headerlink" href="#right" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> None; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">Node&lt;T&gt;?</span></code></p>
+<p>Accesses right subtree. Returns null if no right subtree.</p>
+</div>
+<div class="section" id="value">
+<h5><code class="docutils literal notranslate"><span class="pre">value</span></code><a class="headerlink" href="#value" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> None; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">T</span></code></p>
+<p>Extracts the value from the node.</p>
+<p>An example of a typical Node and Tree usage might be as follows:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">head</span> <span class="o">=</span> <span class="nx">Node</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// Creates a node with value 1</span>
+<span class="kd">let</span> <span class="nx">tree</span> <span class="o">=</span> <span class="nx">Tree</span><span class="o">&lt;</span><span class="nx">Node</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="nx">head</span><span class="p">);</span> <span class="c1">// Constructs a renderable tree from this node</span>
+<span class="nx">tree</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="nx">Node</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// Appends a rendered node with value 0 to the left of the root of the tree</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="examples">

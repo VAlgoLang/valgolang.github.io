@@ -395,7 +395,7 @@ Data Structures
 A rule of thumb is that data structures are the types of things you might have learnt in a CS class (trees, lists, and so on) and which you might find interesting to animate.
 All primitives begin with a lower case letter while data structures will begin with a capitalised letter.
 
-For those of you interested in the nuts and bolts, this distinction was made to make it clear in the type system what sorts of variables should be centre-stage in the animation.
+For those of you interested in the nuts and bolts, this distinction was made to make it clear in the type system for the programmer what sorts of variables should be centre-stage in the animation.
 
 A comprehensive list of data structures "baked in" to the language is detailed below.
 
@@ -460,6 +460,70 @@ Swaps the elements at ``index1`` and ``index2`` in the array. The optional ``lon
 *Arguments:* None; *Return type:* ``number``
 
 Returns the fixed size of the array.
+
+Tree<T>
+###############
+
+The tree type encapsulates an underlying Node<T> object. The distinction between the Node and Tree types exist to allow you to specify exactly which nodes in a subtree should be animated.
+To animate a Node simply construct a Tree from it as defined below.
+
+This has the following inbuilt methods:
+
+``constructor``
+~~~~~~~~~~~~~~~
+
+*Arguments:* ``root: Node<T>?``; 
+
+Constructs a Tree from a Root node, marking the node and all current and future children to be able to be animated as a data structure.
+
+``root``
+~~~~~~~~~
+
+*Arguments:* None; *Return type:* ``Node<T>?``
+
+Accesses underlying Root node of tree.
+
+Node<T>
+###############
+
+This has the following inbuilt methods:
+
+``constructor``
+~~~~~~~~~~~~~~~
+
+*Arguments:* ``root: T``; 
+
+Constructs a Node from the value it will contain.
+
+``left``
+~~~~~~~~~
+
+*Arguments:* None; *Return type:* ``Node<T>?``
+
+Accesses left subtree. Returns null if no left subtree.
+
+``right``
+~~~~~~~~~
+
+*Arguments:* None; *Return type:* ``Node<T>?``
+
+Accesses right subtree. Returns null if no right subtree.
+
+``value``
+~~~~~~~~~
+
+*Arguments:* None; *Return type:* ``T``
+
+Extracts the value from the node.
+
+
+An example of a typical Node and Tree usage might be as follows:
+
+.. code:: javascript
+
+    let head = Node<number>(1); // Creates a node with value 1 
+    let tree = Tree<Node<number>>(head); // Constructs a renderable tree from this node
+    tree.root.left = Node<number>(0); // Appends a rendered node with value 0 to the left of the root of the tree
 
 Examples
 ############
