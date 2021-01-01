@@ -437,7 +437,7 @@ Returns the fixed size of the array.
 Tree<T>
 ###############
 
-The tree type encapsulates an underlying Node<T> object. The distinction between the Node and Tree types exist to allow you to be able to specify exactly which nodes in a subtree should be animated.
+The tree type encapsulates an underlying Node<T> object. The distinction between the Node and Tree types exist to allow you to specify exactly which nodes in a subtree should be animated.
 To animate a Node simply construct a Tree from it as defined below.
 
 This has the following inbuilt methods:
@@ -489,6 +489,14 @@ Accesses right subtree. Returns null if no right subtree.
 
 Extracts the value from the node.
 
+
+An example of a typical Node and Tree usage might be as follows:
+
+.. code:: javascript
+
+    let head = Node<number>(1); // Creates a node with value 1 
+    let tree = Tree<Node<number>>(head); // Constructs a renderable tree from this node
+    tree.root.left = Node<number>(0); // Appends a rendered node with value 0 to the left of the root of the tree
 
 Examples
 ############
