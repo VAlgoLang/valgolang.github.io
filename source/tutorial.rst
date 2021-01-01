@@ -271,18 +271,45 @@ Code Tracking
 
 On a statement level you can choose during code tracking to animate stepping into statements or stepping over them using the ``stepInto`` and ``stepOver`` blocks.
 
-.. code:: javascript
+.. code:: kotlin
     
     ...
-    stepInto {
+    @stepInto {
     let x = f(y);       // This will animate the execution of statements inside the function
     }
 
-    stepOver {
+    @stepOver {
     let z = f(y);       // This will simply step over the statement
     }
     ...
 
+Subtitles
+^^^^^^^^^^^^^^
+
+A subtitle annotation allows you to add descriptive text to your animation. There are two types of subtitles:
+
+``@subtitle`` - Whenever code execution reaches this annotation it will evaluate it.
+
+``@subtitleOnce`` - This subtitle will only show once.
+
+*Arguments:* ``text: string, duration: number, condition: boolean``;
+
+``text`` - Subtitle text that will be displayed in the animation
+
+``duration`` - Time in seconds that the subtitle will be displayed for (defaults to 5 seconds). A subtitle will be displayed for its specified duration or less if another subtitle needs to be shown.
+ 
+``condition`` - The conditions for which when met, the subtitle will be displayed.
+
+.. code:: kotlin
+    
+    ...
+    let x = 5;
+
+    while(x > 0) {
+        x = x - 1;
+        @subtitleOnce("x is now 3", 3, x == 3)  // When x is equal to 3 "x is now 3" will be displayed in the animation for 3 seconds.
+    }
+    ...
 
 Structuring your program
 -----------------------------
