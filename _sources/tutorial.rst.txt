@@ -37,6 +37,33 @@ Arithmetic expressions also look a lot like in any other programming language (f
     let x = 4.5;
     x = (x * 2) + 3; // x = 12
 
+String Expressions
+^^^^^^^^^^^^^^^^^^^
+
+Expressions of type ``string`` can be manipulated further:
+
+**Concatenation**
+
+String expressions can be concatenated with expressions of any other type using the ``+`` operator. This will have the effect
+of joining the ``string`` value of the expressions together and returning the joined string.
+
+.. code :: javascript
+    
+    let x = 4.5;
+    let y = "x is equal to ";
+    let concatenated = y + x; // "x is equal to 4.5"
+    let otherway = x + " it works both ways"; // "4.5 it works both ways"
+
+
+**Character Access**
+
+Single characters in a string expression can be accessed via the array-access operator ``[]``. This returns the ``char`` at the given index.
+
+.. code :: javascript
+
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let a = alphabet[0] // 'a';
+    let d = alphabet[3] // 'd';
 
 Boolean Expressions
 ^^^^^^^^^^^^^^^^^^^
@@ -322,33 +349,13 @@ Types
 
 There are only two "kinds" of types in this language at the moment. 
 
-* Primitives, such as ``boolean``, ``char`` and ``number``.
+* Primitives, such as ``boolean``, ``char``, ``number`` and ``string``.
 * Data structures, such as ``Stack<number>``. Data structures may define restrictions on the type parameters they permit.
 
 .. _primitive_types:
 
 Primitive Types
 ^^^^^^^^^^^^^^^
-
-number
-###############
-
-A number is an arbitrary representation of a numeric value that in our transpiler is represented using Double precision.
-
-.. code:: javascript
-
-    let x: number = 5;
-    let y: number = 4.5;
-
-char
-###############
-
-Represents a 16-bit Unicode character.
-
-.. code:: javascript
-
-    let x: char = 'a';
-    let y: char = '+';
 
 boolean
 ###############
@@ -360,6 +367,38 @@ Represents boolean values true or false.
     let x: boolean = true;
     let y: boolean = false;
 
+char
+###############
+
+Represents a 16-bit Unicode character.
+
+.. code:: javascript
+
+    let x: char = 'a';
+    let y: char = '+';
+
+
+number
+###############
+
+A number is an arbitrary representation of a numeric value that in our transpiler is represented using Double precision.
+
+.. code:: javascript
+
+    let x: number = 5;
+    let y: number = 4.5;
+
+
+string
+###############
+
+A string represents character strings.
+
+.. code:: javascript
+
+    let x: string = "Hi how are you";
+    let y: string = "Hi you are so fantastic";
+
 
 Conversion Functions
 ####################
@@ -367,7 +406,7 @@ Conversion Functions
 ``toChar``
 ~~~~~~~~~~
 
-*Arguments:* ``value: number | char``; *Return type:* ``char``
+*Arguments:* ``value: number | char``; *Return type:* ``char``; *Throws:* ``Runtime Error: Invalid cast operation``
 
 This method converts a ``number`` to its ASCII ``char`` value. It acts as an identity function when a ``char`` is given as input. 
 The number is rounded to the nearest integer to perform the conversion.
@@ -379,13 +418,16 @@ The number is rounded to the nearest integer to perform the conversion.
 ``toNumber``
 ~~~~~~~~~~~~
 
-*Arguments:* ``value: number | char``; *Return type:* ``number``
+*Arguments:* ``value: char | number | string``; *Return type:* ``number``; *Throws:* ``Runtime Error: Invalid cast operation``
 
-This method converts a ``char`` to its ASCII code value. It acts as an identity function when a ``number`` is given as input. 
+This method converts a ``char`` to its ASCII code value. It acts as an identity function when a ``number`` is given as input. When a ``string`` is given as input if the string
+is formatted like a number e.g. ``"123.2"`` its number value will be returned.
 
 .. code:: javascript
 
     toNumber('a'); // will return 97
+    toNumber("123"); // will return 123
+    toNumber("adi"); // will throw a runtime error
 
 .. _data_structures:
 

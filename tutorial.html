@@ -89,6 +89,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#the-basics">The Basics</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#arithmetic-expressions">Arithmetic Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string-expressions">String Expressions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#boolean-expressions">Boolean Expressions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#constructors">Constructors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#control-structures">Control structures</a><ul>
@@ -108,9 +109,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#structuring-your-program">Structuring your program</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#types">Types</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#primitive-types">Primitive Types</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#number">number</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#char">char</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#boolean">boolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#char">char</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#number">number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#string">string</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#conversion-functions">Conversion Functions</a></li>
 </ul>
 </li>
@@ -217,6 +219,26 @@ It is assumed you have at least very basic knowledge of programming in any other
 <p>Arithmetic expressions also look a lot like in any other programming language (for good reason!).</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">4.5</span><span class="p">;</span>
 <span class="nx">x</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// x = 12</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="string-expressions">
+<h3>String Expressions<a class="headerlink" href="#string-expressions" title="Permalink to this headline">¶</a></h3>
+<p>Expressions of type <code class="docutils literal notranslate"><span class="pre">string</span></code> can be manipulated further:</p>
+<p><strong>Concatenation</strong></p>
+<p>String expressions can be concatenated with expressions of any other type using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator. This will have the effect
+of joining the <code class="docutils literal notranslate"><span class="pre">string</span></code> value of the expressions together and returning the joined string.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">4.5</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="s2">&quot;x is equal to &quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">concatenated</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">x</span><span class="p">;</span> <span class="c1">// &quot;x is equal to 4.5&quot;</span>
+<span class="kd">let</span> <span class="nx">otherway</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="s2">&quot; it works both ways&quot;</span><span class="p">;</span> <span class="c1">// &quot;4.5 it works both ways&quot;</span>
+</pre></div>
+</div>
+<p><strong>Character Access</strong></p>
+<p>Single characters in a string expression can be accessed via the array-access operator <code class="docutils literal notranslate"><span class="pre">[]</span></code>. This returns the <code class="docutils literal notranslate"><span class="pre">char</span></code> at the given index.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">alphabet</span> <span class="o">=</span> <span class="s2">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">alphabet</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// &#39;a&#39;;</span>
+<span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">alphabet</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="c1">// &#39;d&#39;;</span>
 </pre></div>
 </div>
 </div>
@@ -478,16 +500,16 @@ will then execute the section of code corresponding to the second <code class="d
 <h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
 <p>There are only two “kinds” of types in this language at the moment.</p>
 <ul class="simple">
-<li><p>Primitives, such as <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <code class="docutils literal notranslate"><span class="pre">char</span></code> and <code class="docutils literal notranslate"><span class="pre">number</span></code>.</p></li>
+<li><p>Primitives, such as <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <code class="docutils literal notranslate"><span class="pre">char</span></code>, <code class="docutils literal notranslate"><span class="pre">number</span></code> and <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p></li>
 <li><p>Data structures, such as <code class="docutils literal notranslate"><span class="pre">Stack&lt;number&gt;</span></code>. Data structures may define restrictions on the type parameters they permit.</p></li>
 </ul>
 <div class="section" id="primitive-types">
 <span id="id2"></span><h3>Primitive Types<a class="headerlink" href="#primitive-types" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="number">
-<h4>number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h4>
-<p>A number is an arbitrary representation of a numeric value that in our transpiler is represented using Double precision.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">y</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="mf">4.5</span><span class="p">;</span>
+<div class="section" id="boolean">
+<h4>boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h4>
+<p>Represents boolean values true or false.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span><span class="o">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span><span class="o">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -499,11 +521,19 @@ will then execute the section of code corresponding to the second <code class="d
 </pre></div>
 </div>
 </div>
-<div class="section" id="boolean">
-<h4>boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h4>
-<p>Represents boolean values true or false.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span><span class="o">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">y</span><span class="o">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<div class="section" id="number">
+<h4>number<a class="headerlink" href="#number" title="Permalink to this headline">¶</a></h4>
+<p>A number is an arbitrary representation of a numeric value that in our transpiler is represented using Double precision.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="mf">4.5</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="string">
+<h4>string<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h4>
+<p>A string represents character strings.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span><span class="o">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s2">&quot;Hi how are you&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span><span class="o">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s2">&quot;Hi you are so fantastic&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -511,7 +541,7 @@ will then execute the section of code corresponding to the second <code class="d
 <h4>Conversion Functions<a class="headerlink" href="#conversion-functions" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="tochar">
 <h5><code class="docutils literal notranslate"><span class="pre">toChar</span></code><a class="headerlink" href="#tochar" title="Permalink to this headline">¶</a></h5>
-<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">value:</span> <span class="pre">number</span> <span class="pre">|</span> <span class="pre">char</span></code>; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">char</span></code></p>
+<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">value:</span> <span class="pre">number</span> <span class="pre">|</span> <span class="pre">char</span></code>; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">char</span></code>; <em>Throws:</em> <code class="docutils literal notranslate"><span class="pre">Runtime</span> <span class="pre">Error:</span> <span class="pre">Invalid</span> <span class="pre">cast</span> <span class="pre">operation</span></code></p>
 <p>This method converts a <code class="docutils literal notranslate"><span class="pre">number</span></code> to its ASCII <code class="docutils literal notranslate"><span class="pre">char</span></code> value. It acts as an identity function when a <code class="docutils literal notranslate"><span class="pre">char</span></code> is given as input.
 The number is rounded to the nearest integer to perform the conversion.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">toChar</span><span class="p">(</span><span class="mi">97</span><span class="p">);</span> <span class="c1">// will return &#39;a&#39;</span>
@@ -520,9 +550,12 @@ The number is rounded to the nearest integer to perform the conversion.</p>
 </div>
 <div class="section" id="tonumber">
 <h5><code class="docutils literal notranslate"><span class="pre">toNumber</span></code><a class="headerlink" href="#tonumber" title="Permalink to this headline">¶</a></h5>
-<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">value:</span> <span class="pre">number</span> <span class="pre">|</span> <span class="pre">char</span></code>; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
-<p>This method converts a <code class="docutils literal notranslate"><span class="pre">char</span></code> to its ASCII code value. It acts as an identity function when a <code class="docutils literal notranslate"><span class="pre">number</span></code> is given as input.</p>
+<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">value:</span> <span class="pre">char</span> <span class="pre">|</span> <span class="pre">number</span> <span class="pre">|</span> <span class="pre">string</span></code>; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">number</span></code>; <em>Throws:</em> <code class="docutils literal notranslate"><span class="pre">Runtime</span> <span class="pre">Error:</span> <span class="pre">Invalid</span> <span class="pre">cast</span> <span class="pre">operation</span></code></p>
+<p>This method converts a <code class="docutils literal notranslate"><span class="pre">char</span></code> to its ASCII code value. It acts as an identity function when a <code class="docutils literal notranslate"><span class="pre">number</span></code> is given as input. When a <code class="docutils literal notranslate"><span class="pre">string</span></code> is given as input if the string
+is formatted like a number e.g. <code class="docutils literal notranslate"><span class="pre">&quot;123.2&quot;</span></code> its number value will be returned.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">toNumber</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span> <span class="c1">// will return 97</span>
+<span class="nx">toNumber</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">);</span> <span class="c1">// will return 123</span>
+<span class="nx">toNumber</span><span class="p">(</span><span class="s2">&quot;adi&quot;</span><span class="p">);</span> <span class="c1">// will throw a runtime error</span>
 </pre></div>
 </div>
 </div>
