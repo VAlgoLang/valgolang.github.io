@@ -37,6 +37,33 @@ Arithmetic expressions also look a lot like in any other programming language (f
     let x = 4.5;
     x = (x * 2) + 3; // x = 12
 
+String Expressions
+^^^^^^^^^^^^^^^^^^^
+
+Expressions of type ``string`` can be manipulated further:
+
+**Concatenation**
+
+String expressions can be concatenated with expressions of any other type using the ``+`` operator. This will have the effect
+of joining the ``string`` value of the expressions together and returning the joined string.
+
+.. code :: javascript
+    
+    let x = 4.5;
+    let y = "x is equal to ";
+    let concatenated = y + x; // "x is equal to 4.5"
+    let otherway = x + " it works both ways"; // "4.5 it works both ways"
+
+
+**Character Access**
+
+Single characters in a string expression can be accessed via the array-access operator ``[]``. This returns the ``char`` at the given index.
+
+.. code :: javascript
+
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let a = alphabet[0] // 'a';
+    let d = alphabet[3] // 'd';
 
 Boolean Expressions
 ^^^^^^^^^^^^^^^^^^^
