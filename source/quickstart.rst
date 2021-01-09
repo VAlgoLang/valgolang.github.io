@@ -4,9 +4,9 @@ Quick Start & Installation
 Introduction
 -----------------
 
-Welcome to Manim DSL's documentation!
+Welcome to VAlgoLang's documentation!
 
-Manim DSL is a domain specific language that helps educators create animations for teaching students about data structures
+VAlgoLang is a domain specific language that helps educators create animations for teaching students about data structures
 and algorithms.
 
 Here is an example:
