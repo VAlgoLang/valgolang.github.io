@@ -1,4 +1,4 @@
-Welcome to Manim DSL's documentation!
+Welcome to VAlgoLang's documentation!
 =====================================
 
 .. toctree::
