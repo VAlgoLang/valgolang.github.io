@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Contributing &mdash; VAlgoLang  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Customising Your Animation" href="customisation.html" />
+    <link rel="prev" title="Usage" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> VAlgoLang
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start &amp; Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Language Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#contribution-case-study-adding-lists">Contribution case study: Adding Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#technical-documentation">Technical documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="customisation.html">Customising Your Animation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_library.html">Python Library</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">VAlgoLang</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Contributing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/contributing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="contributing">
+<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h1>
+<p>We welcome all contributions! If you would like to contribute to VAlgoLang, please see the <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/blob/master/CONTRIBUTING.md">corresponding guidelines</a> and our <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/blob/master/CONTRIBUTING.md">code of conduct</a>.</p>
+<p>For a worked example on how to contribute to <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler">our repository</a>, please read on!</p>
+<div class="section" id="contribution-case-study-adding-lists">
+<h2>Contribution case study: Adding Lists<a class="headerlink" href="#contribution-case-study-adding-lists" title="Permalink to this headline">¶</a></h2>
+<p>To give you an example of how you can contribute to the repository, here’s a worked example of how we added the List data structure to the language, just by extending the existing constructs. Our hope is that the core data structures we provide can be used as building blocks to create other more specialised data structures, reducing the amount of effort needed for a contributor to extend our language.</p>
+<p>In summary, resizable Lists are simply an extension of Arrays, both within the compiler and also in the Python library (i.e., when translated into executable Manim code).</p>
+<p>The way we implemented Lists are as follows:</p>
+<ol class="arabic simple">
+<li><p>Extended the <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/tree/master/antlr_config">grammar</a> (both lexer and parser).</p></li>
+<li><p>Created a type for Lists by extending the Array type, but with the methods <code class="docutils literal notranslate"><span class="pre">prepend</span></code> and <code class="docutils literal notranslate"><span class="pre">append</span></code> (as well as <code class="docutils literal notranslate"><span class="pre">size</span></code>, like arrays).</p></li>
+<li><p>Extended <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/blob/master/src/main/resources/python/array.py">Arrays</a> in the Python library to be able to animate these new methods.</p></li>
+<li><p>Extended the linear representation with <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/blob/master/src/main/kotlin/com/manimdsl/linearrepresentation/datastructures/list/ListLinearRepresentation.kt">instructions</a> that can be used to generate the Manim code from Step 3.</p></li>
+<li><p>Extended the virtual machine accordingly, using the instructions from Step 4.</p></li>
+</ol>
+<p>And that’s it! By relying on the existing constructs, we were able to add a new data structure to our language with minimal effort.</p>
+<p>Full details are available in the corresponding <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/pull/130">Pull Request</a> on GitHub.</p>
+</div>
+<div class="section" id="technical-documentation">
+<h2>Technical documentation<a class="headerlink" href="#technical-documentation" title="Permalink to this headline">¶</a></h2>
+<p>For those interested in contributing, a good source of information is our <a class="reference external" href="https://manimdsl.github.io/ManimDSLCompiler/manimdsl/">technical documentation</a> of the compiler, written using <a class="reference external" href="https://kotlinlang.org/docs/reference/kotlin-doc.html">KDoc</a> and generated by <a class="reference external" href="https://github.com/Kotlin/dokka">Dokka</a>. This provides more detail on the classes and methods within each stage of the compiler.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="customisation.html" class="btn btn-neutral float-right" title="Customising Your Animation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Rini Banerjee, Clara Lebbos, Ilona Zhu, Mayank Sharma, Arjun Banerjee, Aditya Goel.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
