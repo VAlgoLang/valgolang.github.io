@@ -30,7 +30,7 @@ Quick Start Guide
 
 The quickest way to get started with VAlgoLang is to head over to the **web interface** at `https://valgolang.netlify.app/ <https://valgolang.netlify.app/>`_. Take a look at the examples pane on the left hand side to get an idea of what you can do with the language and just get stuck in!
 
-Alternatively, if you'd prefer to work locally, follow `these instructions <https://github.com/ManimDSL/ManimDSLCompiler#installation>`_ to install the required dependencies on your machine.
+Alternatively, if you'd prefer to work locally, follow `these instructions <https://github.com/ManimDSL/ManimDSLCompiler#installation>`_ to install the required dependencies on your machine. The file extension for VAlgoLang files is ``.val`` .
 
 The next steps are to:
 
