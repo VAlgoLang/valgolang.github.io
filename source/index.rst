@@ -9,4 +9,8 @@ Welcome to VAlgoLang's documentation!
    quickstart
    tutorial
    usage
+<<<<<<< HEAD
    *
+=======
+   *
+>>>>>>> dfd91420bdfe815af017f8c62053c07923dd6080
