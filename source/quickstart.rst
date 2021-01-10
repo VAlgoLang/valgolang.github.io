@@ -9,13 +9,13 @@ Welcome to VAlgoLang's documentation!
 VAlgoLang is a domain specific language that helps educators create animations for teaching students about data structures
 and algorithms.
 
-Here is an example:
+Here's a short example:
 
 .. code:: javascript
 
-    let stack: Stack = new Stack;
+    let stack = Stack<number>();
     stack.push(5);
-    stack.pop();
+    let x: number = stack.pop();
 
 This would produce the video:
 
