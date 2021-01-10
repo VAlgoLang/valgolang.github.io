@@ -57,6 +57,24 @@ The values accepted for this are ``true`` and ``false``, with a default value of
 
 If ``hideCode`` is set to ``true``, the code and variable state will not appear on the left hand side and the animation takes up the entire frame. However, you can still use ``stepInto`` and ``stepOver`` statement blocks to specify implicit code tracking that the animation reflects.
 
+Hide Variables
+^^^^^^^^^^^^^^
+
+The ``hideVariables`` property controls if the variable state will be displayed on the left hand side of the generated animation.
+
+.. code:: json
+
+    {
+      "hideVariables": true
+    }
+
+The values accepted for this are ``true`` and ``false``, with a default value of ``false``. This default means that variable state will be rendered.
+
+If ``hideVariables`` is set to ``true``, the variable state will not appear on the left hand side and the code block stretches to takes up the entire left hand side of the frame, with the animation on the right hand side.
+
+if ``hideCode`` is also set to ``true``, the code block will not appear either and this will have the same effect as just setting ``hideCode`` to true.
+
+
 Code Tracking
 ^^^^^^^^^^^^^^
 
