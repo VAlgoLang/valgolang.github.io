@@ -122,6 +122,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#data-structures">Data Structures</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#stack-t">Stack&lt;T&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#array-t">Array&lt;T&gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-t">List&lt;T&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#tree-t">Tree&lt;T&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#node-t">Node&lt;T&gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
@@ -615,6 +616,25 @@ All primitives begin with a lower case letter while data structures will begin w
 <p>Returns the fixed size of the array.</p>
 </div>
 </div>
+<div class="section" id="list-t">
+<h4>List&lt;T&gt;<a class="headerlink" href="#list-t" title="Permalink to this headline">¶</a></h4>
+<p>This has the following inbuilt methods:</p>
+<div class="section" id="prepend">
+<h5><code class="docutils literal notranslate"><span class="pre">prepend</span></code><a class="headerlink" href="#prepend" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">item:</span> <span class="pre">T</span></code>; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Adds an item to the front of the list.</p>
+</div>
+<div class="section" id="append">
+<h5><code class="docutils literal notranslate"><span class="pre">append</span></code><a class="headerlink" href="#append" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">item:</span> <span class="pre">T</span></code>; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Adds an item to the end of the list.</p>
+</div>
+<div class="section" id="id5">
+<h5><code class="docutils literal notranslate"><span class="pre">size</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<p><em>Arguments:</em> None; <em>Return type:</em> <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
+<p>Returns the current size of the list.</p>
+</div>
+</div>
 <div class="section" id="tree-t">
 <h4>Tree&lt;T&gt;<a class="headerlink" href="#tree-t" title="Permalink to this headline">¶</a></h4>
 <p>The tree type encapsulates an underlying Node&lt;T&gt; object. The distinction between the Node and Tree types exist to allow you to specify exactly which nodes in a subtree should be animated.
@@ -634,8 +654,8 @@ To animate a Node simply construct a Tree from it as defined below.</p>
 <div class="section" id="node-t">
 <h4>Node&lt;T&gt;<a class="headerlink" href="#node-t" title="Permalink to this headline">¶</a></h4>
 <p>This has the following inbuilt methods:</p>
-<div class="section" id="id5">
-<h5><code class="docutils literal notranslate"><span class="pre">constructor</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id6">
+<h5><code class="docutils literal notranslate"><span class="pre">constructor</span></code><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
 <p><em>Arguments:</em> <code class="docutils literal notranslate"><span class="pre">root:</span> <span class="pre">T</span></code>;</p>
 <p>Constructs a Node from the value it will contain.</p>
 </div>
