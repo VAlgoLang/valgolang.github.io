@@ -341,7 +341,9 @@ A subtitle annotation allows you to add descriptive text to your animation. Ther
 Speed
 ^^^^^^^^^^^^^^
 
-A speed annotation allows you to specify the speed at which you want a block of code to be executed. The speed annotation takes as argument a double specifying the speed up relative to the current speed desired.This means to double the speed of a function call we might do something like this:
+A speed annotation allows you to specify the speed at which you want a block of code to be executed, relative to the current speed of the animation (all animations have default speed 1.0). 
+
+To double the speed of a function call we might do something like this:
 
 .. code:: kotlin
 
@@ -351,8 +353,8 @@ A speed annotation allows you to specify the speed at which you want a block of 
     }
     ...
 
-Speed annotations also have a second, optional argument. This is a boolean flag indicating whether or not to speed up by a certain amount.
-In the code below we speed up the inner loop by a factor of 3 after the first iteration is complete and can be useful for when you want to speed through certain parts of your animation.
+Speed annotations also have a second, optional argument. This is a boolean flag indicating whether or not to speed up by the specified amount.
+In the code below we speed up the inner loop by a factor of 3 after the first iteration is complete. This can be useful for when you want to conditionally speed through certain parts of your animation.
 
 
 .. code:: kotlin
