@@ -501,7 +501,7 @@ Swaps the elements at ``index1`` and ``index2`` in the array. The optional ``lon
 
 *Arguments:* None; *Return type:* ``number``
 
-Returns the fixed size of the array.
+Returns the current size of the list.
 
 List<T>
 ###############
