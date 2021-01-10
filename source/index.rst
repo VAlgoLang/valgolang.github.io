@@ -2,7 +2,7 @@ Welcome to VAlgoLang's documentation!
 =====================================
 
 .. toctree::
-   :caption: Contents:
+   :caption: Table of Contents:
    :maxdepth: 4
    :glob:
 
