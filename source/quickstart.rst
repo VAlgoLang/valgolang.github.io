@@ -34,7 +34,7 @@ Alternatively, if you'd prefer to work locally, follow `these instructions <http
 
 The next steps are to:
 
-#. Take a look through our :doc:`language tour <tutorial>` to familiarise yourself with the syntax of VAlgoLang. It should be pretty easy to pick up if you have even a bit of programming experience!
+#. Take a look through our :doc:`Language Tour <tutorial>` to familiarise yourself with the syntax of VAlgoLang. It should be pretty easy to pick up if you have even a bit of programming experience!
 #. Check out the :doc:`Customising Your Animation <customisation>` section for ideas on how to change the style attributes of your animation using the stylesheet. 
 
 We hope you enjoy using VAlgoLang! Feel free to reach out to us on `GitHub <https://github.com/ManimDSL>`_ :)
