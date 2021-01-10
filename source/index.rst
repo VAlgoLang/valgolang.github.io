@@ -10,10 +10,3 @@ Welcome to VAlgoLang's documentation!
    tutorial
    usage
    *
-
-
-Table of contents
-==================
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
