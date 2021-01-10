@@ -16,7 +16,7 @@ The way we implemented Lists are as follows:
 1. Extended the `grammar <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/antlr_config>`_ (both lexer and parser).
 2. Created a type for Lists by extending the Array type, but with the methods ``prepend`` and ``append`` (as well as ``size``, like arrays).
 3. Extended `Arrays <https://github.com/ManimDSL/ManimDSLCompiler/blob/master/src/main/resources/python/array.py>`_ in the Python library to be able to animate these new methods.
-4. Extended the linear representation with `instructions <https://github.com/ManimDSL/ManimDSLCompiler/blob/master/src/main/kotlin/com/manimdsl/linearrepresentation/datastructures/list/ListLinearRepresentation.kt>`_ that generate the animations from Step 3.
+4. Extended the linear representation with `instructions <https://github.com/ManimDSL/ManimDSLCompiler/blob/master/src/main/kotlin/com/manimdsl/linearrepresentation/datastructures/list/ListLinearRepresentation.kt>`_ that can be used to generate the Manim code from Step 3.
 5. Extended the virtual machine accordingly, using the instructions from Step 4.
 
 And that's it! By relying on the existing constructs, we were able to add a new data structure to our language with minimal effort.
