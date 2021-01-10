@@ -93,6 +93,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Customising Your Animation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#stylesheet">Stylesheet</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#hide-code">Hide Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hide-variables">Hide Variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-tracking">Code Tracking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-syntax-highlighting">Code Syntax Highlighting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-syntax-highlighting-style">Code Syntax Highlighting Style</a></li>
@@ -223,6 +224,18 @@ You can then pass this stylesheet into the compiler using the <code class="docut
 </div>
 <p>The values accepted for this are <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>, with a default value of <code class="docutils literal notranslate"><span class="pre">false</span></code>. This default means that code and variable state will be rendered.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">hideCode</span></code> is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the code and variable state will not appear on the left hand side and the animation takes up the entire frame. However, you can still use <code class="docutils literal notranslate"><span class="pre">stepInto</span></code> and <code class="docutils literal notranslate"><span class="pre">stepOver</span></code> statement blocks to specify implicit code tracking that the animation reflects.</p>
+</div>
+<div class="section" id="hide-variables">
+<h3>Hide Variables<a class="headerlink" href="#hide-variables" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">hideVariables</span></code> property controls if the variable state will be displayed on the left hand side of the generated animation.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;hideVariables&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The values accepted for this are <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>, with a default value of <code class="docutils literal notranslate"><span class="pre">false</span></code>. This default means that variable state will be rendered.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">hideVariables</span></code> is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the variable state will not appear on the left hand side and the code block stretches to takes up the entire left hand side of the frame, with the animation on the right hand side.</p>
+<p>if <code class="docutils literal notranslate"><span class="pre">hideCode</span></code> is also set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the code block will not appear either and this will have the same effect as just setting <code class="docutils literal notranslate"><span class="pre">hideCode</span></code> to true.</p>
 </div>
 <div class="section" id="code-tracking">
 <h3>Code Tracking<a class="headerlink" href="#code-tracking" title="Permalink to this headline">¶</a></h3>
