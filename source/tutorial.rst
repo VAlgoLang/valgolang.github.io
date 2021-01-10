@@ -501,19 +501,12 @@ Swaps the elements at ``index1`` and ``index2`` in the array. The optional ``lon
 
 *Arguments:* None; *Return type:* ``number``
 
-Returns the current size of the list.
+Returns the fixed size of the array.
 
 List<T>
 ###############
 
 This has the following inbuilt methods:
-
-``size``
-~~~~~~~~~
-
-*Arguments:* None; *Return type:* ``number``
-
-Returns the fixed size of the array.
 
 
 ``prepend``
@@ -530,6 +523,15 @@ Adds an item to the front of the list.
 *Arguments:* ``item: T``; *Return type:* ``void``
 
 Adds an item to the end of the list.
+
+
+``size``
+~~~~~~~~~
+
+*Arguments:* None; *Return type:* ``number``
+
+Returns the current size of the list.
+
 
 Tree<T>
 ###############
