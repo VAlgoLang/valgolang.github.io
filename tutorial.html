@@ -107,9 +107,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#sleep">Sleep</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-tracking">Code Tracking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#subtitles">Subtitles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#speed">Speed</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#structuring-your-program">Structuring your program</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#types">Types</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#primitive-types">Primitive Types</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#boolean">boolean</a></li>
@@ -498,14 +498,34 @@ will then execute the section of code corresponding to the second <code class="d
 </pre></div>
 </div>
 </div>
+<div class="section" id="speed">
+<h3>Speed<a class="headerlink" href="#speed" title="Permalink to this headline">¶</a></h3>
+<p>A speed annotation allows you to specify the speed at which you want a block of code to be executed, relative to the current speed of the animation (all animations have default speed 1.0).</p>
+<p>To double the speed of a function call we might do something like this:</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="n">@speed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">let</span> <span class="n">x</span> <span class="p">=</span> <span class="n">slowFunction</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></div>
 </div>
-<div class="section" id="structuring-your-program">
-<h2>Structuring your program<a class="headerlink" href="#structuring-your-program" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Work</span> <span class="pre">in</span> <span class="pre">progress!</span></code></p>
+<p>Speed annotations also have a second, optional argument. This is a boolean flag indicating whether or not to speed up by the specified amount.
+In the code below we speed up the inner loop by a factor of 3 after the first iteration is complete. This can be useful for when you want to conditionally speed through certain parts of your animation.</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="m">5</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">@speed</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="n">i</span> <span class="p">&gt;=</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="m">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="types">
 <h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
-<p>There are only two “kinds” of types in this language at the moment.</p>
+<p>There are two “kinds” of types in this language at the moment.</p>
 <ul class="simple">
 <li><p>Primitives, such as <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <code class="docutils literal notranslate"><span class="pre">char</span></code>, <code class="docutils literal notranslate"><span class="pre">number</span></code> and <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p></li>
 <li><p>Data structures, such as <code class="docutils literal notranslate"><span class="pre">Stack&lt;number&gt;</span></code>. Data structures may define restrictions on the type parameters they permit.</p></li>
