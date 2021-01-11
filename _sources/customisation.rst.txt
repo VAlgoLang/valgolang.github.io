@@ -39,7 +39,7 @@ Here, we define styles for the variable ``"stack1"`` and the data structure ``"S
 
 The style properties for ``"stack1"`` are applied to *all* variables in the program named ``stack1``, whether in global or local scope. This logic can be extended to all variables throughout the program. 
 
-Meanwhile, the style properties for ``"Stack"`` are applied to *all* variables in the program that are of the type ``Stack``, and this again applies throughout all scopes. This works similarly for other data structures. (For a full list of the data structures available in ManimDSL, see :ref:`here <data_structures>`).
+Meanwhile, the style properties for ``"Stack"`` are applied to *all* variables in the program that are of the type ``Stack``, and this again applies throughout all scopes. This works similarly for other data structures. (For a full list of the data structures available in VAlgoLang, see :ref:`here <data_structures>`).
 
 
 Hide Code
@@ -197,7 +197,7 @@ The default animation style is ``FadeToColor``.
 Precedence
 ~~~~~~~~~~~~~
 
-The stylesheet for a ``.manimdsl`` program prioritises style properties associated with **variables** over those associated with **data structures**.
+The stylesheet for a ``.val`` program prioritises style properties associated with **variables** over those associated with **data structures**.
 
 This can best be demonstrated using an example stylesheet:
 

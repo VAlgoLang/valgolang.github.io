@@ -166,26 +166,26 @@
             
   <div class="section" id="contributing">
 <h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h1>
-<p>We welcome all contributions! If you would like to contribute to VAlgoLang, please see the <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/blob/master/CONTRIBUTING.md">corresponding guidelines</a> and our <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/blob/master/CONTRIBUTING.md">code of conduct</a>.</p>
-<p>For a worked example on how to contribute to <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler">our repository</a>, please read on!</p>
+<p>We welcome all contributions! If you would like to contribute to VAlgoLang, please see the <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/blob/master/CONTRIBUTING.md">corresponding guidelines</a> and our <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/blob/master/CONTRIBUTING.md">code of conduct</a>.</p>
+<p>For a worked example on how to contribute to <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang">our repository</a>, please read on!</p>
 <div class="section" id="contribution-case-study-adding-lists">
 <h2>Contribution case study: Adding Lists<a class="headerlink" href="#contribution-case-study-adding-lists" title="Permalink to this headline">¶</a></h2>
 <p>To give you an example of how you can contribute to the repository, here’s a worked example of how we added the List data structure to the language, just by extending the existing constructs. Our hope is that the core data structures we provide can be used as building blocks to create other more specialised data structures, reducing the amount of effort needed for a contributor to extend our language.</p>
 <p>In summary, resizable Lists are simply an extension of Arrays, both within the compiler and also in the Python library (i.e., when translated into executable Manim code).</p>
 <p>The way we implemented Lists are as follows:</p>
 <ol class="arabic simple">
-<li><p>Extended the <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/tree/master/antlr_config">grammar</a> (both lexer and parser).</p></li>
+<li><p>Extended the <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/tree/master/antlr_config">grammar</a> (both lexer and parser).</p></li>
 <li><p>Created a type for Lists by extending the Array type, but with the methods <code class="docutils literal notranslate"><span class="pre">prepend</span></code> and <code class="docutils literal notranslate"><span class="pre">append</span></code> (as well as <code class="docutils literal notranslate"><span class="pre">size</span></code>, like arrays).</p></li>
-<li><p>Extended <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/blob/master/src/main/resources/python/array.py">Arrays</a> in the Python library to be able to animate these new methods.</p></li>
-<li><p>Extended the linear representation with <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/blob/master/src/main/kotlin/com/manimdsl/linearrepresentation/datastructures/list/ListLinearRepresentation.kt">instructions</a> that can be used to generate the Manim code from Step 3.</p></li>
+<li><p>Extended <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/blob/master/src/main/resources/python/array.py">Arrays</a> in the Python library to be able to animate these new methods.</p></li>
+<li><p>Extended the linear representation with <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/blob/master/src/main/kotlin/com/valgolang/linearrepresentation/datastructures/list/ListLinearRepresentation.kt">instructions</a> that can be used to generate the Manim code from Step 3.</p></li>
 <li><p>Extended the virtual machine accordingly, using the instructions from Step 4.</p></li>
 </ol>
 <p>And that’s it! By relying on the existing constructs, we were able to add a new data structure to our language with minimal effort.</p>
-<p>Full details are available in the corresponding <a class="reference external" href="https://github.com/ManimDSL/ManimDSLCompiler/pull/130">Pull Request</a> on GitHub.</p>
+<p>Full details are available in the corresponding <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/pull/130">Pull Request</a> on GitHub.</p>
 </div>
 <div class="section" id="technical-documentation">
 <h2>Technical documentation<a class="headerlink" href="#technical-documentation" title="Permalink to this headline">¶</a></h2>
-<p>For those interested in contributing, a good source of information is our <a class="reference external" href="https://manimdsl.github.io/ManimDSLCompiler/manimdsl/">technical documentation</a> of the compiler, written using <a class="reference external" href="https://kotlinlang.org/docs/reference/kotlin-doc.html">KDoc</a> and generated by <a class="reference external" href="https://github.com/Kotlin/dokka">Dokka</a>. This provides more detail on the classes and methods within each stage of the compiler.</p>
+<p>For those interested in contributing, a good source of information is our <a class="reference external" href="https://valgolang.github.io/VAlgoLang/valgolang/">technical documentation</a> of the compiler, written using <a class="reference external" href="https://kotlinlang.org/docs/reference/kotlin-doc.html">KDoc</a> and generated by <a class="reference external" href="https://github.com/Kotlin/dokka">Dokka</a>. This provides more detail on the classes and methods within each stage of the compiler.</p>
 </div>
 </div>
 

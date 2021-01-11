@@ -7,9 +7,9 @@ The compiler has some command line options:
 
 .. code:: bash
 
-    Usage: manimdsl [-hpV] [-o=<output>] [-q=<quality>] <file>
-    ManimDSL compiler to produce manim animations
-          <file>                     The manimdsl file to compile and animate.
+    Usage: valgolang [-hpV] [-o=<output>] [-q=<quality>] <file>
+    VAlgoLang compiler to produce manim animations
+          <file>                     The .val file to compile and animate.
       -f, --open_file                Show the output file in file manager (optional).
       -h, --help                     Show this help message and exit.
       -m, --manim                    Only output generated python & manim code (optional).
@@ -27,7 +27,7 @@ Command Line Arguments
 <file>
 ^^^^^^^^^^^^
 
- - The ``.manimdsl`` file to compile (required)
+ - The ``.val`` file to compile (required)
 
 -f, --open_file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,7 +79,7 @@ Command Line Arguments
 Program Exit Status
 -------------------
 
-When compiling ManimDSL the compiler can return a variety of informative status codes.
+When compiling VAlgoLang the compiler can return a variety of informative status codes.
 
 0: Success
 ^^^^^^^^^^
