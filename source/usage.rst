@@ -107,7 +107,7 @@ An invalid declaration like below will lead to a semantic error.
 
 .. code :: none
 
-    let x: number = new Stack;
+    let x: number = Stack<number>();
 
 .. code :: none
 
@@ -124,7 +124,7 @@ For instance "popping" from an empty stack will cause a Runtime Error.
 
 .. code :: none
 
-    let x = new Stack<number>;
+    let x = Stack<number>();
     x.pop();
 
 .. code :: none

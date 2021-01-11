@@ -127,13 +127,13 @@ Examples
 Constructors
 ^^^^^^^^^^^^
 
-Data structures baked into the language have constructors. These can be invoked using the ``new`` keyword.
+Data structures baked into the language have constructors. These can be invoked by directly instantiating an instance of the data structure.
 
 Note that if a data structure (as below) takes generic type arguments in their constructor they must not be omitted.
 
 .. code :: javascript
     
-    let stack = new Stack<number>;
+    let stack = Stack<number>();
 
 
 Control structures

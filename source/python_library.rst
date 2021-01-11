@@ -1,10 +1,71 @@
 Python Library
 =====================================
 
-The compiler uses manim to create animations for your code.
-Although the compiler has a standard way of representing datastructures, you are able to modify our functions to represent them the way you want!
+The interpreter uses manim to create animations for your code and the following prebuilt Python libraries define the standard visualisation for different data structures.
+Although this is a fixed standard way of representing data structures, you are able to change the style attributes through the stylesheet or even modify our functions to represent data structures the way you want!
 
-All of the utility functions can be found at `src/main/resources/python/util.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/src/main/resources/python/util.py>`_, and all the shapes are in their own class (i.e. Rectangle_block is in `src/main/resources/python/rectangle.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/src/main/resources/python/rectangle.py>`_)
+All of the utility functions can be found at `src/main/resources/python/util.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/src/main/resources/python/util.py>`_, and all of the shapes/data structures are in their own class (i.e. Rectangle_block is in `src/main/resources/python/rectangle.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/src/main/resources/python/rectangle.py>`_)
+
+Data Structure
+-----------------
+
+This is the abstract base class that defines the common fields and functions shared across all the data structures.
+
+Constructor
+^^^^^^^^^^^
+
+The constructor of the most generic data structure takes the following arguments:
+
+* ``ul`` - the coordinates of the upper-left corner of the boundary for the data structure
+* ``ur`` - the coordinates of the upper-right corner of the boundary for the data structure
+* ``ll`` - the coordinates of the lower-left corner of the boundary for the data structure
+* ``lr`` - the coordinates of the lower-right corner of the boundary for the data structure
+* ``aligned_edge`` - the edge towards which the data structure will be scaled if it grows out of the boundary (only applies if data structure is dynamic)
+* ``color`` - the color of the shapes visualised as part of the data structure *[Optional - defaults to* ``WHITE`` *]*
+* ``text_color`` - the color of the text visualised as part of the data structure *[Optional - defaults to* ``WHITE`` *]*
+* ``text_weight`` - the weight of the text visualised as part of the data structure *[Optional - defaults to* ``NORMAL`` *]*
+* ``font`` - the font of the text visualised as part of the data structure *[Optional - defaults to* ``"Times New Roman"`` *]*
+
+Inbuilt Functions
+^^^^^^^^^^^^^^^^^^
+
+Any data structure has the following inbuilt functions implemented:
+
+``shrink``
+""""""""""
+Resizes the entire data structure by calculating a scale factor based on ``new_width`` and ``new_height`` provided.
+
+In most cases, the scaling will be done directly, aligning to ``aligned_edge``; however, the function ``shrink2`` provides an alternative way of scaling the data structure in place and then moving it to align the ``aligned_edge``.
+
+``will_cross_boundary``
+"""""""""""""""""""""""
+
+Checks if the given dimension ``object_dim`` will cross the boundary spceified by ``boundary_name``. The check is done by calling the corresponding function ``will_cross_top_boundary``, ``will_cross_bottom_boundary``, ``will_cross_right_boundary`` or ``will_cross_left_boundary``.
+
+``add``
+"""""""
+
+Adds the given ``obj`` into the ``VGroup`` that holds all components of the data structure.
+
+Abstract Methods
+^^^^^^^^^^^^^^^^^^
+
+The following abstract methods are to be implemented by any data structure class, as different data structures may have different implementation.
+
+``create_init``
+"""""""""""""""
+
+Creates an initial visualisation of the data structure when it's instantiated.
+
+``shrink_if_cross_border``
+""""""""""""""""""""""""""
+
+Checks if the data structure is growing out of the boundary and resizes the data structure if necessary.
+
+``clean_up``
+"""""""""""""
+
+Cleans up the current data structure visualisation, which is helpful when a data structure is no longer used.
 
 Initial Structure
 -----------------
