@@ -1,6 +1,6 @@
 # valgolang.github.io
 
-This is the repository for the official documentation for VAlgoLang, made using [Sphinx](https://www.sphinx-doc.org/en/master/), which uses [reStructuredText](https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html) (.rst) as its markdown format.
+This is the repository for the official documentation for VAlgoLang, made using [Sphinx](https://www.sphinx-doc.org/en/master/), which uses [reStructuredText](https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html) (`.rst`) as its markdown format.
 
 If you would like to work on this repository locally, please do the following:
 
