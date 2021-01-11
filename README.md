@@ -4,7 +4,7 @@ This is the repository for the official documentation for VAlgoLang, made using 
 
 If you would like to work on this repository locally, please do the following:
 
-1. Install Sphinx using the [recommended commands](https://www.sphinx-doc.org/en/master/usage/installation.html) for your operating system. 
+1. Install Sphinx using the [recommended instructions](https://www.sphinx-doc.org/en/master/usage/installation.html) for your operating system. 
 2. Once you are in the root directory for `valgolang.github.io`, run
 
 ```
