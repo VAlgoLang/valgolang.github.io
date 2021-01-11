@@ -8,12 +8,10 @@ All of the utility functions can be found at `src/main/resources/python/util.py 
 
 Data Structure
 -----------------
-
 This is the abstract base class that defines the common fields and functions shared across all the data structures.
 
 Constructor
 ^^^^^^^^^^^
-
 The constructor of the most generic data structure takes the following arguments:
 
 * ``ul`` - the coordinates of the upper-left corner of the boundary for the data structure
@@ -28,7 +26,6 @@ The constructor of the most generic data structure takes the following arguments
 
 Inbuilt Functions
 ^^^^^^^^^^^^^^^^^^
-
 Any data structure has the following inbuilt functions implemented:
 
 ``shrink``
@@ -39,12 +36,10 @@ In most cases, the scaling will be done directly, aligning to ``aligned_edge``; 
 
 ``will_cross_boundary``
 """""""""""""""""""""""
-
 Checks if the given dimension ``object_dim`` will cross the boundary spceified by ``boundary_name``. The check is done by calling the corresponding function ``will_cross_top_boundary``, ``will_cross_bottom_boundary``, ``will_cross_right_boundary`` or ``will_cross_left_boundary``.
 
 ``add``
 """""""
-
 Adds the given ``obj`` into the ``VGroup`` that holds all components of the data structure.
 
 Abstract Methods
@@ -67,9 +62,37 @@ Checks if the data structure is growing out of the boundary and resizes the data
 
 Cleans up the current data structure visualisation, which is helpful when a data structure is no longer used.
 
-Initial Structure
------------------
 
+Stack
+-----
+
+Constructor
+^^^^^^^^^^^
+
+The constructor of Stack takes in the exact same argument as ``Data Structure``.
+
+Inbuilt Functions
+^^^^^^^^^^^^^^^^^^
+
+``push``
+""""""""
+Animates the push operation of a new item ``obj``. The animation consists of visualising the creation of the ``obj`` using ``creation_style`` (optional and defaults to ``"FadeIn"``), as well as moving ``obj`` to the top of the stack.
+
+``push_existing``
+""""""""""""""""""
+Animates a special form of push operation when the item to be pushed - ``obj`` - has been created already. The animation would use the existing ``obj`` and push it onto the stack.
+
+``pop``
+"""""""
+Animates the pop operation. The animation consists of moving the ``obj`` off the stack and (optionally) fade out ``obj`` if it's no longer being used.
+
+
+Building Blocks
+----------------
+The visualisation of data structures are built on top of the following building blocks. Feel free to reuse them if you wish to add your own data structure visualisation!
+
+Initial Structure
+^^^^^^^^^^^^^^^^^
 An initial structure represents the empty state for any data structure.
 
 It consists of a line, which can be horizontal or vertical, and a text label indicating the variable name under the line.
@@ -95,10 +118,9 @@ To change the default position of the label and the distance between the label a
         group = VGroup(label, line)
         return group
 
-Rectangle
------------------
-
-Rectangles take in:
+Rectangle Block
+^^^^^^^^^^^^^^^
+A Rectangle Block takes in:
     - A text which is placed inside the rectangle
     - A width and height to for the rectangle dimensions
     - A color for the rectangle outline
@@ -114,28 +136,9 @@ To add an additional element, create it, and group it with the VGroup.
         group       = VGroup(inside_text, rectangle)
         return group
 
-Text Box
---------------------
-
-Text Boxes take in:
-    - A text
-    - A color for the text
-
-If you want to change the way it appears on the screen, you will need to change that in your construct function.
-
-.. code :: python
-
-    def construct(self):
-        ...
-        text = Text_block("hello", BLUE).build()
-        self.play(Write(assignment1))
-
-Here, Write could be FadeIn, Flash, FadeToColor...
-
 Code Block
---------------------
-
-The Code Block is your inputed ManimDSL code which appears at the bottom left of your screen.
+^^^^^^^^^^
+The Code Block is your inputed VAlgoLang code which appears at the bottom left of your screen.
 If you do not want this code to appear, remove this part from the construct function.
 
 .. code :: python
