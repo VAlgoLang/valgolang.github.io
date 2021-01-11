@@ -8,10 +8,12 @@ All of the utility functions can be found at `src/main/resources/python/util.py 
 
 Data Structure
 -----------------
+
 This is the abstract base class that defines the common fields and functions shared across all the data structures.
 
 Constructor
 ^^^^^^^^^^^
+
 The constructor of the most generic data structure takes the following arguments:
 
 * ``ul`` - the coordinates of the upper-left corner of the boundary for the data structure
@@ -26,6 +28,7 @@ The constructor of the most generic data structure takes the following arguments
 
 Inbuilt Functions
 ^^^^^^^^^^^^^^^^^^
+
 Any data structure has the following inbuilt functions implemented:
 
 ``shrink``
@@ -87,70 +90,77 @@ Animates a special form of push operation when the item to be pushed - ``obj`` -
 Animates the pop operation. The animation consists of moving the ``obj`` off the stack and (optionally) fade out ``obj`` if it's no longer being used.
 
 
-Building Blocks
-----------------
-The visualisation of data structures are built on top of the following building blocks. Feel free to reuse them if you wish to add your own data structure visualisation!
+Array
+------
 
-Initial Structure
-^^^^^^^^^^^^^^^^^
-An initial structure represents the empty state for any data structure.
+Constructor
+^^^^^^^^^^^
 
-It consists of a line, which can be horizontal or vertical, and a text label indicating the variable name under the line.
+The constructor of Array takes in the following:
 
-An Initial Structure takes in:
-    - A text that is labelled under the line
-    - An angle of rotation (``0`` for horizontal line, ``TAU/4`` for vertical line)
-    - A length for the line *[Optional - default is* ``1.5`` *]*
-    - A color for the line and text label *[Optional - default is* ``WHITE`` *]*
+* ``values`` - list of values corresponding to each index of the array
+* ``title`` - the text label to be displayed with the array
+* ``boundaries`` - coordinates of boundary
+* ``padding`` - specifies whether to add a padding between the title and the shape visualisation
+* ``color`` and ``text_color`` - same as for all data structures
 
-The Line Mobject with length (given or default) rotated by the given angle, and a TextMobject with the label, are grouped under a VGroup.
-To add an additional element, create it, and group it with the VGroup.
-To change the default position of the label and the distance between the label and the line, change ``DOWN`` and ``SMALL_BUFF`` respectively.
+Inbuilt Functions
+^^^^^^^^^^^^^^^^^^
 
-.. code :: python
+``build``
+"""""""""
 
-    def build(self):
-        line = Line(color=self.color)
-        line.set_length(self.length)
-        line.set_angle(self.angle)
-        label = TextMobject(self.ident, color=self.color)
-        label.next_to(line, DOWN, SMALL_BUFF)
-        group = VGroup(label, line)
-        return group
+``swap_mobjects``
+""""""""""""""""""
 
-Rectangle Block
-^^^^^^^^^^^^^^^
-A Rectangle Block takes in:
-    - A text which is placed inside the rectangle
-    - A width and height to for the rectangle dimensions
-    - A color for the rectangle outline
+``clone_and_swap``
+""""""""""""""""""""
 
-A TextMobject with the text, and a Rectangle, are grouped under a VGroup.
-To add an additional element, create it, and group it with the VGroup.
+``update_element``
+"""""""""""""""""""
 
-.. code :: python
+``update_array_elements``
+""""""""""""""""""""""""""
 
-    def build(self):
-        inside_text = TextMobject(self.text)
-        rectangle   = Rectangle(height=self.height, width=self.width, color=self.color)
-        group       = VGroup(inside_text, rectangle)
-        return group
+``append``
+""""""""""
+
 
 Code Block
-^^^^^^^^^^
-The Code Block is your inputed VAlgoLang code which appears at the bottom left of your screen.
-If you do not want this code to appear, remove this part from the construct function.
+----------
 
-.. code :: python
+The Code Block is your inputed VAlgoLang code which appears at the bottom left of your screen (by default).
 
-    def construct(self):
-        # Remove all below lines
-        code_block = Code_block(self.code)
-        code_text = code_block.build()
-        self.place_at(code_text, -1, 0)
-        self.play(FadeIn(code_text))
+The positioning and whether the Code Block should be rendered are controlled by the Stlysheet. Please refer to the :doc:`Customising Your Animation <customisation>` section for a more detailed description of how the Stylesheet works.
 
-Tracking the line that is currently executing is done with an ArrowTip. If you wish to change that shape, color, or scale, change this line in your construct function.
+Constructor
+^^^^^^^^^^^
+
+The constructor of Code Block takes in the following:
+
+* ``code`` - list of strings representing each line of code
+* ``boundaries`` - coordinates of boundary
+* ``syntax_highlighting`` - flag indicating whether syntax highlighting of the code is turned on or not
+* ``syntax_highlighting_style`` - the style of syntax highlighting *[Optional - defaults to* ``"inkpot"`` *]*
+* ``text_color`` - color of the code *[Optional - defaults to* ``WHITE`` *]*
+* ``text_weight`` - weight of the code *[Optional - defaults to* ``NORMAL`` *]*
+* ``font`` - font of the code *[Optional - defaults to* ``"Times New Roman"`` *]*
+* ``tab_spacing`` - size of tabulation within the code *[Optional - defaults to* ``2`` *]*
+
+For the full list of possible syntax highlighting style, please refer to the :doc:`Customising Your Animation <customisation>` section.
+
+Inbuilt Functions
+^^^^^^^^^^^^^^^^^
+
+``build``
+""""""""""
+Arranges the code block to be correctly formatted and returns the resultant ``VGroup``.
+
+``get_line_at``
+""""""""""""""""
+Returns the ``Text`` of the line of code specified by ``line_number``.
+
+Tracking the line that is currently executing is done with an ArrowTip and the ``move_arrow_to_line`` function. If you wish to change that shape, color, or scale, change this line in your construct function.
 
 .. code :: python
 
@@ -158,4 +168,61 @@ Tracking the line that is currently executing is done with an ArrowTip. If you w
         ...
         pointer = ArrowTip(color=YELLOW).scale(0.7).flip(TOP)
 
-The ``move_arrow_to_line`` function is used to move the arrow to a specific line number. To change the moment at which you change the line number, you can move this line.
+
+Building Blocks
+----------------
+The visualisation of data structures are built on top of the following building blocks. Feel free to reuse them if you wish to add your own data structure visualisation!
+
+Initial Structure
+^^^^^^^^^^^^^^^^^
+An initial structure represents the empty state for a data structure, such as for a ``Stack``.
+
+It consists of a line, which can be horizontal or vertical, and a text label indicating the variable name under the line.
+
+Constructor
+"""""""""""
+
+The constructor of Initial Structure takes in the following:
+
+* ``text`` - text that is labelled under the line
+* ``angle`` - angle of rotation (``0`` for horizontal line, ``TAU/4`` for vertical line)
+* ``length`` - length for the line *[Optional - defaults to* ``1.5`` *]*
+* ``color`` - color of the line *[Optional - defaults to* ``WHITE`` *]*
+* ``text_color`` - color of the text label *[Optional - defaults to* ``WHITE`` *]*
+* ``text_weight`` - weight of the text label *[Optional - defaults to* ``NORMAL`` *]*
+* ``font`` - font of the text label *[Optional - defaults to* ``"Times New Roman"`` *]*
+
+To add an additional element, create it, and group it with the VGroup.
+To change the default position of the label and the distance between the label and the line, change ``DOWN`` and ``SMALL_BUFF`` respectively.
+
+Rectangle Block
+^^^^^^^^^^^^^^^
+
+A Rectangle Block represents a rectangle shape with text inside it.
+
+Constructor
+"""""""""""
+
+The constructor of Rectangle Block takes in the following:
+
+* ``text`` - text placed inside the rectangle
+* ``target`` - a target that the rectangle block would be scaled to match *[Optional - defaults to* ``None`` *]*
+* ``width`` - width of the rectangle *[Optional - defaults to* ``1.5`` *]*
+* ``width`` - height of the rectangle *[Optional - defaults to* ``0.75`` *]*
+* ``color`` - color of the rectangle outline *[Optional - defaults to* ``BLUE`` *]*
+* ``text_color`` - color of the text inside the rectangle *[Optional - defaults to* ``WHITE`` *]*
+* ``text_weight`` - weight of the text inside the rectangle *[Optional - defaults to* ``NORMAL`` *]*
+* ``font`` - font of the text inside the rectangle *[Optional - defaults to* ``"Times New Roman"`` *]*
+
+To add an additional element, create it, and group it with the VGroup.
+
+Inbuilt Functions
+"""""""""""""""""
+
+``replace_text``
+~~~~~~~~~~~~~~~~
+Animates replacement of the text lablel to ``new_text`` inside the rectangle.
+
+``clean_up``
+~~~~~~~~~~~~~
+Cleans up the current Rectangle Block visualisation.
