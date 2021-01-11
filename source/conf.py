@@ -18,7 +18,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'Manim DSL'
+project = 'VAlgoLang'
 copyright = '2020, Rini Banerjee, Clara Lebbos, Ilona Zhu, Mayank Sharma, Arjun Banerjee, Aditya Goel'
 author = 'Rini Banerjee, Clara Lebbos, Ilona Zhu, Mayank Sharma, Arjun Banerjee, Aditya Goel'
 

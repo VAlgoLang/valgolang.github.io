@@ -338,16 +338,41 @@ A subtitle annotation allows you to add descriptive text to your animation. Ther
     }
     ...
 
-Structuring your program
------------------------------
+Speed
+^^^^^^^^^^^^^^
 
-``Work in progress!``
+A speed annotation allows you to specify the speed at which you want a block of code to be executed, relative to the current speed of the animation (all animations have default speed 1.0). 
 
+To double the speed of a function call we might do something like this:
+
+.. code:: kotlin
+
+    ...
+    @speed(2) {
+    let x = slowFunction(y);
+    }
+    ...
+
+Speed annotations also have a second, optional argument. This is a boolean flag indicating whether or not to speed up by the specified amount.
+In the code below we speed up the inner loop by a factor of 3 after the first iteration is complete. This can be useful for when you want to conditionally speed through certain parts of your animation.
+
+
+.. code:: kotlin
+
+
+	...
+	for i in range(5) {	
+	  @speed(3, i >= 1) {
+	  for j in range(5) {
+	    ...
+	  }
+	  }
+	}
 
 Types
 ------------------------------
 
-There are only two "kinds" of types in this language at the moment. 
+There are two "kinds" of types in this language at the moment. 
 
 * Primitives, such as ``boolean``, ``char``, ``number`` and ``string``.
 * Data structures, such as ``Stack<number>``. Data structures may define restrictions on the type parameters they permit.
@@ -502,6 +527,36 @@ Swaps the elements at ``index1`` and ``index2`` in the array. The optional ``lon
 *Arguments:* None; *Return type:* ``number``
 
 Returns the fixed size of the array.
+
+List<T>
+###############
+
+This has the following inbuilt methods:
+
+
+``prepend``
+~~~~~~~~~~~~~~
+
+*Arguments:* ``item: T``; *Return type:* ``void``
+
+Adds an item to the front of the list.
+
+
+``append``
+~~~~~~~~~~~~~~
+
+*Arguments:* ``item: T``; *Return type:* ``void``
+
+Adds an item to the end of the list.
+
+
+``size``
+~~~~~~~~~
+
+*Arguments:* None; *Return type:* ``number``
+
+Returns the current size of the list.
+
 
 Tree<T>
 ###############

@@ -1,8 +1,8 @@
-Welcome to Manim DSL's documentation!
+Welcome to VAlgoLang's documentation!
 =====================================
 
 .. toctree::
-   :caption: Contents:
+   :caption: Table of Contents:
    :maxdepth: 4
    :glob:
 
@@ -10,10 +10,3 @@ Welcome to Manim DSL's documentation!
    tutorial
    usage
    *
-
-
-Table of contents
-==================
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
