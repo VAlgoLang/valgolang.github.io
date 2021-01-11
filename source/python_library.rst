@@ -4,7 +4,7 @@ Python Library
 The interpreter uses manim to create animations for your code and the following prebuilt Python libraries define the standard visualisation for different data structures.
 Although this is a fixed standard way of representing data structures, you are able to change the style attributes through the stylesheet or even modify our functions to represent data structures the way you want!
 
-All of the utility functions can be found at `src/main/resources/python/util.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/src/main/resources/python/util.py>`_, and all of the shapes/data structures are in their own class (i.e. Rectangle_block is in `src/main/resources/python/rectangle.py <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/src/main/resources/python/rectangle.py>`_)
+All of the utility functions can be found at `src/main/resources/python/util.py <https://github.com/VAlgoLang/VAlgoLang/tree/master/src/main/resources/python/util.py>`_, and all of the shapes/data structures are in their own class (i.e. RectangleBlock is in `src/main/resources/python/rectangle.py <https://github.com/VAlgoLang/VAlgoLang/tree/master/src/main/resources/python/rectangle.py>`_)
 
 Data Structure
 -----------------

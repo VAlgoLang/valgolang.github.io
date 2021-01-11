@@ -1,13 +1,13 @@
 Language Tour
 =====================================
 
-ManimDSL is a statically typed language designed to leverage the Manim visualisation library to enable educators to succinctly express and visualise algorithms. The core language is small by design.
+VAlgoLang is a statically typed language designed to leverage the Manim visualisation library to enable educators to succinctly express and visualise algorithms. The core language is small by design.
 
 This tour will take you through some of the basic constructs of the language, many of which will be familiar to those with any programming background.
 It is assumed you have at least very basic knowledge of programming in any other language (such as Python, JavaScript or Java). 
 
 
-Note that this is an open source project and we welcome suggestions and improvements! If you would like to make a contribution feel free to submit a pull request `here <https://github.com/ManimDSL/ManimDSLCompiler/tree/master/>`_.
+Note that this is an open source project and we welcome suggestions and improvements! If you would like to make a contribution feel free to submit a pull request `here <https://github.com/VAlgoLang/VAlgoLang/tree/master/>`_.
 
 
 The Basics
@@ -199,7 +199,7 @@ will then execute the section of code corresponding to the second ``else-if`` an
 Loops
 ###############
 
-Loops in ManimDSL work much the same as they do in other programming languages. ManimDSL has two types of loops: for loops and while loops. They are best demonstrated using the following examples.
+Loops in VAlgoLang work much the same as they do in other programming languages. VAlgoLang has two types of loops: for loops and while loops. They are best demonstrated using the following examples.
 
 For loops
 ~~~~~~~~~
@@ -220,7 +220,7 @@ For loops
         }
     }
 
-The ``range`` keyword specifies the index value sequence that the loop iterates over. Similar to Python, ``range`` in ManimDSL takes at most 3 arguments:
+The ``range`` keyword specifies the index value sequence that the loop iterates over. Similar to Python, ``range`` in VAlgoLang takes at most 3 arguments:
 
 * ``start`` - (inclusive) start index value *[Optional - default is* ``0`` *]*
 * ``end`` - (exclusive) end index value
