@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#stylesheet">Stylesheet</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#hide-code">Hide Code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hide-variables">Hide Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hide-data-structures">Hide Data Structures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-tracking">Code Tracking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-syntax-highlighting">Code Syntax Highlighting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-syntax-highlighting-style">Code Syntax Highlighting Style</a></li>
@@ -237,6 +238,22 @@ You can then pass this stylesheet into the compiler using the <code class="docut
 <p>The values accepted for this are <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>, with a default value of <code class="docutils literal notranslate"><span class="pre">false</span></code>. This default means that variable state will be rendered.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">hideVariables</span></code> is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the variable state will not appear on the left hand side and the code block stretches to takes up the entire left hand side of the frame, with the animation on the right hand side.</p>
 <p>if <code class="docutils literal notranslate"><span class="pre">hideCode</span></code> is also set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the code block will not appear either and this will have the same effect as just setting <code class="docutils literal notranslate"><span class="pre">hideCode</span></code> to true.</p>
+</div>
+<div class="section" id="hide-data-structures">
+<h3>Hide Data Structures<a class="headerlink" href="#hide-data-structures" title="Permalink to this headline">¶</a></h3>
+<p>To hide any data structure by using the stylesheet, set its height and width to 0 in their stylesheet property.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;positions&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;datastructure_name&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">-2</span><span class="p">,</span>
+      <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">-2</span><span class="p">,</span>
+      <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="code-tracking">
 <h3>Code Tracking<a class="headerlink" href="#code-tracking" title="Permalink to this headline">¶</a></h3>
