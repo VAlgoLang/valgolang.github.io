@@ -52,18 +52,15 @@ The following abstract methods are to be implemented by any data structure class
 
 ``create_init``
 """""""""""""""
-
 Creates an initial visualisation of the data structure when it's instantiated.
 
 ``shrink_if_cross_border``
 """"""""""""""""""""""""""
-
 Checks if the data structure is growing out of the boundary and resizes the data structure if necessary.
 
 ``clean_up``
 """""""""""""
-
-Cleans up the current data structure visualisation, which is helpful when a data structure is no longer used.
+Cleans up the current data structure visualisation, which is helpful when a data structure is no longer used. The most common way of doing this is to fade out the data structure visualisation using ``FadeOut``.
 
 
 Stack
@@ -72,7 +69,7 @@ Stack
 Constructor
 ^^^^^^^^^^^
 
-The constructor of Stack takes in the exact same argument as ``Data Structure``.
+The constructor of Stack takes in the exact same argument as ``Data Structure`` with the same default values.
 
 Inbuilt Functions
 ^^^^^^^^^^^^^^^^^^
@@ -101,29 +98,61 @@ The constructor of Array takes in the following:
 * ``values`` - list of values corresponding to each index of the array
 * ``title`` - the text label to be displayed with the array
 * ``boundaries`` - coordinates of boundary
-* ``padding`` - specifies whether to add a padding between the title and the shape visualisation
-* ``color`` and ``text_color`` - same as for all data structures
+* ``padding`` - specifies whether to add a padding between the title and the shape visualisation *[Optional - defaults to* ``True`` *]*
+* ``color`` and ``text_color`` - same as for all data structures *[Optional -* ``color`` *defaults to* ``BLUE`` *and* ``text_color`` *defaults to* ``WHITE`` *]*
 
 Inbuilt Functions
 ^^^^^^^^^^^^^^^^^^
 
 ``build``
 """""""""
+Arranges each element of the array to be next to each other and adds in the title on the left of the array. The final ``Array`` object is returned.
 
 ``swap_mobjects``
 """"""""""""""""""
+Animates the normal "quick" ``swap`` method, which swaps 2 elements of an array directly.
 
 ``clone_and_swap``
 """"""""""""""""""""
+Animates the special form of ``swap`` when ``longSwap`` is set to ``true``. This would create an visualisation of the temp variable (a clone) and its usage, which is often seen when swapping array elements programmatically.
 
 ``update_element``
 """""""""""""""""""
+Animates updating the element at index ``idx`` with value ``v``. The optional argument ``color`` represents the new color of the text that corresponds to the specific element (defaults to ``None``, which is the original ``text_color``).
 
 ``update_array_elements``
 """"""""""""""""""""""""""
+Helper function for ``append`` that updates the array elements stored so far and recomputes the new dimension for the array (so that it fits within the boundary).
 
 ``append``
 """"""""""
+Since the ``List`` data structure has been added using the existing ``Array`` data structure, this function animates the ``append`` method supported by ``List``. This would visualise adding a new element with value ``v`` at the end of a resizable ``List``.
+
+Array 2D
+--------
+
+Constructor
+^^^^^^^^^^^
+
+The constructor of 2D Array takes in the many of the same arguments as normal ``Array`` does, with the following differences:
+
+* ``values`` - list of list of values corresponding to each element of the array
+* no ``padding`` argument required
+
+Inbuilt Functions
+^^^^^^^^^^^^^^^^^^
+
+``build``
+"""""""""
+Animates the creation of a 2D Array with the optional ``creation_style`` (defaults to ``FadeIn``).
+
+``replace_row``
+""""""""""""""""""
+Animates updating the row specified by ``row_index`` with the given values ``new_values``, which normally corresponds to a row assignment of a 2D Array.
+
+``swap_mobjects``
+""""""""""""""""""""
+Animates swapping 2 elements of the 2D Array specified by ``(i1, j1)`` and ``(i2, j2)``. The visualisation would first dim the rest of the 2D Array to indicate which elements are being swapped, before fading the rest of the array back to the original ``text_color``.
 
 
 Code Block
@@ -139,7 +168,7 @@ Constructor
 The constructor of Code Block takes in the following:
 
 * ``code`` - list of strings representing each line of code
-* ``boundaries`` - coordinates of boundary
+* ``boundaries`` - coordinates of boundary that the code block has to stay within
 * ``syntax_highlighting`` - flag indicating whether syntax highlighting of the code is turned on or not
 * ``syntax_highlighting_style`` - the style of syntax highlighting *[Optional - defaults to* ``"inkpot"`` *]*
 * ``text_color`` - color of the code *[Optional - defaults to* ``WHITE`` *]*
@@ -167,6 +196,74 @@ Tracking the line that is currently executing is done with an ArrowTip and the `
     def construct(self):
         ...
         pointer = ArrowTip(color=YELLOW).scale(0.7).flip(TOP)
+
+
+Variable Block
+---------------
+
+The Variable Block displays the list of most recently updated variables and their values at the top left of your screen (by default).
+
+The positioning and whether the Varaible Block should be rendered are controlled by the Stlysheet. Please refer to the :doc:`Customising Your Animation <customisation>` section for a more detailed description of how the Stylesheet works.
+
+Constructor
+^^^^^^^^^^^
+
+The constructor of Variable Block takes in the following:
+
+* ``variables`` - list of strings representing the variables and their values
+* ``boundaries`` - coordinates of boundary that the variable block has to stay within
+* ``text_color`` - color of the text *[Optional - defaults to* ``WHITE`` *]*
+* ``text_weight`` - weight of the text *[Optional - defaults to* ``NORMAL`` *]*
+* ``font`` - font of the text *[Optional - defaults to* ``"Times New Roman"`` *]*
+
+Inbuilt Functions
+^^^^^^^^^^^^^^^^^
+
+``build``
+""""""""""
+Arranges the variable block to be correctly formatted and returns the resultant ``VGroup``.
+
+``update_variable``
+""""""""""""""""""""
+Animates updating the variable strings with the given argument ``variables``.
+
+
+Subtitle Block
+--------------
+
+The Subtitle Block displays the list of most recently updated variables and their values at the top left of your screen (by default).
+
+The positioning and whether the Varaible Block should be rendered are controlled by the Stlysheet. Please refer to the :doc:`Customising Your Animation <customisation>` section for a more detailed description of how the Stylesheet works.
+
+Constructor
+^^^^^^^^^^^
+
+The constructor of Variable Block takes in the following:
+
+* ``end_time`` - time that the subtitle should disappear
+* ``boundaries`` - coordinates of boundary that the subtitle block has to stay within
+* ``text_color`` - color of the subtitle text *[Optional - defaults to* ``WHITE`` *]*
+* ``text_weight`` - weight of the subtitle text *[Optional - defaults to* ``NORMAL`` *]*
+* ``font`` - font of the subtitle text *[Optional - defaults to* ``"Times New Roman"`` *]*
+
+Inbuilt Functions
+^^^^^^^^^^^^^^^^^
+
+``change_text``
+""""""""""""""""
+Changes the subtitle text to ``text``.
+
+``display``
+"""""""""""
+Displays the given ``text`` as subtitle until the specified ``end_time`` has passed.
+
+``clear``
+""""""""""
+Clears the current subtitle.
+
+``action``
+""""""""""
+Same as ``clear``.
 
 
 Building Blocks
@@ -221,7 +318,7 @@ Inbuilt Functions
 
 ``replace_text``
 ~~~~~~~~~~~~~~~~
-Animates replacement of the text lablel to ``new_text`` inside the rectangle.
+Animates replacement of the text lablel to ``new_text`` inside the rectangle. The optional argument ``color`` represents to the new color of the text (defaults to the same as the original ``text_color``).
 
 ``clean_up``
 ~~~~~~~~~~~~~
