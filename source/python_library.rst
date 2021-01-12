@@ -323,3 +323,22 @@ Animates replacement of the text lablel to ``new_text`` inside the rectangle. Th
 ``clean_up``
 ~~~~~~~~~~~~~
 Cleans up the current Rectangle Block visualisation.
+
+
+Utility Functions
+-----------------
+
+The following is a list of all the utility functions implemented so far, which help to create repeated animation. Feel free to use them if you wish to generate your own animation or contribute!
+
+* ``place_at(self, group, x, y)`` - places ``group`` at the coordinate specified by ``(x, y, 0)``.
+* ``move_relative_to_edge(self, group, x, y)`` - moves ``group`` relative to the edge specified by ``(x, y, 0)``.
+* ``move_relative_to_obj(self, group, target, x, y)`` - moves ``group`` relative to the object ``target`` specified by ``(x, y, 0)``.
+* ``place_relative_to_obj(self, group, target, x, y)`` - places ``group`` relative to the object ``target`` with the offset specified by ``(x, y, 0)``.
+* ``fade_out_if_needed(self, mobject)`` - fades out ``mobject`` if it is already on the Scene.
+* ``play_animation(self, *args, run_time=1.0)`` - plays the animation(s) passed in as ``*args`` with optional ``run_time`` (defaults to ``1.0``). This is particularly useful as it accounts for all the ``time_object`` that have a duration of time they should appear for, such as ``Subtitle Block``.
+* ``move_arrow_to_line(self, line_number, pointer, code_block, code_text)`` - moves the ``pointer`` next to the line of code specified by ``line_number``. Scrolling is also handled here if needed by calling the corresponding ``scroll_down`` and ``scroll_up`` functions. 
+
+The following utility functions are inspired from https://www.reddit.com/r/manim/comments/bubyj2/scrolling_mobjects/
+
+* ``scroll_down(self, group, scrolls)`` - scrolls the ``group`` (in this case ``code_text``) down by ``scrolls`` number of times.
+* ``scroll_up(self, group, scrolls)`` - scrolls the ``group`` (in this case ``code_text``) up by ``scrolls`` number of times.
