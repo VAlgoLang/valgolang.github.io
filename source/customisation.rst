@@ -74,6 +74,23 @@ If ``hideVariables`` is set to ``true``, the variable state will not appear on t
 
 if ``hideCode`` is also set to ``true``, the code block will not appear either and this will have the same effect as just setting ``hideCode`` to true.
 
+Hide Data Structures
+^^^^^^^^^^^^^^^^^^^^
+
+To hide any data structure by using the stylesheet, set its height and width to 0 in their stylesheet property.
+
+.. code:: json
+
+    {
+      "positions": {
+        "datastructure_name": {
+          "x": -2,
+          "y": -2,
+          "width": 0,
+          "height": 0
+        },
+      }
+    }
 
 Code Tracking
 ^^^^^^^^^^^^^^
