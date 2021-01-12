@@ -31,18 +31,18 @@ Inbuilt Functions
 
 Any data structure has the following inbuilt functions implemented:
 
-``shrink``
-""""""""""
+``shrink(self, new_width, new_height)``
+"""""""""""""""""""""""""""""""""""""""
 Resizes the entire data structure by calculating a scale factor based on ``new_width`` and ``new_height`` provided.
 
 In most cases, the scaling will be done directly, aligning to ``aligned_edge``; however, the function ``shrink2`` provides an alternative way of scaling the data structure in place and then moving it to align the ``aligned_edge``.
 
-``will_cross_boundary``
-"""""""""""""""""""""""
+``will_cross_boundary(self, object_dim, boundary_name)``
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Checks if the given dimension ``object_dim`` will cross the boundary spceified by ``boundary_name``. The check is done by calling the corresponding function ``will_cross_top_boundary``, ``will_cross_bottom_boundary``, ``will_cross_right_boundary`` or ``will_cross_left_boundary``.
 
-``add``
-"""""""
+``add(self, obj)``
+""""""""""""""""""
 Adds the given ``obj`` into the ``VGroup`` that holds all components of the data structure.
 
 Abstract Methods
@@ -50,16 +50,16 @@ Abstract Methods
 
 The following abstract methods are to be implemented by any data structure class, as different data structures may have different implementation.
 
-``create_init``
-"""""""""""""""
-Creates an initial visualisation of the data structure when it's instantiated.
+``create_init(self, ident)``
+"""""""""""""""""""""""""""""
+Creates an initial visualisation of the data structure with the label ``ident`` when it's instantiated.
 
-``shrink_if_cross_border``
-""""""""""""""""""""""""""
-Checks if the data structure is growing out of the boundary and resizes the data structure if necessary.
+``shrink_if_cross_boundary(self, obj)``
+"""""""""""""""""""""""""""""""""""""""
+Checks if the data structure is growing out of the boundary when ``obj`` is added and resizes the data structure if necessary.
 
-``clean_up``
-"""""""""""""
+``clean_up(self)``
+""""""""""""""""""
 Cleans up the current data structure visualisation, which is helpful when a data structure is no longer used. The most common way of doing this is to fade out the data structure visualisation using ``FadeOut``.
 
 
@@ -74,16 +74,16 @@ The constructor of Stack takes in the exact same argument as ``Data Structure`` 
 Inbuilt Functions
 ^^^^^^^^^^^^^^^^^^
 
-``push``
-""""""""
+``push(self, obj, creation_style=None)``
+"""""""""""""""""""""""""""""""""""""""""
 Animates the push operation of a new item ``obj``. The animation consists of visualising the creation of the ``obj`` using ``creation_style`` (optional and defaults to ``"FadeIn"``), as well as moving ``obj`` to the top of the stack.
 
-``push_existing``
-""""""""""""""""""
+``push_existing(self, obj)``
+"""""""""""""""""""""""""""""
 Animates a special form of push operation when the item to be pushed - ``obj`` - has been created already. The animation would use the existing ``obj`` and push it onto the stack.
 
-``pop``
-"""""""
+``pop(self, obj, fade_out=True)``
+"""""""""""""""""""""""""""""""""
 Animates the pop operation. The animation consists of moving the ``obj`` off the stack and (optionally) fade out ``obj`` if it's no longer being used.
 
 
@@ -104,28 +104,30 @@ The constructor of Array takes in the following:
 Inbuilt Functions
 ^^^^^^^^^^^^^^^^^^
 
-``build``
-"""""""""
-Arranges each element of the array to be next to each other and adds in the title on the left of the array. The final ``Array`` object is returned.
+``build(self, coord=None)``
+""""""""""""""""""""""""""""
+Arranges each element of the array to be next to each other and adds in the title on the left of the array. The final ``Array`` object is then returned.
 
-``swap_mobjects``
-""""""""""""""""""
-Animates the normal "quick" ``swap`` method, which swaps 2 elements of an array directly.
+The optional argument ``coord`` specifies the left most coordinate of the array (defaults to where the title is), which is particularly useful when the array elements are updated.
 
-``clone_and_swap``
-""""""""""""""""""""
+``swap_mobjects(self, i1, i2)``
+"""""""""""""""""""""""""""""""
+Animates the normal "quick" ``swap`` method, which swaps the 2 elements at ``i1`` and ``i2`` directly.
+
+``clone_and_swap(self, i1, i2)``
+""""""""""""""""""""""""""""""""
 Animates the special form of ``swap`` when ``longSwap`` is set to ``true``. This would create an visualisation of the temp variable (a clone) and its usage, which is often seen when swapping array elements programmatically.
 
-``update_element``
-"""""""""""""""""""
+``update_element(self, idx, v, color=None)``
+""""""""""""""""""""""""""""""""""""""""""""
 Animates updating the element at index ``idx`` with value ``v``. The optional argument ``color`` represents the new color of the text that corresponds to the specific element (defaults to ``None``, which is the original ``text_color``).
 
-``update_array_elements``
-""""""""""""""""""""""""""
+``update_array_elements(self)``
+""""""""""""""""""""""""""""""""
 Helper function for ``append`` that updates the array elements stored so far and recomputes the new dimension for the array (so that it fits within the boundary).
 
-``append``
-""""""""""
+``append(self, v)``
+"""""""""""""""""""
 Since the ``List`` data structure has been added using the existing ``Array`` data structure, this function animates the ``append`` method supported by ``List``. This would visualise adding a new element with value ``v`` at the end of a resizable ``List``.
 
 Array 2D
@@ -142,16 +144,16 @@ The constructor of 2D Array takes in the many of the same arguments as normal ``
 Inbuilt Functions
 ^^^^^^^^^^^^^^^^^^
 
-``build``
-"""""""""
+``build(self, creation_style=None)``
+""""""""""""""""""""""""""""""""""""
 Animates the creation of a 2D Array with the optional ``creation_style`` (defaults to ``FadeIn``).
 
-``replace_row``
-""""""""""""""""""
+``replace_row(self, row_index, new_values)``
+""""""""""""""""""""""""""""""""""""""""""""
 Animates updating the row specified by ``row_index`` with the given values ``new_values``, which normally corresponds to a row assignment of a 2D Array.
 
-``swap_mobjects``
-""""""""""""""""""""
+``swap_mobjects(self, i1, j1, i2, j2)``
+"""""""""""""""""""""""""""""""""""""""
 Animates swapping 2 elements of the 2D Array specified by ``(i1, j1)`` and ``(i2, j2)``. The visualisation would first dim the rest of the 2D Array to indicate which elements are being swapped, before fading the rest of the array back to the original ``text_color``.
 
 
@@ -181,12 +183,12 @@ For the full list of possible syntax highlighting style, please refer to the :do
 Inbuilt Functions
 ^^^^^^^^^^^^^^^^^
 
-``build``
-""""""""""
+``build(self)``
+""""""""""""""""
 Arranges the code block to be correctly formatted and returns the resultant ``VGroup``.
 
-``get_line_at``
-""""""""""""""""
+``get_line_at(self, line_number)``
+""""""""""""""""""""""""""""""""""
 Returns the ``Text`` of the line of code specified by ``line_number``.
 
 Tracking the line that is currently executing is done with an ArrowTip and the ``move_arrow_to_line`` function. If you wish to change that shape, color, or scale, change this line in your construct function.
@@ -219,12 +221,12 @@ The constructor of Variable Block takes in the following:
 Inbuilt Functions
 ^^^^^^^^^^^^^^^^^
 
-``build``
-""""""""""
+``build(self)``
+""""""""""""""""
 Arranges the variable block to be correctly formatted and returns the resultant ``VGroup``.
 
-``update_variable``
-""""""""""""""""""""
+``update_variable(self, variables)``
+"""""""""""""""""""""""""""""""""""""
 Animates updating the variable strings with the given argument ``variables``.
 
 
@@ -249,20 +251,20 @@ The constructor of Variable Block takes in the following:
 Inbuilt Functions
 ^^^^^^^^^^^^^^^^^
 
-``change_text``
-""""""""""""""""
+``change_text(self, text)``
+"""""""""""""""""""""""""""
 Changes the subtitle text to ``text``.
 
-``display``
-"""""""""""
+``display(self, text, end_time)``
+"""""""""""""""""""""""""""""""""
 Displays the given ``text`` as subtitle until the specified ``end_time`` has passed.
 
-``clear``
-""""""""""
+``clear(self)``
+""""""""""""""""
 Clears the current subtitle.
 
-``action``
-""""""""""
+``action(self)``
+""""""""""""""""
 Same as ``clear``.
 
 
@@ -316,12 +318,12 @@ To add an additional element, create it, and group it with the VGroup.
 Inbuilt Functions
 """""""""""""""""
 
-``replace_text``
-~~~~~~~~~~~~~~~~
+``replace_text(self, new_text, color=None)``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Animates replacement of the text lablel to ``new_text`` inside the rectangle. The optional argument ``color`` represents to the new color of the text (defaults to the same as the original ``text_color``).
 
-``clean_up``
-~~~~~~~~~~~~~
+``clean_up(self)``
+~~~~~~~~~~~~~~~~~~
 Cleans up the current Rectangle Block visualisation.
 
 
