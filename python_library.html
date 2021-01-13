@@ -118,7 +118,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#array">Array</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#array-1d">Array (1D)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id3">Constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">Inbuilt Functions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#build-self-coord-none"><code class="docutils literal notranslate"><span class="pre">build(self,</span> <span class="pre">coord=None)</span></code></a></li>
@@ -295,8 +295,8 @@
   <div class="section" id="python-library">
 <h1>Python Library<a class="headerlink" href="#python-library" title="Permalink to this headline">¶</a></h1>
 <p>The interpreter uses manim to create animations for your code and the following prebuilt Python libraries define the standard visualisation for different data structures.
-Although this is a fixed standard way of representing data structures, you are able to change the style attributes through the stylesheet or even modify our functions to represent data structures the way you want!</p>
-<p>All of the utility functions can be found at <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/tree/master/src/main/resources/python/util.py">src/main/resources/python/util.py</a>, and all of the shapes/data structures are in their own class (i.e. RectangleBlock is in <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/tree/master/src/main/resources/python/rectangle.py">src/main/resources/python/rectangle.py</a>)</p>
+Although this is a fixed standard way of representing data structures, you are able to change the style attributes through the stylesheet or even modify our functions to represent data structures the way you want! For more information on the stylesheet, check out the <a class="reference internal" href="customisation.html"><span class="doc">Customising Your Animation</span></a> section.</p>
+<p>All of the utility functions can be found at <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/tree/master/src/main/resources/python/util.py">src/main/resources/python/util.py</a>, and all of the shapes and data structures are in their own class (i.e. RectangleBlock is in <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/tree/master/src/main/resources/python/rectangle.py">src/main/resources/python/rectangle.py</a>)</p>
 <div class="section" id="data-structure">
 <h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h2>
 <p>This is the abstract base class that defines the common fields and functions shared across all the data structures.</p>
@@ -334,7 +334,7 @@ Although this is a fixed standard way of representing data structures, you are a
 </div>
 <div class="section" id="abstract-methods">
 <h3>Abstract Methods<a class="headerlink" href="#abstract-methods" title="Permalink to this headline">¶</a></h3>
-<p>The following abstract methods are to be implemented by any data structure class, as different data structures may have different implementation.</p>
+<p>The following abstract methods are to be implemented by any data structure class, as different data structures may have different implementations.</p>
 <div class="section" id="create-init-self-ident">
 <h4><code class="docutils literal notranslate"><span class="pre">create_init(self,</span> <span class="pre">ident)</span></code><a class="headerlink" href="#create-init-self-ident" title="Permalink to this headline">¶</a></h4>
 <p>Creates an initial visualisation of the data structure with the label <code class="docutils literal notranslate"><span class="pre">ident</span></code> when it’s instantiated.</p>
@@ -371,8 +371,8 @@ Although this is a fixed standard way of representing data structures, you are a
 </div>
 </div>
 </div>
-<div class="section" id="array">
-<h2>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="array-1d">
+<h2>Array (1D)<a class="headerlink" href="#array-1d" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
 <h3>Constructor<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>The constructor of Array takes in the following:</p>
@@ -578,7 +578,7 @@ Although this is a fixed standard way of representing data structures, you are a
 <div class="section" id="code-block">
 <h2>Code Block<a class="headerlink" href="#code-block" title="Permalink to this headline">¶</a></h2>
 <p>The Code Block is your inputted VAlgoLang code which appears at the bottom left of your screen (by default).</p>
-<p>The positioning and whether the Code Block should be rendered are controlled by the Stylesheet. Please refer to the <a class="reference internal" href="customisation.html"><span class="doc">Customising Your Animation</span></a> section for a more detailed description of how the Stylesheet works.</p>
+<p>The positioning and whether the Code Block should be rendered are controlled by the stylesheet. Please refer to the <a class="reference internal" href="customisation.html"><span class="doc">Customising Your Animation</span></a> section for a more detailed description of how the stylesheet works.</p>
 <div class="section" id="id11">
 <h3>Constructor<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>The constructor of Code Block takes in the following:</p>
@@ -615,7 +615,7 @@ Although this is a fixed standard way of representing data structures, you are a
 <div class="section" id="variable-block">
 <h2>Variable Block<a class="headerlink" href="#variable-block" title="Permalink to this headline">¶</a></h2>
 <p>The Variable Block displays the list of most recently updated variables and their values at the top left of your screen (by default).</p>
-<p>The positioning and whether the Variable Block should be rendered are controlled by the Stylesheet. Please refer to the <a class="reference internal" href="customisation.html"><span class="doc">Customising Your Animation</span></a> section for a more detailed description of how the Stylesheet works.</p>
+<p>The positioning and whether the Variable Block should be rendered are controlled by the stylesheet. Please refer to the <a class="reference internal" href="customisation.html"><span class="doc">Customising Your Animation</span></a> section for a more detailed description of how the stylesheet works.</p>
 <div class="section" id="id13">
 <h3>Constructor<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>The constructor of Variable Block takes in the following:</p>
@@ -642,7 +642,7 @@ Although this is a fixed standard way of representing data structures, you are a
 <div class="section" id="subtitle-block">
 <h2>Subtitle Block<a class="headerlink" href="#subtitle-block" title="Permalink to this headline">¶</a></h2>
 <p>The Subtitle Block displays the list of most recently updated variables and their values at the top left of your screen (by default).</p>
-<p>The Subtitle Block holds subtitles generated by the subtitle annotations and the positioning of the Subtitle Block is controlled by the Stlysheet. Please refer to the <a class="reference internal" href="tutorial.html#subtitlesannotation"><span class="std std-ref">Subtitles</span></a> and <a class="reference internal" href="customisation.html"><span class="doc">Customising Your Animation</span></a> sections for a more detailed description of how the subtitle annotations and Stylesheet works.</p>
+<p>The Subtitle Block holds subtitles generated by the subtitle annotations and the positioning of the Subtitle Block is controlled by the Stlysheet. Please refer to the <a class="reference internal" href="tutorial.html#subtitlesannotation"><span class="std std-ref">Subtitles</span></a> and <a class="reference internal" href="customisation.html"><span class="doc">Customising Your Animation</span></a> sections for a more detailed description of how the subtitle annotations and stylesheet works.</p>
 <div class="section" id="id16">
 <h3>Constructor<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p>The constructor of Variable Block takes in the following:</p>
@@ -740,7 +740,7 @@ To change the default position of the label and the distance between the label a
 <li><p><code class="docutils literal notranslate"><span class="pre">play_animation(self,</span> <span class="pre">*args,</span> <span class="pre">run_time=1.0)</span></code> - plays the animation(s) passed in as <code class="docutils literal notranslate"><span class="pre">*args</span></code> with optional <code class="docutils literal notranslate"><span class="pre">run_time</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>). This is particularly useful as it accounts for all the <code class="docutils literal notranslate"><span class="pre">time_object</span></code> that have a duration of time they should appear for, such as <code class="docutils literal notranslate"><span class="pre">Subtitle</span> <span class="pre">Block</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">move_arrow_to_line(self,</span> <span class="pre">line_number,</span> <span class="pre">pointer,</span> <span class="pre">code_block,</span> <span class="pre">code_text)</span></code> - moves the <code class="docutils literal notranslate"><span class="pre">pointer</span></code> next to the line of code specified by <code class="docutils literal notranslate"><span class="pre">line_number</span></code>. Scrolling is also handled here if needed by calling the corresponding <code class="docutils literal notranslate"><span class="pre">scroll_down</span></code> and <code class="docutils literal notranslate"><span class="pre">scroll_up</span></code> functions.</p></li>
 </ul>
-<p>The following utility functions are inspired from <a class="reference external" href="https://www.reddit.com/r/manim/comments/bubyj2/scrolling_mobjects/">https://www.reddit.com/r/manim/comments/bubyj2/scrolling_mobjects/</a></p>
+<p>The following utility functions are inspired from the <a class="reference external" href="https://www.reddit.com/r/manim/comments/bubyj2/scrolling_mobjects/">Manim Reddit community</a>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">scroll_down(self,</span> <span class="pre">group,</span> <span class="pre">scrolls)</span></code> - scrolls the <code class="docutils literal notranslate"><span class="pre">group</span></code> (<code class="docutils literal notranslate"><span class="pre">code_text</span></code> in the interpreter) down by <code class="docutils literal notranslate"><span class="pre">scrolls</span></code> number of times.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scroll_up(self,</span> <span class="pre">group,</span> <span class="pre">scrolls)</span></code> - scrolls the <code class="docutils literal notranslate"><span class="pre">group</span></code> (<code class="docutils literal notranslate"><span class="pre">code_text</span></code> in the interpreter) up by <code class="docutils literal notranslate"><span class="pre">scrolls</span></code> number of times.</p></li>
