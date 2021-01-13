@@ -275,7 +275,7 @@ Structuring Your Program
 
 VAlgoLang has no specific requirement for the structure of the main body of the program. Like many of the other programming languages, watch out for syntax and semantic errors such as accessing an undeclared identifier, incompatible type assignments and so on.
 
-The only thing to note is that if you wish to compile a program with functions, thos functions need to be declared at the top of the file. The main body of the code (statements) should then follow these function definitions.
+The only thing to note is that if you wish to compile a program with functions, those functions need to be declared at the top of the file. The main body of the code (statements) should then follow these function definitions.
 
 Controlling Your Animation
 -----------------------------
@@ -314,8 +314,10 @@ On a statement level you can choose during code tracking to animate stepping int
     }
     ...
 
+.. _subtitlesannotation:
+
 Subtitles
-^^^^^^^^^^^^^^
+^^^^^^^^^^
 
 A subtitle annotation allows you to add descriptive text to your animation. There are two types of subtitles:
 

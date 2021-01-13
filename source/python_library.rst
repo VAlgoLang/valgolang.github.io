@@ -14,17 +14,17 @@ This is the abstract base class that defines the common fields and functions sha
 Constructor
 ^^^^^^^^^^^
 
-The constructor of the most generic data structure takes the following arguments:
+The constructor of the most generic data structure takes in the following:
 
 * ``ul`` - the coordinates of the upper-left corner of the boundary for the data structure
 * ``ur`` - the coordinates of the upper-right corner of the boundary for the data structure
 * ``ll`` - the coordinates of the lower-left corner of the boundary for the data structure
 * ``lr`` - the coordinates of the lower-right corner of the boundary for the data structure
-* ``aligned_edge`` - the edge towards which the data structure will be scaled if it grows out of the boundary (only applies if data structure is dynamic)
+* ``aligned_edge`` - the edge towards which the data structure will be scaled if it grows out of the boundary (only applies if the data structure is dynamic in size)
 * ``color`` - the color of the shapes visualised as part of the data structure *[Optional - defaults to* ``WHITE`` *]*
-* ``text_color`` - the color of the text visualised as part of the data structure *[Optional - defaults to* ``WHITE`` *]*
-* ``text_weight`` - the weight of the text visualised as part of the data structure *[Optional - defaults to* ``NORMAL`` *]*
-* ``font`` - the font of the text visualised as part of the data structure *[Optional - defaults to* ``"Times New Roman"`` *]*
+* ``text_color`` - the color of the text label visualised as part of the data structure *[Optional - defaults to* ``WHITE`` *]*
+* ``text_weight`` - the weight of the text label visualised as part of the data structure *[Optional - defaults to* ``NORMAL`` *]*
+* ``font`` - the font of the text label visualised as part of the data structure *[Optional - defaults to* ``"Times New Roman"`` *]*
 
 Inbuilt Functions
 ^^^^^^^^^^^^^^^^^^
@@ -39,7 +39,7 @@ In most cases, the scaling will be done directly, aligning to ``aligned_edge``; 
 
 ``will_cross_boundary(self, object_dim, boundary_name)``
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-Checks if the given dimension ``object_dim`` will cross the boundary spceified by ``boundary_name``. The check is done by calling the corresponding function ``will_cross_top_boundary``, ``will_cross_bottom_boundary``, ``will_cross_right_boundary`` or ``will_cross_left_boundary``.
+Checks if the given dimension ``object_dim`` will cross the boundary specified by ``boundary_name``. The check is done by calling the corresponding function ``will_cross_top_boundary``, ``will_cross_bottom_boundary``, ``will_cross_right_boundary`` or ``will_cross_left_boundary``.
 
 ``add(self, obj)``
 """"""""""""""""""
@@ -97,7 +97,7 @@ The constructor of Array takes in the following:
 
 * ``values`` - list of values corresponding to each index of the array
 * ``title`` - the text label to be displayed with the array
-* ``boundaries`` - coordinates of boundary
+* ``boundaries`` - coordinates of boundary that the array has to stay within
 * ``padding`` - specifies whether to add a padding between the title and the shape visualisation *[Optional - defaults to* ``True`` *]*
 * ``color`` and ``text_color`` - same as for all data structures *[Optional -* ``color`` *defaults to* ``BLUE`` *and* ``text_color`` *defaults to* ``WHITE`` *]*
 
@@ -116,7 +116,7 @@ Animates the normal "quick" ``swap`` method, which swaps the 2 elements at ``i1`
 
 ``clone_and_swap(self, i1, i2)``
 """"""""""""""""""""""""""""""""
-Animates the special form of ``swap`` when ``longSwap`` is set to ``true``. This would create an visualisation of the temp variable (a clone) and its usage, which is often seen when swapping array elements programmatically.
+Animates the special form of ``swap`` when ``longSwap`` is set to ``true``. This would create a visualisation of the temp variable (a clone) and its usage, which is often seen when swapping array elements programmatically.
 
 ``update_element(self, idx, v, color=None)``
 """"""""""""""""""""""""""""""""""""""""""""
@@ -139,7 +139,7 @@ Constructor
 
 The constructor of 2D Array takes in the many of the same arguments as normal ``Array`` does, with the following differences:
 
-* ``values`` - list of list of values corresponding to each element of the array
+* ``values`` - list of lists of values corresponding to each element of the array
 * no ``padding`` argument required
 
 Inbuilt Functions
@@ -225,11 +225,11 @@ Computes the scale factor when the tree crosses the bottom boundary.
 
 ``crossing_left_right_border(self, offset_x, scale=10e9)``
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Computes the scle factor if tree crosses the left or right boundary with ``offset_x`` added on both side.
+Computes the scle factor if tree crosses the left or right boundary with ``offset_x`` added on both sides.
 
 ``grow_if_small(self)``
 """""""""""""""""""""""
-Scales the tree bigger If the it is not utilising the space allocated fully.
+Scales the tree bigger if it is not utilising the space allocated fully.
 
 ``check_overlapping_children(self, node)``
 """"""""""""""""""""""""""""""""""""""""""
@@ -300,9 +300,9 @@ Animates deleting the right child of the node. Assumes that the node has a right
 Code Block
 ----------
 
-The Code Block is your inputed VAlgoLang code which appears at the bottom left of your screen (by default).
+The Code Block is your inputted VAlgoLang code which appears at the bottom left of your screen (by default).
 
-The positioning and whether the Code Block should be rendered are controlled by the Stlysheet. Please refer to the :doc:`Customising Your Animation <customisation>` section for a more detailed description of how the Stylesheet works.
+The positioning and whether the Code Block should be rendered are controlled by the Stylesheet. Please refer to the :doc:`Customising Your Animation <customisation>` section for a more detailed description of how the Stylesheet works.
 
 Constructor
 ^^^^^^^^^^^
@@ -345,7 +345,7 @@ Variable Block
 
 The Variable Block displays the list of most recently updated variables and their values at the top left of your screen (by default).
 
-The positioning and whether the Varaible Block should be rendered are controlled by the Stlysheet. Please refer to the :doc:`Customising Your Animation <customisation>` section for a more detailed description of how the Stylesheet works.
+The positioning and whether the Variable Block should be rendered are controlled by the Stylesheet. Please refer to the :doc:`Customising Your Animation <customisation>` section for a more detailed description of how the Stylesheet works.
 
 Constructor
 ^^^^^^^^^^^
@@ -375,7 +375,7 @@ Subtitle Block
 
 The Subtitle Block displays the list of most recently updated variables and their values at the top left of your screen (by default).
 
-The positioning and whether the Varaible Block should be rendered are controlled by the Stlysheet. Please refer to the :doc:`Customising Your Animation <customisation>` section for a more detailed description of how the Stylesheet works.
+The Subtitle Block holds subtitles generated by the subtitle annotations and the positioning of the Subtitle Block is controlled by the Stlysheet. Please refer to the :ref:`Subtitles <subtitlesannotation>` and :doc:`Customising Your Animation <customisation>` sections for a more detailed description of how the subtitle annotations and Stylesheet works.
 
 Constructor
 ^^^^^^^^^^^
@@ -410,7 +410,7 @@ Same as ``clear``.
 
 Building Blocks
 ----------------
-The visualisation of data structures are built on top of the following building blocks. Feel free to reuse them if you wish to add your own data structure visualisation!
+The visualisation of data structures is built on top of the following building blocks. Feel free to reuse them if you wish to add your own data structure visualisation!
 
 Initial Structure
 ^^^^^^^^^^^^^^^^^
@@ -431,7 +431,7 @@ The constructor of Initial Structure takes in the following:
 * ``text_weight`` - weight of the text label *[Optional - defaults to* ``NORMAL`` *]*
 * ``font`` - font of the text label *[Optional - defaults to* ``"Times New Roman"`` *]*
 
-To add an additional element, create it, and group it with the VGroup.
+To add an additional element, create it, and group it with the ``VGroup``.
 To change the default position of the label and the distance between the label and the line, change ``DOWN`` and ``SMALL_BUFF`` respectively.
 
 Rectangle Block
@@ -453,7 +453,7 @@ The constructor of Rectangle Block takes in the following:
 * ``text_weight`` - weight of the text inside the rectangle *[Optional - defaults to* ``NORMAL`` *]*
 * ``font`` - font of the text inside the rectangle *[Optional - defaults to* ``"Times New Roman"`` *]*
 
-To add an additional element, create it, and group it with the VGroup.
+To add an additional element, create it, and group it with the ``VGroup``.
 
 Inbuilt Functions
 """""""""""""""""
@@ -482,5 +482,5 @@ The following is a list of all the utility functions implemented so far, which h
 
 The following utility functions are inspired from https://www.reddit.com/r/manim/comments/bubyj2/scrolling_mobjects/
 
-* ``scroll_down(self, group, scrolls)`` - scrolls the ``group`` (``code_text`` in the intepreter) down by ``scrolls`` number of times.
-* ``scroll_up(self, group, scrolls)`` - scrolls the ``group`` (``code_text`` in the intepreter) up by ``scrolls`` number of times.
+* ``scroll_down(self, group, scrolls)`` - scrolls the ``group`` (``code_text`` in the interpreter) down by ``scrolls`` number of times.
+* ``scroll_up(self, group, scrolls)`` - scrolls the ``group`` (``code_text`` in the interpreter) up by ``scrolls`` number of times.
