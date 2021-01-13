@@ -4,7 +4,7 @@ We welcome all contributions! If you would like to contribute to VAlgoLang, plea
 
 For a worked example on how to contribute to `our repository <https://github.com/VAlgoLang/VAlgoLang>`_, please read on!
 
-Contribution case study: Adding Lists
+Contribution Case Study: Adding Lists
 ---------------------------------------
 
 To give you an example of how you can contribute to the repository, here's a worked example of how we added the List data structure to the language, just by extending the existing constructs. Our hope is that the core data structures we provide can be used as building blocks to create other more specialised data structures, reducing the amount of effort needed for a contributor to extend our language.
