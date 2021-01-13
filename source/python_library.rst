@@ -69,7 +69,7 @@ Stack
 Constructor
 ^^^^^^^^^^^
 
-The constructor of Stack takes in the exact same argument as ``Data Structure`` with the same default values.
+The constructor of Stack takes in the exact same arguments as ``Data Structure`` with the same default values.
 
 Inbuilt Functions
 ^^^^^^^^^^^^^^^^^^
@@ -130,6 +130,7 @@ Helper function for ``append`` that updates the array elements stored so far and
 """""""""""""""""""
 Since the ``List`` data structure has been added using the existing ``Array`` data structure, this function animates the ``append`` method supported by ``List``. This would visualise adding a new element with value ``v`` at the end of a resizable ``List``.
 
+
 Array 2D
 --------
 
@@ -155,6 +156,145 @@ Animates updating the row specified by ``row_index`` with the given values ``new
 ``swap_mobjects(self, i1, j1, i2, j2)``
 """""""""""""""""""""""""""""""""""""""
 Animates swapping 2 elements of the 2D Array specified by ``(i1, j1)`` and ``(i2, j2)``. The visualisation would first dim the rest of the 2D Array to indicate which elements are being swapped, before fading the rest of the array back to the original ``text_color``.
+
+
+Tree
+-----
+
+Constructor
+^^^^^^^^^^^
+
+The constructor of Tree takes in the many of the same arguments as ``Data Structure`` with the same default values. The different ones are as follows:
+
+* ``root`` - the root node of the tree
+* ``identifier`` - text label for the tree
+* ``radius`` - radius of the node of the tree *[Optional - defaults to* ``0.6`` *]*
+* ``color`` - same as ``Data Structures`` but defaults to ``RED``
+* ``text_color`` - same as ``Data Structures`` but defaults to ``BLUE``
+
+Inbuilt Functions
+^^^^^^^^^^^^^^^^^^
+
+``update_root(self, node)``
+""""""""""""""""""""""""""""
+Updates the root of the tree with ``node``.
+
+``check_if_child_will_cross_boundary(self, parent, child, is_left)``
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Checks whether adding ``child`` will make the tree with ``parent`` cross the boundary. The ``is_left`` flag indicates which side the ``child`` will be added.
+
+``set_right(self, parent, child)``
+"""""""""""""""""""""""""""""""""""
+Animates setting ``child`` as the right child of ``parent``. Assumes that ``parent`` is in the tree. The check for scaling and the corresponding animations are also done by calling ``_resize_after_modification``.
+
+``set_left(self, parent, child)``
+"""""""""""""""""""""""""""""""""""
+Animates setting ``child`` as the left child of ``parent``. Assumes that ``parent`` is in the tree. The check for scaling and the corresponding animations are also done by calling ``_resize_after_modification``.
+
+``delete_right(self, parent)``
+""""""""""""""""""""""""""""""
+Animates removing the right child of ``parent``. Assumes that ``parent`` is in the tree. The check for scaling and the corresponding animations are also done by calling ``_resize_after_modification``.
+
+``delete_left(self, parent)``
+"""""""""""""""""""""""""""""
+Animates removing the left child of ``parent``. Assumes that ``parent`` is in the tree. The check for scaling and the corresponding animations are also done by calling ``_resize_after_modification``.
+
+``edit_node_value(self, node, text)``
+""""""""""""""""""""""""""""""""""""""
+Animates updating the value of ``node`` to ``text``.
+
+``set_reference_right(self, parent, tree)``
+"""""""""""""""""""""""""""""""""""""""""""
+Animates setting the reference of the right child of ``parent`` to ``tree``. The check for scaling and the corresponding animations are also done by calling ``_resize_after_modification``.
+
+``set_reference_left(self, parent, tree)``
+"""""""""""""""""""""""""""""""""""""""""""
+Animates setting the reference of the left child of ``parent`` to ``tree``. The check for scaling and the corresponding animations are also done by calling ``_resize_after_modification``.
+
+``_resize_after_modification(self, animations)``
+"""""""""""""""""""""""""""""""""""""""""""""""""
+Check if scaling needs to be done and appends the animation that scales the tree to ``animations`` if needed. The check is done by calling ``check_positioning``.
+
+``check_positioning(self)``
+"""""""""""""""""""""""""""
+Checks if the positioning and the size of the tree still fits within the boundary and fully utilises the space; scales the tree (bigger or smaller) if any of the check fails.
+
+``crossing_bottom_border(self)``
+"""""""""""""""""""""""""""""""""
+Computes the scale factor when the tree crosses the bottom boundary.
+
+``crossing_left_right_border(self, offset_x, scale=10e9)``
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Computes the scle factor if tree crosses the left or right boundary with ``offset_x`` added on both side.
+
+``grow_if_small(self)``
+"""""""""""""""""""""""
+Scales the tree bigger If the it is not utilising the space allocated fully.
+
+``check_overlapping_children(self, node)``
+""""""""""""""""""""""""""""""""""""""""""
+Recursively checks if any of left and right child of ``node`` (or its children) are overlapping and scales the tree (or subtree) down if any nodes are overlapping.
+
+
+Node
+-----
+
+The Node is the underlying representation of each node constructed as part of a ``Tree``. Therefore, these two classes are put in the same file `binary_tree.py <https://github.com/VAlgoLang/VAlgoLang/tree/master/src/main/resources/python/binary_tree.py>`_.
+
+Constructor
+^^^^^^^^^^^
+
+The constructor of Node takes in all the arguments as ``Tree`` with the same default values. Additionally, it takes in the following:
+
+* ``line_color`` - the color of the line connecting two nodes together *[Optional - defaults to* ``GREEN`` *]*
+* ``highlight_color`` - the color to highlight the node outline in when the node has been accessed *[Optional - defaults to* ``YELLOW`` *]*
+
+Inbuilt Functions
+^^^^^^^^^^^^^^^^^^
+
+``set_left(self, node, scale)``
+"""""""""""""""""""""""""""""""
+Sets the left child of the node to ``node`` by calling ``set_left_mobject``. ``scale`` represents the scale factor of how much the tree has been scaled (initially starts as ``1``).
+
+``set_left_mobject(self, shape, vgroup, scale)``
+""""""""""""""""""""""""""""""""""""""""""""""""
+Animates setting the left of ``shape`` to ``vgroup`` - moving ``vgroup`` to lower left of ``shape`` and adding in the line that connects the two. ``scale`` is passed from ``set_left`` and used to obtain the position offset from ``shape``.
+
+``set_right(self, node, scale)``
+"""""""""""""""""""""""""""""""
+Sets the right child of the node to ``node`` by calling ``set_right_mobject``. ``scale`` represents the scale factor of how much the tree has been scaled (initially starts as ``1``).
+
+``set_right_mobject(self, shape, vgroup, scale)``
+"""""""""""""""""""""""""""""""""""""""""""""""""
+Animates setting the right of ``shape`` to ``vgroup`` - moving ``vgroup`` to lower left of ``shape`` and adding in the line that connects the two. ``scale`` is passed from ``set_right`` and used to obtain the position offset from ``shape``.
+
+``set_reference(self, tree, scale, left)``
+""""""""""""""""""""""""""""""""""""""""""
+Sets the left or right child of the node to be a reference to ``tree`` (in this case a text label) as data structures are passed by reference. The flag ``left`` indicates whether the left child or the right child is set. ``scale`` represents the scale factor of how much the tree has been scaled (initially starts as ``1``).
+
+* ``edit_node_value(self, text)``
+"""""""""""""""""""""""""""""""""
+Changes the text representing the value of the node to ``text``.
+
+* ``highlight(self, color)``
+""""""""""""""""""""""""""""
+Highlights the node outline to ``color``.
+
+* ``unhighlight(self)``
+"""""""""""""""""""""""
+Unhighlights the node outline.
+
+* ``set_radius(self, new_radius)``
+""""""""""""""""""""""""""""""""""
+Changes the radius of the node to ``new_radius`` and scales the node if needed.
+
+* ``delete_left(self)``
+"""""""""""""""""""""""
+Animates deleting the left child of the node. Assumes that the node has a left child.
+
+* ``delete_right(self)``
+"""""""""""""""""""""""
+Animates deleting the right child of the node. Assumes that the node has a right child.
 
 
 Code Block
@@ -342,5 +482,5 @@ The following is a list of all the utility functions implemented so far, which h
 
 The following utility functions are inspired from https://www.reddit.com/r/manim/comments/bubyj2/scrolling_mobjects/
 
-* ``scroll_down(self, group, scrolls)`` - scrolls the ``group`` (in this case ``code_text``) down by ``scrolls`` number of times.
-* ``scroll_up(self, group, scrolls)`` - scrolls the ``group`` (in this case ``code_text``) up by ``scrolls`` number of times.
+* ``scroll_down(self, group, scrolls)`` - scrolls the ``group`` (``code_text`` in the intepreter) down by ``scrolls`` number of times.
+* ``scroll_up(self, group, scrolls)`` - scrolls the ``group`` (``code_text`` in the intepreter) up by ``scrolls`` number of times.
