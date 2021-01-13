@@ -261,7 +261,7 @@ Sets the left child of the node to ``node`` by calling ``set_left_mobject``. ``s
 Animates setting the left of ``shape`` to ``vgroup`` - moving ``vgroup`` to lower left of ``shape`` and adding in the line that connects the two. ``scale`` is passed from ``set_left`` and used to obtain the position offset from ``shape``.
 
 ``set_right(self, node, scale)``
-"""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""
 Sets the right child of the node to ``node`` by calling ``set_right_mobject``. ``scale`` represents the scale factor of how much the tree has been scaled (initially starts as ``1``).
 
 ``set_right_mobject(self, shape, vgroup, scale)``
@@ -272,27 +272,27 @@ Animates setting the right of ``shape`` to ``vgroup`` - moving ``vgroup`` to low
 """"""""""""""""""""""""""""""""""""""""""
 Sets the left or right child of the node to be a reference to ``tree`` (in this case a text label) as data structures are passed by reference. The flag ``left`` indicates whether the left child or the right child is set. ``scale`` represents the scale factor of how much the tree has been scaled (initially starts as ``1``).
 
-* ``edit_node_value(self, text)``
+``edit_node_value(self, text)``
 """""""""""""""""""""""""""""""""
 Changes the text representing the value of the node to ``text``.
 
-* ``highlight(self, color)``
+``highlight(self, color)``
 """"""""""""""""""""""""""""
 Highlights the node outline to ``color``.
 
-* ``unhighlight(self)``
+``unhighlight(self)``
 """""""""""""""""""""""
 Unhighlights the node outline.
 
-* ``set_radius(self, new_radius)``
+``set_radius(self, new_radius)``
 """"""""""""""""""""""""""""""""""
 Changes the radius of the node to ``new_radius`` and scales the node if needed.
 
-* ``delete_left(self)``
+``delete_left(self)``
 """""""""""""""""""""""
 Animates deleting the left child of the node. Assumes that the node has a left child.
 
-* ``delete_right(self)``
+``delete_right(self)``
 """""""""""""""""""""""
 Animates deleting the right child of the node. Assumes that the node has a right child.
 
