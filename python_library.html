@@ -92,10 +92,137 @@
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="customisation.html">Customising Your Animation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Python Library</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#initial-structure">Initial Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rectangle">Rectangle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#text-box">Text Box</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#code-block">Code Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-structure">Data Structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constructor">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inbuilt-functions">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#shrink-self-new-width-new-height"><code class="docutils literal notranslate"><span class="pre">shrink(self,</span> <span class="pre">new_width,</span> <span class="pre">new_height)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#will-cross-boundary-self-object-dim-boundary-name"><code class="docutils literal notranslate"><span class="pre">will_cross_boundary(self,</span> <span class="pre">object_dim,</span> <span class="pre">boundary_name)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-self-obj"><code class="docutils literal notranslate"><span class="pre">add(self,</span> <span class="pre">obj)</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#abstract-methods">Abstract Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-init-self-ident"><code class="docutils literal notranslate"><span class="pre">create_init(self,</span> <span class="pre">ident)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shrink-if-cross-boundary-self-obj"><code class="docutils literal notranslate"><span class="pre">shrink_if_cross_boundary(self,</span> <span class="pre">obj)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clean-up-self"><code class="docutils literal notranslate"><span class="pre">clean_up(self)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#stack">Stack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#push-self-obj-creation-style-none"><code class="docutils literal notranslate"><span class="pre">push(self,</span> <span class="pre">obj,</span> <span class="pre">creation_style=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#push-existing-self-obj"><code class="docutils literal notranslate"><span class="pre">push_existing(self,</span> <span class="pre">obj)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pop-self-obj-fade-out-true"><code class="docutils literal notranslate"><span class="pre">pop(self,</span> <span class="pre">obj,</span> <span class="pre">fade_out=True)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#array">Array</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build-self-coord-none"><code class="docutils literal notranslate"><span class="pre">build(self,</span> <span class="pre">coord=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#swap-mobjects-self-i1-i2"><code class="docutils literal notranslate"><span class="pre">swap_mobjects(self,</span> <span class="pre">i1,</span> <span class="pre">i2)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clone-and-swap-self-i1-i2"><code class="docutils literal notranslate"><span class="pre">clone_and_swap(self,</span> <span class="pre">i1,</span> <span class="pre">i2)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-element-self-idx-v-color-none"><code class="docutils literal notranslate"><span class="pre">update_element(self,</span> <span class="pre">idx,</span> <span class="pre">v,</span> <span class="pre">color=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-array-elements-self"><code class="docutils literal notranslate"><span class="pre">update_array_elements(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#append-self-v"><code class="docutils literal notranslate"><span class="pre">append(self,</span> <span class="pre">v)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#array-2d">Array 2D</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build-self-creation-style-none"><code class="docutils literal notranslate"><span class="pre">build(self,</span> <span class="pre">creation_style=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#replace-row-self-row-index-new-values"><code class="docutils literal notranslate"><span class="pre">replace_row(self,</span> <span class="pre">row_index,</span> <span class="pre">new_values)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#swap-mobjects-self-i1-j1-i2-j2"><code class="docutils literal notranslate"><span class="pre">swap_mobjects(self,</span> <span class="pre">i1,</span> <span class="pre">j1,</span> <span class="pre">i2,</span> <span class="pre">j2)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tree">Tree</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#update-root-self-node"><code class="docutils literal notranslate"><span class="pre">update_root(self,</span> <span class="pre">node)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#check-if-child-will-cross-boundary-self-parent-child-is-left"><code class="docutils literal notranslate"><span class="pre">check_if_child_will_cross_boundary(self,</span> <span class="pre">parent,</span> <span class="pre">child,</span> <span class="pre">is_left)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-right-self-parent-child"><code class="docutils literal notranslate"><span class="pre">set_right(self,</span> <span class="pre">parent,</span> <span class="pre">child)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-left-self-parent-child"><code class="docutils literal notranslate"><span class="pre">set_left(self,</span> <span class="pre">parent,</span> <span class="pre">child)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-right-self-parent"><code class="docutils literal notranslate"><span class="pre">delete_right(self,</span> <span class="pre">parent)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-left-self-parent"><code class="docutils literal notranslate"><span class="pre">delete_left(self,</span> <span class="pre">parent)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-node-value-self-node-text"><code class="docutils literal notranslate"><span class="pre">edit_node_value(self,</span> <span class="pre">node,</span> <span class="pre">text)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-reference-right-self-parent-tree"><code class="docutils literal notranslate"><span class="pre">set_reference_right(self,</span> <span class="pre">parent,</span> <span class="pre">tree)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-reference-left-self-parent-tree"><code class="docutils literal notranslate"><span class="pre">set_reference_left(self,</span> <span class="pre">parent,</span> <span class="pre">tree)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resize-after-modification-self-animations"><code class="docutils literal notranslate"><span class="pre">_resize_after_modification(self,</span> <span class="pre">animations)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#check-positioning-self"><code class="docutils literal notranslate"><span class="pre">check_positioning(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#crossing-bottom-border-self"><code class="docutils literal notranslate"><span class="pre">crossing_bottom_border(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#crossing-left-right-border-self-offset-x-scale-10e9"><code class="docutils literal notranslate"><span class="pre">crossing_left_right_border(self,</span> <span class="pre">offset_x,</span> <span class="pre">scale=10e9)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grow-if-small-self"><code class="docutils literal notranslate"><span class="pre">grow_if_small(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#check-overlapping-children-self-node"><code class="docutils literal notranslate"><span class="pre">check_overlapping_children(self,</span> <span class="pre">node)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#node">Node</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-left-self-node-scale"><code class="docutils literal notranslate"><span class="pre">set_left(self,</span> <span class="pre">node,</span> <span class="pre">scale)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-left-mobject-self-shape-vgroup-scale"><code class="docutils literal notranslate"><span class="pre">set_left_mobject(self,</span> <span class="pre">shape,</span> <span class="pre">vgroup,</span> <span class="pre">scale)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-right-self-node-scale"><code class="docutils literal notranslate"><span class="pre">set_right(self,</span> <span class="pre">node,</span> <span class="pre">scale)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-right-mobject-self-shape-vgroup-scale"><code class="docutils literal notranslate"><span class="pre">set_right_mobject(self,</span> <span class="pre">shape,</span> <span class="pre">vgroup,</span> <span class="pre">scale)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-reference-self-tree-scale-left"><code class="docutils literal notranslate"><span class="pre">set_reference(self,</span> <span class="pre">tree,</span> <span class="pre">scale,</span> <span class="pre">left)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-node-value-self-text"><code class="docutils literal notranslate"><span class="pre">edit_node_value(self,</span> <span class="pre">text)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#highlight-self-color"><code class="docutils literal notranslate"><span class="pre">highlight(self,</span> <span class="pre">color)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unhighlight-self"><code class="docutils literal notranslate"><span class="pre">unhighlight(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-radius-self-new-radius"><code class="docutils literal notranslate"><span class="pre">set_radius(self,</span> <span class="pre">new_radius)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-left-self"><code class="docutils literal notranslate"><span class="pre">delete_left(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-right-self"><code class="docutils literal notranslate"><span class="pre">delete_right(self)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#code-block">Code Block</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build-self"><code class="docutils literal notranslate"><span class="pre">build(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-line-at-self-line-number"><code class="docutils literal notranslate"><span class="pre">get_line_at(self,</span> <span class="pre">line_number)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#variable-block">Variable Block</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">build(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-variable-self-variables"><code class="docutils literal notranslate"><span class="pre">update_variable(self,</span> <span class="pre">variables)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#subtitle-block">Subtitle Block</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id16">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#change-text-self-text"><code class="docutils literal notranslate"><span class="pre">change_text(self,</span> <span class="pre">text)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#display-self-text-end-time"><code class="docutils literal notranslate"><span class="pre">display(self,</span> <span class="pre">text,</span> <span class="pre">end_time)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clear-self"><code class="docutils literal notranslate"><span class="pre">clear(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#action-self"><code class="docutils literal notranslate"><span class="pre">action(self)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#building-blocks">Building Blocks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initial-structure">Initial Structure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id18">Constructor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rectangle-block">Rectangle Block</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id19">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">Inbuilt Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#utility-functions">Utility Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -167,93 +294,457 @@
             
   <div class="section" id="python-library">
 <h1>Python Library<a class="headerlink" href="#python-library" title="Permalink to this headline">¶</a></h1>
-<p>The compiler uses manim to create animations for your code.
-Although the compiler has a standard way of representing datastructures, you are able to modify our functions to represent them the way you want!</p>
-<p>All of the utility functions can be found at <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/tree/master/src/main/resources/python/util.py">src/main/resources/python/util.py</a>, and all the shapes are in their own class (i.e. Rectangle_block is in <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/tree/master/src/main/resources/python/rectangle.py">src/main/resources/python/rectangle.py</a>)</p>
-<div class="section" id="initial-structure">
-<h2>Initial Structure<a class="headerlink" href="#initial-structure" title="Permalink to this headline">¶</a></h2>
-<p>An initial structure represents the empty state for any data structure.</p>
-<p>It consists of a line, which can be horizontal or vertical, and a text label indicating the variable name under the line.</p>
-<dl class="simple">
-<dt>An Initial Structure takes in:</dt><dd><ul class="simple">
-<li><p>A text that is labelled under the line</p></li>
-<li><p>An angle of rotation (<code class="docutils literal notranslate"><span class="pre">0</span></code> for horizontal line, <code class="docutils literal notranslate"><span class="pre">TAU/4</span></code> for vertical line)</p></li>
-<li><p>A length for the line <em>[Optional - default is</em> <code class="docutils literal notranslate"><span class="pre">1.5</span></code> <em>]</em></p></li>
-<li><p>A color for the line and text label <em>[Optional - default is</em> <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> <em>]</em></p></li>
+<p>The interpreter uses manim to create animations for your code and the following prebuilt Python libraries define the standard visualisation for different data structures.
+Although this is a fixed standard way of representing data structures, you are able to change the style attributes through the stylesheet or even modify our functions to represent data structures the way you want!</p>
+<p>All of the utility functions can be found at <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/tree/master/src/main/resources/python/util.py">src/main/resources/python/util.py</a>, and all of the shapes/data structures are in their own class (i.e. RectangleBlock is in <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/tree/master/src/main/resources/python/rectangle.py">src/main/resources/python/rectangle.py</a>)</p>
+<div class="section" id="data-structure">
+<h2>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h2>
+<p>This is the abstract base class that defines the common fields and functions shared across all the data structures.</p>
+<div class="section" id="constructor">
+<h3>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h3>
+<p>The constructor of the most generic data structure takes in the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ul</span></code> - the coordinates of the upper-left corner of the boundary for the data structure</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ur</span></code> - the coordinates of the upper-right corner of the boundary for the data structure</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ll</span></code> - the coordinates of the lower-left corner of the boundary for the data structure</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lr</span></code> - the coordinates of the lower-right corner of the boundary for the data structure</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aligned_edge</span></code> - the edge towards which the data structure will be scaled if it grows out of the boundary (only applies if the data structure is dynamic in size)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> - the color of the shapes visualised as part of the data structure <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_color</span></code> - the color of the text label visualised as part of the data structure <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_weight</span></code> - the weight of the text label visualised as part of the data structure <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">NORMAL</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">font</span></code> - the font of the text label visualised as part of the data structure <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">&quot;Times</span> <span class="pre">New</span> <span class="pre">Roman&quot;</span></code> <em>]</em></p></li>
 </ul>
-</dd>
-</dl>
-<p>The Line Mobject with length (given or default) rotated by the given angle, and a TextMobject with the label, are grouped under a VGroup.
-To add an additional element, create it, and group it with the VGroup.
-To change the default position of the label and the distance between the label and the line, change <code class="docutils literal notranslate"><span class="pre">DOWN</span></code> and <code class="docutils literal notranslate"><span class="pre">SMALL_BUFF</span></code> respectively.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">set_length</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">)</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">set_angle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">angle</span><span class="p">)</span>
-    <span class="n">label</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ident</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
-    <span class="n">label</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">DOWN</span><span class="p">,</span> <span class="n">SMALL_BUFF</span><span class="p">)</span>
-    <span class="n">group</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">group</span>
-</pre></div>
+</div>
+<div class="section" id="inbuilt-functions">
+<h3>Inbuilt Functions<a class="headerlink" href="#inbuilt-functions" title="Permalink to this headline">¶</a></h3>
+<p>Any data structure has the following inbuilt functions implemented:</p>
+<div class="section" id="shrink-self-new-width-new-height">
+<h4><code class="docutils literal notranslate"><span class="pre">shrink(self,</span> <span class="pre">new_width,</span> <span class="pre">new_height)</span></code><a class="headerlink" href="#shrink-self-new-width-new-height" title="Permalink to this headline">¶</a></h4>
+<p>Resizes the entire data structure by calculating a scale factor based on <code class="docutils literal notranslate"><span class="pre">new_width</span></code> and <code class="docutils literal notranslate"><span class="pre">new_height</span></code> provided.</p>
+<p>In most cases, the scaling will be done directly, aligning to <code class="docutils literal notranslate"><span class="pre">aligned_edge</span></code>; however, the function <code class="docutils literal notranslate"><span class="pre">shrink2</span></code> provides an alternative way of scaling the data structure in place and then moving it to align the <code class="docutils literal notranslate"><span class="pre">aligned_edge</span></code>.</p>
+</div>
+<div class="section" id="will-cross-boundary-self-object-dim-boundary-name">
+<h4><code class="docutils literal notranslate"><span class="pre">will_cross_boundary(self,</span> <span class="pre">object_dim,</span> <span class="pre">boundary_name)</span></code><a class="headerlink" href="#will-cross-boundary-self-object-dim-boundary-name" title="Permalink to this headline">¶</a></h4>
+<p>Checks if the given dimension <code class="docutils literal notranslate"><span class="pre">object_dim</span></code> will cross the boundary specified by <code class="docutils literal notranslate"><span class="pre">boundary_name</span></code>. The check is done by calling the corresponding function <code class="docutils literal notranslate"><span class="pre">will_cross_top_boundary</span></code>, <code class="docutils literal notranslate"><span class="pre">will_cross_bottom_boundary</span></code>, <code class="docutils literal notranslate"><span class="pre">will_cross_right_boundary</span></code> or <code class="docutils literal notranslate"><span class="pre">will_cross_left_boundary</span></code>.</p>
+</div>
+<div class="section" id="add-self-obj">
+<h4><code class="docutils literal notranslate"><span class="pre">add(self,</span> <span class="pre">obj)</span></code><a class="headerlink" href="#add-self-obj" title="Permalink to this headline">¶</a></h4>
+<p>Adds the given <code class="docutils literal notranslate"><span class="pre">obj</span></code> into the <code class="docutils literal notranslate"><span class="pre">VGroup</span></code> that holds all components of the data structure.</p>
 </div>
 </div>
-<div class="section" id="rectangle">
-<h2>Rectangle<a class="headerlink" href="#rectangle" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt>Rectangles take in:</dt><dd><ul class="simple">
-<li><p>A text which is placed inside the rectangle</p></li>
-<li><p>A width and height to for the rectangle dimensions</p></li>
-<li><p>A color for the rectangle outline</p></li>
+<div class="section" id="abstract-methods">
+<h3>Abstract Methods<a class="headerlink" href="#abstract-methods" title="Permalink to this headline">¶</a></h3>
+<p>The following abstract methods are to be implemented by any data structure class, as different data structures may have different implementation.</p>
+<div class="section" id="create-init-self-ident">
+<h4><code class="docutils literal notranslate"><span class="pre">create_init(self,</span> <span class="pre">ident)</span></code><a class="headerlink" href="#create-init-self-ident" title="Permalink to this headline">¶</a></h4>
+<p>Creates an initial visualisation of the data structure with the label <code class="docutils literal notranslate"><span class="pre">ident</span></code> when it’s instantiated.</p>
+</div>
+<div class="section" id="shrink-if-cross-boundary-self-obj">
+<h4><code class="docutils literal notranslate"><span class="pre">shrink_if_cross_boundary(self,</span> <span class="pre">obj)</span></code><a class="headerlink" href="#shrink-if-cross-boundary-self-obj" title="Permalink to this headline">¶</a></h4>
+<p>Checks if the data structure is growing out of the boundary when <code class="docutils literal notranslate"><span class="pre">obj</span></code> is added and resizes the data structure if necessary.</p>
+</div>
+<div class="section" id="clean-up-self">
+<h4><code class="docutils literal notranslate"><span class="pre">clean_up(self)</span></code><a class="headerlink" href="#clean-up-self" title="Permalink to this headline">¶</a></h4>
+<p>Cleans up the current data structure visualisation, which is helpful when a data structure is no longer used. The most common way of doing this is to fade out the data structure visualisation using <code class="docutils literal notranslate"><span class="pre">FadeOut</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="stack">
+<h2>Stack<a class="headerlink" href="#stack" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Constructor<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The constructor of Stack takes in the exact same arguments as <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Structure</span></code> with the same default values.</p>
+</div>
+<div class="section" id="id2">
+<h3>Inbuilt Functions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="push-self-obj-creation-style-none">
+<h4><code class="docutils literal notranslate"><span class="pre">push(self,</span> <span class="pre">obj,</span> <span class="pre">creation_style=None)</span></code><a class="headerlink" href="#push-self-obj-creation-style-none" title="Permalink to this headline">¶</a></h4>
+<p>Animates the push operation of a new item <code class="docutils literal notranslate"><span class="pre">obj</span></code>. The animation consists of visualising the creation of the <code class="docutils literal notranslate"><span class="pre">obj</span></code> using <code class="docutils literal notranslate"><span class="pre">creation_style</span></code> (optional and defaults to <code class="docutils literal notranslate"><span class="pre">&quot;FadeIn&quot;</span></code>), as well as moving <code class="docutils literal notranslate"><span class="pre">obj</span></code> to the top of the stack.</p>
+</div>
+<div class="section" id="push-existing-self-obj">
+<h4><code class="docutils literal notranslate"><span class="pre">push_existing(self,</span> <span class="pre">obj)</span></code><a class="headerlink" href="#push-existing-self-obj" title="Permalink to this headline">¶</a></h4>
+<p>Animates a special form of push operation when the item to be pushed - <code class="docutils literal notranslate"><span class="pre">obj</span></code> - has been created already. The animation would use the existing <code class="docutils literal notranslate"><span class="pre">obj</span></code> and push it onto the stack.</p>
+</div>
+<div class="section" id="pop-self-obj-fade-out-true">
+<h4><code class="docutils literal notranslate"><span class="pre">pop(self,</span> <span class="pre">obj,</span> <span class="pre">fade_out=True)</span></code><a class="headerlink" href="#pop-self-obj-fade-out-true" title="Permalink to this headline">¶</a></h4>
+<p>Animates the pop operation. The animation consists of moving the <code class="docutils literal notranslate"><span class="pre">obj</span></code> off the stack and (optionally) fade out <code class="docutils literal notranslate"><span class="pre">obj</span></code> if it’s no longer being used.</p>
+</div>
+</div>
+</div>
+<div class="section" id="array">
+<h2>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>Constructor<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>The constructor of Array takes in the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">values</span></code> - list of values corresponding to each index of the array</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code> - the text label to be displayed with the array</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">boundaries</span></code> - coordinates of boundary that the array has to stay within</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code> - specifies whether to add a padding between the title and the shape visualisation <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">True</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">text_color</span></code> - same as for all data structures <em>[Optional -</em> <code class="docutils literal notranslate"><span class="pre">color</span></code> <em>defaults to</em> <code class="docutils literal notranslate"><span class="pre">BLUE</span></code> <em>and</em> <code class="docutils literal notranslate"><span class="pre">text_color</span></code> <em>defaults to</em> <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> <em>]</em></p></li>
 </ul>
-</dd>
-</dl>
-<p>A TextMobject with the text, and a Rectangle, are grouped under a VGroup.
-To add an additional element, create it, and group it with the VGroup.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="n">inside_text</span> <span class="o">=</span> <span class="n">TextMobject</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">rectangle</span>   <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
-    <span class="n">group</span>       <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">inside_text</span><span class="p">,</span> <span class="n">rectangle</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">group</span>
-</pre></div>
+</div>
+<div class="section" id="id4">
+<h3>Inbuilt Functions<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="build-self-coord-none">
+<h4><code class="docutils literal notranslate"><span class="pre">build(self,</span> <span class="pre">coord=None)</span></code><a class="headerlink" href="#build-self-coord-none" title="Permalink to this headline">¶</a></h4>
+<p>Arranges each element of the array to be next to each other and adds in the title on the left of the array. The final <code class="docutils literal notranslate"><span class="pre">Array</span></code> object is then returned.</p>
+<p>The optional argument <code class="docutils literal notranslate"><span class="pre">coord</span></code> specifies the left most coordinate of the array (defaults to where the title is), which is particularly useful when the array elements are updated.</p>
+</div>
+<div class="section" id="swap-mobjects-self-i1-i2">
+<h4><code class="docutils literal notranslate"><span class="pre">swap_mobjects(self,</span> <span class="pre">i1,</span> <span class="pre">i2)</span></code><a class="headerlink" href="#swap-mobjects-self-i1-i2" title="Permalink to this headline">¶</a></h4>
+<p>Animates the normal “quick” <code class="docutils literal notranslate"><span class="pre">swap</span></code> method, which swaps the 2 elements at <code class="docutils literal notranslate"><span class="pre">i1</span></code> and <code class="docutils literal notranslate"><span class="pre">i2</span></code> directly.</p>
+</div>
+<div class="section" id="clone-and-swap-self-i1-i2">
+<h4><code class="docutils literal notranslate"><span class="pre">clone_and_swap(self,</span> <span class="pre">i1,</span> <span class="pre">i2)</span></code><a class="headerlink" href="#clone-and-swap-self-i1-i2" title="Permalink to this headline">¶</a></h4>
+<p>Animates the special form of <code class="docutils literal notranslate"><span class="pre">swap</span></code> when <code class="docutils literal notranslate"><span class="pre">longSwap</span></code> is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>. This would create a visualisation of the temp variable (a clone) and its usage, which is often seen when swapping array elements programmatically.</p>
+</div>
+<div class="section" id="update-element-self-idx-v-color-none">
+<h4><code class="docutils literal notranslate"><span class="pre">update_element(self,</span> <span class="pre">idx,</span> <span class="pre">v,</span> <span class="pre">color=None)</span></code><a class="headerlink" href="#update-element-self-idx-v-color-none" title="Permalink to this headline">¶</a></h4>
+<p>Animates updating the element at index <code class="docutils literal notranslate"><span class="pre">idx</span></code> with value <code class="docutils literal notranslate"><span class="pre">v</span></code>. The optional argument <code class="docutils literal notranslate"><span class="pre">color</span></code> represents the new color of the text that corresponds to the specific element (defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>, which is the original <code class="docutils literal notranslate"><span class="pre">text_color</span></code>).</p>
+</div>
+<div class="section" id="update-array-elements-self">
+<h4><code class="docutils literal notranslate"><span class="pre">update_array_elements(self)</span></code><a class="headerlink" href="#update-array-elements-self" title="Permalink to this headline">¶</a></h4>
+<p>Helper function for <code class="docutils literal notranslate"><span class="pre">append</span></code> that updates the array elements stored so far and recomputes the new dimension for the array (so that it fits within the boundary).</p>
+</div>
+<div class="section" id="append-self-v">
+<h4><code class="docutils literal notranslate"><span class="pre">append(self,</span> <span class="pre">v)</span></code><a class="headerlink" href="#append-self-v" title="Permalink to this headline">¶</a></h4>
+<p>Since the <code class="docutils literal notranslate"><span class="pre">List</span></code> data structure has been added using the existing <code class="docutils literal notranslate"><span class="pre">Array</span></code> data structure, this function animates the <code class="docutils literal notranslate"><span class="pre">append</span></code> method supported by <code class="docutils literal notranslate"><span class="pre">List</span></code>. This would visualise adding a new element with value <code class="docutils literal notranslate"><span class="pre">v</span></code> at the end of a resizable <code class="docutils literal notranslate"><span class="pre">List</span></code>.</p>
 </div>
 </div>
-<div class="section" id="text-box">
-<h2>Text Box<a class="headerlink" href="#text-box" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt>Text Boxes take in:</dt><dd><ul class="simple">
-<li><p>A text</p></li>
-<li><p>A color for the text</p></li>
+</div>
+<div class="section" id="array-2d">
+<h2>Array 2D<a class="headerlink" href="#array-2d" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Constructor<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>The constructor of 2D Array takes in the many of the same arguments as normal <code class="docutils literal notranslate"><span class="pre">Array</span></code> does, with the following differences:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">values</span></code> - list of lists of values corresponding to each element of the array</p></li>
+<li><p>no <code class="docutils literal notranslate"><span class="pre">padding</span></code> argument required</p></li>
 </ul>
-</dd>
-</dl>
-<p>If you want to change the way it appears on the screen, you will need to change that in your construct function.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="o">...</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">Text_block</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="n">BLUE</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">assignment1</span><span class="p">))</span>
-</pre></div>
 </div>
-<p>Here, Write could be FadeIn, Flash, FadeToColor…</p>
+<div class="section" id="id6">
+<h3>Inbuilt Functions<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="build-self-creation-style-none">
+<h4><code class="docutils literal notranslate"><span class="pre">build(self,</span> <span class="pre">creation_style=None)</span></code><a class="headerlink" href="#build-self-creation-style-none" title="Permalink to this headline">¶</a></h4>
+<p>Animates the creation of a 2D Array with the optional <code class="docutils literal notranslate"><span class="pre">creation_style</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">FadeIn</span></code>).</p>
+</div>
+<div class="section" id="replace-row-self-row-index-new-values">
+<h4><code class="docutils literal notranslate"><span class="pre">replace_row(self,</span> <span class="pre">row_index,</span> <span class="pre">new_values)</span></code><a class="headerlink" href="#replace-row-self-row-index-new-values" title="Permalink to this headline">¶</a></h4>
+<p>Animates updating the row specified by <code class="docutils literal notranslate"><span class="pre">row_index</span></code> with the given values <code class="docutils literal notranslate"><span class="pre">new_values</span></code>, which normally corresponds to a row assignment of a 2D Array.</p>
+</div>
+<div class="section" id="swap-mobjects-self-i1-j1-i2-j2">
+<h4><code class="docutils literal notranslate"><span class="pre">swap_mobjects(self,</span> <span class="pre">i1,</span> <span class="pre">j1,</span> <span class="pre">i2,</span> <span class="pre">j2)</span></code><a class="headerlink" href="#swap-mobjects-self-i1-j1-i2-j2" title="Permalink to this headline">¶</a></h4>
+<p>Animates swapping 2 elements of the 2D Array specified by <code class="docutils literal notranslate"><span class="pre">(i1,</span> <span class="pre">j1)</span></code> and <code class="docutils literal notranslate"><span class="pre">(i2,</span> <span class="pre">j2)</span></code>. The visualisation would first dim the rest of the 2D Array to indicate which elements are being swapped, before fading the rest of the array back to the original <code class="docutils literal notranslate"><span class="pre">text_color</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="tree">
+<h2>Tree<a class="headerlink" href="#tree" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>Constructor<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>The constructor of Tree takes in the many of the same arguments as <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Structure</span></code> with the same default values. The different ones are as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">root</span></code> - the root node of the tree</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">identifier</span></code> - text label for the tree</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">radius</span></code> - radius of the node of the tree <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">0.6</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> - same as <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Structures</span></code> but defaults to <code class="docutils literal notranslate"><span class="pre">RED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_color</span></code> - same as <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Structures</span></code> but defaults to <code class="docutils literal notranslate"><span class="pre">BLUE</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>Inbuilt Functions<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="update-root-self-node">
+<h4><code class="docutils literal notranslate"><span class="pre">update_root(self,</span> <span class="pre">node)</span></code><a class="headerlink" href="#update-root-self-node" title="Permalink to this headline">¶</a></h4>
+<p>Updates the root of the tree with <code class="docutils literal notranslate"><span class="pre">node</span></code>.</p>
+</div>
+<div class="section" id="check-if-child-will-cross-boundary-self-parent-child-is-left">
+<h4><code class="docutils literal notranslate"><span class="pre">check_if_child_will_cross_boundary(self,</span> <span class="pre">parent,</span> <span class="pre">child,</span> <span class="pre">is_left)</span></code><a class="headerlink" href="#check-if-child-will-cross-boundary-self-parent-child-is-left" title="Permalink to this headline">¶</a></h4>
+<p>Checks whether adding <code class="docutils literal notranslate"><span class="pre">child</span></code> will make the tree with <code class="docutils literal notranslate"><span class="pre">parent</span></code> cross the boundary. The <code class="docutils literal notranslate"><span class="pre">is_left</span></code> flag indicates which side the <code class="docutils literal notranslate"><span class="pre">child</span></code> will be added.</p>
+</div>
+<div class="section" id="set-right-self-parent-child">
+<h4><code class="docutils literal notranslate"><span class="pre">set_right(self,</span> <span class="pre">parent,</span> <span class="pre">child)</span></code><a class="headerlink" href="#set-right-self-parent-child" title="Permalink to this headline">¶</a></h4>
+<p>Animates setting <code class="docutils literal notranslate"><span class="pre">child</span></code> as the right child of <code class="docutils literal notranslate"><span class="pre">parent</span></code>. Assumes that <code class="docutils literal notranslate"><span class="pre">parent</span></code> is in the tree. The check for scaling and the corresponding animations are also done by calling <code class="docutils literal notranslate"><span class="pre">_resize_after_modification</span></code>.</p>
+</div>
+<div class="section" id="set-left-self-parent-child">
+<h4><code class="docutils literal notranslate"><span class="pre">set_left(self,</span> <span class="pre">parent,</span> <span class="pre">child)</span></code><a class="headerlink" href="#set-left-self-parent-child" title="Permalink to this headline">¶</a></h4>
+<p>Animates setting <code class="docutils literal notranslate"><span class="pre">child</span></code> as the left child of <code class="docutils literal notranslate"><span class="pre">parent</span></code>. Assumes that <code class="docutils literal notranslate"><span class="pre">parent</span></code> is in the tree. The check for scaling and the corresponding animations are also done by calling <code class="docutils literal notranslate"><span class="pre">_resize_after_modification</span></code>.</p>
+</div>
+<div class="section" id="delete-right-self-parent">
+<h4><code class="docutils literal notranslate"><span class="pre">delete_right(self,</span> <span class="pre">parent)</span></code><a class="headerlink" href="#delete-right-self-parent" title="Permalink to this headline">¶</a></h4>
+<p>Animates removing the right child of <code class="docutils literal notranslate"><span class="pre">parent</span></code>. Assumes that <code class="docutils literal notranslate"><span class="pre">parent</span></code> is in the tree. The check for scaling and the corresponding animations are also done by calling <code class="docutils literal notranslate"><span class="pre">_resize_after_modification</span></code>.</p>
+</div>
+<div class="section" id="delete-left-self-parent">
+<h4><code class="docutils literal notranslate"><span class="pre">delete_left(self,</span> <span class="pre">parent)</span></code><a class="headerlink" href="#delete-left-self-parent" title="Permalink to this headline">¶</a></h4>
+<p>Animates removing the left child of <code class="docutils literal notranslate"><span class="pre">parent</span></code>. Assumes that <code class="docutils literal notranslate"><span class="pre">parent</span></code> is in the tree. The check for scaling and the corresponding animations are also done by calling <code class="docutils literal notranslate"><span class="pre">_resize_after_modification</span></code>.</p>
+</div>
+<div class="section" id="edit-node-value-self-node-text">
+<h4><code class="docutils literal notranslate"><span class="pre">edit_node_value(self,</span> <span class="pre">node,</span> <span class="pre">text)</span></code><a class="headerlink" href="#edit-node-value-self-node-text" title="Permalink to this headline">¶</a></h4>
+<p>Animates updating the value of <code class="docutils literal notranslate"><span class="pre">node</span></code> to <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p>
+</div>
+<div class="section" id="set-reference-right-self-parent-tree">
+<h4><code class="docutils literal notranslate"><span class="pre">set_reference_right(self,</span> <span class="pre">parent,</span> <span class="pre">tree)</span></code><a class="headerlink" href="#set-reference-right-self-parent-tree" title="Permalink to this headline">¶</a></h4>
+<p>Animates setting the reference of the right child of <code class="docutils literal notranslate"><span class="pre">parent</span></code> to <code class="docutils literal notranslate"><span class="pre">tree</span></code>. The check for scaling and the corresponding animations are also done by calling <code class="docutils literal notranslate"><span class="pre">_resize_after_modification</span></code>.</p>
+</div>
+<div class="section" id="set-reference-left-self-parent-tree">
+<h4><code class="docutils literal notranslate"><span class="pre">set_reference_left(self,</span> <span class="pre">parent,</span> <span class="pre">tree)</span></code><a class="headerlink" href="#set-reference-left-self-parent-tree" title="Permalink to this headline">¶</a></h4>
+<p>Animates setting the reference of the left child of <code class="docutils literal notranslate"><span class="pre">parent</span></code> to <code class="docutils literal notranslate"><span class="pre">tree</span></code>. The check for scaling and the corresponding animations are also done by calling <code class="docutils literal notranslate"><span class="pre">_resize_after_modification</span></code>.</p>
+</div>
+<div class="section" id="resize-after-modification-self-animations">
+<h4><code class="docutils literal notranslate"><span class="pre">_resize_after_modification(self,</span> <span class="pre">animations)</span></code><a class="headerlink" href="#resize-after-modification-self-animations" title="Permalink to this headline">¶</a></h4>
+<p>Check if scaling needs to be done and appends the animation that scales the tree to <code class="docutils literal notranslate"><span class="pre">animations</span></code> if needed. The check is done by calling <code class="docutils literal notranslate"><span class="pre">check_positioning</span></code>.</p>
+</div>
+<div class="section" id="check-positioning-self">
+<h4><code class="docutils literal notranslate"><span class="pre">check_positioning(self)</span></code><a class="headerlink" href="#check-positioning-self" title="Permalink to this headline">¶</a></h4>
+<p>Checks if the positioning and the size of the tree still fits within the boundary and fully utilises the space; scales the tree (bigger or smaller) if any of the check fails.</p>
+</div>
+<div class="section" id="crossing-bottom-border-self">
+<h4><code class="docutils literal notranslate"><span class="pre">crossing_bottom_border(self)</span></code><a class="headerlink" href="#crossing-bottom-border-self" title="Permalink to this headline">¶</a></h4>
+<p>Computes the scale factor when the tree crosses the bottom boundary.</p>
+</div>
+<div class="section" id="crossing-left-right-border-self-offset-x-scale-10e9">
+<h4><code class="docutils literal notranslate"><span class="pre">crossing_left_right_border(self,</span> <span class="pre">offset_x,</span> <span class="pre">scale=10e9)</span></code><a class="headerlink" href="#crossing-left-right-border-self-offset-x-scale-10e9" title="Permalink to this headline">¶</a></h4>
+<p>Computes the scle factor if tree crosses the left or right boundary with <code class="docutils literal notranslate"><span class="pre">offset_x</span></code> added on both sides.</p>
+</div>
+<div class="section" id="grow-if-small-self">
+<h4><code class="docutils literal notranslate"><span class="pre">grow_if_small(self)</span></code><a class="headerlink" href="#grow-if-small-self" title="Permalink to this headline">¶</a></h4>
+<p>Scales the tree bigger if it is not utilising the space allocated fully.</p>
+</div>
+<div class="section" id="check-overlapping-children-self-node">
+<h4><code class="docutils literal notranslate"><span class="pre">check_overlapping_children(self,</span> <span class="pre">node)</span></code><a class="headerlink" href="#check-overlapping-children-self-node" title="Permalink to this headline">¶</a></h4>
+<p>Recursively checks if any of left and right child of <code class="docutils literal notranslate"><span class="pre">node</span></code> (or its children) are overlapping and scales the tree (or subtree) down if any nodes are overlapping.</p>
+</div>
+</div>
+</div>
+<div class="section" id="node">
+<h2>Node<a class="headerlink" href="#node" title="Permalink to this headline">¶</a></h2>
+<p>The Node is the underlying representation of each node constructed as part of a <code class="docutils literal notranslate"><span class="pre">Tree</span></code>. Therefore, these two classes are put in the same file <a class="reference external" href="https://github.com/VAlgoLang/VAlgoLang/tree/master/src/main/resources/python/binary_tree.py">binary_tree.py</a>.</p>
+<div class="section" id="id9">
+<h3>Constructor<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>The constructor of Node takes in all the arguments as <code class="docutils literal notranslate"><span class="pre">Tree</span></code> with the same default values. Additionally, it takes in the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">line_color</span></code> - the color of the line connecting two nodes together <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">GREEN</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">highlight_color</span></code> - the color to highlight the node outline in when the node has been accessed <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">YELLOW</span></code> <em>]</em></p></li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h3>Inbuilt Functions<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="set-left-self-node-scale">
+<h4><code class="docutils literal notranslate"><span class="pre">set_left(self,</span> <span class="pre">node,</span> <span class="pre">scale)</span></code><a class="headerlink" href="#set-left-self-node-scale" title="Permalink to this headline">¶</a></h4>
+<p>Sets the left child of the node to <code class="docutils literal notranslate"><span class="pre">node</span></code> by calling <code class="docutils literal notranslate"><span class="pre">set_left_mobject</span></code>. <code class="docutils literal notranslate"><span class="pre">scale</span></code> represents the scale factor of how much the tree has been scaled (initially starts as <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p>
+</div>
+<div class="section" id="set-left-mobject-self-shape-vgroup-scale">
+<h4><code class="docutils literal notranslate"><span class="pre">set_left_mobject(self,</span> <span class="pre">shape,</span> <span class="pre">vgroup,</span> <span class="pre">scale)</span></code><a class="headerlink" href="#set-left-mobject-self-shape-vgroup-scale" title="Permalink to this headline">¶</a></h4>
+<p>Animates setting the left of <code class="docutils literal notranslate"><span class="pre">shape</span></code> to <code class="docutils literal notranslate"><span class="pre">vgroup</span></code> - moving <code class="docutils literal notranslate"><span class="pre">vgroup</span></code> to lower left of <code class="docutils literal notranslate"><span class="pre">shape</span></code> and adding in the line that connects the two. <code class="docutils literal notranslate"><span class="pre">scale</span></code> is passed from <code class="docutils literal notranslate"><span class="pre">set_left</span></code> and used to obtain the position offset from <code class="docutils literal notranslate"><span class="pre">shape</span></code>.</p>
+</div>
+<div class="section" id="set-right-self-node-scale">
+<h4><code class="docutils literal notranslate"><span class="pre">set_right(self,</span> <span class="pre">node,</span> <span class="pre">scale)</span></code><a class="headerlink" href="#set-right-self-node-scale" title="Permalink to this headline">¶</a></h4>
+<p>Sets the right child of the node to <code class="docutils literal notranslate"><span class="pre">node</span></code> by calling <code class="docutils literal notranslate"><span class="pre">set_right_mobject</span></code>. <code class="docutils literal notranslate"><span class="pre">scale</span></code> represents the scale factor of how much the tree has been scaled (initially starts as <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p>
+</div>
+<div class="section" id="set-right-mobject-self-shape-vgroup-scale">
+<h4><code class="docutils literal notranslate"><span class="pre">set_right_mobject(self,</span> <span class="pre">shape,</span> <span class="pre">vgroup,</span> <span class="pre">scale)</span></code><a class="headerlink" href="#set-right-mobject-self-shape-vgroup-scale" title="Permalink to this headline">¶</a></h4>
+<p>Animates setting the right of <code class="docutils literal notranslate"><span class="pre">shape</span></code> to <code class="docutils literal notranslate"><span class="pre">vgroup</span></code> - moving <code class="docutils literal notranslate"><span class="pre">vgroup</span></code> to lower left of <code class="docutils literal notranslate"><span class="pre">shape</span></code> and adding in the line that connects the two. <code class="docutils literal notranslate"><span class="pre">scale</span></code> is passed from <code class="docutils literal notranslate"><span class="pre">set_right</span></code> and used to obtain the position offset from <code class="docutils literal notranslate"><span class="pre">shape</span></code>.</p>
+</div>
+<div class="section" id="set-reference-self-tree-scale-left">
+<h4><code class="docutils literal notranslate"><span class="pre">set_reference(self,</span> <span class="pre">tree,</span> <span class="pre">scale,</span> <span class="pre">left)</span></code><a class="headerlink" href="#set-reference-self-tree-scale-left" title="Permalink to this headline">¶</a></h4>
+<p>Sets the left or right child of the node to be a reference to <code class="docutils literal notranslate"><span class="pre">tree</span></code> (in this case a text label) as data structures are passed by reference. The flag <code class="docutils literal notranslate"><span class="pre">left</span></code> indicates whether the left child or the right child is set. <code class="docutils literal notranslate"><span class="pre">scale</span></code> represents the scale factor of how much the tree has been scaled (initially starts as <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p>
+</div>
+<div class="section" id="edit-node-value-self-text">
+<h4><code class="docutils literal notranslate"><span class="pre">edit_node_value(self,</span> <span class="pre">text)</span></code><a class="headerlink" href="#edit-node-value-self-text" title="Permalink to this headline">¶</a></h4>
+<p>Changes the text representing the value of the node to <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p>
+</div>
+<div class="section" id="highlight-self-color">
+<h4><code class="docutils literal notranslate"><span class="pre">highlight(self,</span> <span class="pre">color)</span></code><a class="headerlink" href="#highlight-self-color" title="Permalink to this headline">¶</a></h4>
+<p>Highlights the node outline to <code class="docutils literal notranslate"><span class="pre">color</span></code>.</p>
+</div>
+<div class="section" id="unhighlight-self">
+<h4><code class="docutils literal notranslate"><span class="pre">unhighlight(self)</span></code><a class="headerlink" href="#unhighlight-self" title="Permalink to this headline">¶</a></h4>
+<p>Unhighlights the node outline.</p>
+</div>
+<div class="section" id="set-radius-self-new-radius">
+<h4><code class="docutils literal notranslate"><span class="pre">set_radius(self,</span> <span class="pre">new_radius)</span></code><a class="headerlink" href="#set-radius-self-new-radius" title="Permalink to this headline">¶</a></h4>
+<p>Changes the radius of the node to <code class="docutils literal notranslate"><span class="pre">new_radius</span></code> and scales the node if needed.</p>
+</div>
+<div class="section" id="delete-left-self">
+<h4><code class="docutils literal notranslate"><span class="pre">delete_left(self)</span></code><a class="headerlink" href="#delete-left-self" title="Permalink to this headline">¶</a></h4>
+<p>Animates deleting the left child of the node. Assumes that the node has a left child.</p>
+</div>
+<div class="section" id="delete-right-self">
+<h4><code class="docutils literal notranslate"><span class="pre">delete_right(self)</span></code><a class="headerlink" href="#delete-right-self" title="Permalink to this headline">¶</a></h4>
+<p>Animates deleting the right child of the node. Assumes that the node has a right child.</p>
+</div>
+</div>
 </div>
 <div class="section" id="code-block">
 <h2>Code Block<a class="headerlink" href="#code-block" title="Permalink to this headline">¶</a></h2>
-<p>The Code Block is your inputed VAlgoLang code which appears at the bottom left of your screen.
-If you do not want this code to appear, remove this part from the construct function.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="c1"># Remove all below lines</span>
-    <span class="n">code_block</span> <span class="o">=</span> <span class="n">Code_block</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
-    <span class="n">code_text</span> <span class="o">=</span> <span class="n">code_block</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">place_at</span><span class="p">(</span><span class="n">code_text</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">code_text</span><span class="p">))</span>
-</pre></div>
+<p>The Code Block is your inputted VAlgoLang code which appears at the bottom left of your screen (by default).</p>
+<p>The positioning and whether the Code Block should be rendered are controlled by the Stylesheet. Please refer to the <a class="reference internal" href="customisation.html"><span class="doc">Customising Your Animation</span></a> section for a more detailed description of how the Stylesheet works.</p>
+<div class="section" id="id11">
+<h3>Constructor<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>The constructor of Code Block takes in the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">code</span></code> - list of strings representing each line of code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">boundaries</span></code> - coordinates of boundary that the code block has to stay within</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">syntax_highlighting</span></code> - flag indicating whether syntax highlighting of the code is turned on or not</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">syntax_highlighting_style</span></code> - the style of syntax highlighting <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">&quot;inkpot&quot;</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_color</span></code> - color of the code <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_weight</span></code> - weight of the code <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">NORMAL</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">font</span></code> - font of the code <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">&quot;Times</span> <span class="pre">New</span> <span class="pre">Roman&quot;</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tab_spacing</span></code> - size of tabulation within the code <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">2</span></code> <em>]</em></p></li>
+</ul>
+<p>For the full list of possible syntax highlighting style, please refer to the <a class="reference internal" href="customisation.html"><span class="doc">Customising Your Animation</span></a> section.</p>
 </div>
-<p>Tracking the line that is currently executing is done with an ArrowTip. If you wish to change that shape, color, or scale, change this line in your construct function.</p>
+<div class="section" id="id12">
+<h3>Inbuilt Functions<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="build-self">
+<h4><code class="docutils literal notranslate"><span class="pre">build(self)</span></code><a class="headerlink" href="#build-self" title="Permalink to this headline">¶</a></h4>
+<p>Arranges the code block to be correctly formatted and returns the resultant <code class="docutils literal notranslate"><span class="pre">VGroup</span></code>.</p>
+</div>
+<div class="section" id="get-line-at-self-line-number">
+<h4><code class="docutils literal notranslate"><span class="pre">get_line_at(self,</span> <span class="pre">line_number)</span></code><a class="headerlink" href="#get-line-at-self-line-number" title="Permalink to this headline">¶</a></h4>
+<p>Returns the <code class="docutils literal notranslate"><span class="pre">Text</span></code> of the line of code specified by <code class="docutils literal notranslate"><span class="pre">line_number</span></code>.</p>
+<p>Tracking the line that is currently executing is done with an ArrowTip and the <code class="docutils literal notranslate"><span class="pre">move_arrow_to_line</span></code> function. If you wish to change that shape, color, or scale, change this line in your construct function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="o">...</span>
     <span class="n">pointer</span> <span class="o">=</span> <span class="n">ArrowTip</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">YELLOW</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">TOP</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">move_arrow_to_line</span></code> function is used to move the arrow to a specific line number. To change the moment at which you change the line number, you can move this line.</p>
+</div>
+</div>
+</div>
+<div class="section" id="variable-block">
+<h2>Variable Block<a class="headerlink" href="#variable-block" title="Permalink to this headline">¶</a></h2>
+<p>The Variable Block displays the list of most recently updated variables and their values at the top left of your screen (by default).</p>
+<p>The positioning and whether the Variable Block should be rendered are controlled by the Stylesheet. Please refer to the <a class="reference internal" href="customisation.html"><span class="doc">Customising Your Animation</span></a> section for a more detailed description of how the Stylesheet works.</p>
+<div class="section" id="id13">
+<h3>Constructor<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>The constructor of Variable Block takes in the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">variables</span></code> - list of strings representing the variables and their values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">boundaries</span></code> - coordinates of boundary that the variable block has to stay within</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_color</span></code> - color of the text <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_weight</span></code> - weight of the text <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">NORMAL</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">font</span></code> - font of the text <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">&quot;Times</span> <span class="pre">New</span> <span class="pre">Roman&quot;</span></code> <em>]</em></p></li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h3>Inbuilt Functions<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h4><code class="docutils literal notranslate"><span class="pre">build(self)</span></code><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<p>Arranges the variable block to be correctly formatted and returns the resultant <code class="docutils literal notranslate"><span class="pre">VGroup</span></code>.</p>
+</div>
+<div class="section" id="update-variable-self-variables">
+<h4><code class="docutils literal notranslate"><span class="pre">update_variable(self,</span> <span class="pre">variables)</span></code><a class="headerlink" href="#update-variable-self-variables" title="Permalink to this headline">¶</a></h4>
+<p>Animates updating the variable strings with the given argument <code class="docutils literal notranslate"><span class="pre">variables</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="subtitle-block">
+<h2>Subtitle Block<a class="headerlink" href="#subtitle-block" title="Permalink to this headline">¶</a></h2>
+<p>The Subtitle Block displays the list of most recently updated variables and their values at the top left of your screen (by default).</p>
+<p>The Subtitle Block holds subtitles generated by the subtitle annotations and the positioning of the Subtitle Block is controlled by the Stlysheet. Please refer to the <a class="reference internal" href="tutorial.html#subtitlesannotation"><span class="std std-ref">Subtitles</span></a> and <a class="reference internal" href="customisation.html"><span class="doc">Customising Your Animation</span></a> sections for a more detailed description of how the subtitle annotations and Stylesheet works.</p>
+<div class="section" id="id16">
+<h3>Constructor<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>The constructor of Variable Block takes in the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">end_time</span></code> - time that the subtitle should disappear</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">boundaries</span></code> - coordinates of boundary that the subtitle block has to stay within</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_color</span></code> - color of the subtitle text <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_weight</span></code> - weight of the subtitle text <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">NORMAL</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">font</span></code> - font of the subtitle text <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">&quot;Times</span> <span class="pre">New</span> <span class="pre">Roman&quot;</span></code> <em>]</em></p></li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h3>Inbuilt Functions<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="change-text-self-text">
+<h4><code class="docutils literal notranslate"><span class="pre">change_text(self,</span> <span class="pre">text)</span></code><a class="headerlink" href="#change-text-self-text" title="Permalink to this headline">¶</a></h4>
+<p>Changes the subtitle text to <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p>
+</div>
+<div class="section" id="display-self-text-end-time">
+<h4><code class="docutils literal notranslate"><span class="pre">display(self,</span> <span class="pre">text,</span> <span class="pre">end_time)</span></code><a class="headerlink" href="#display-self-text-end-time" title="Permalink to this headline">¶</a></h4>
+<p>Displays the given <code class="docutils literal notranslate"><span class="pre">text</span></code> as subtitle until the specified <code class="docutils literal notranslate"><span class="pre">end_time</span></code> has passed.</p>
+</div>
+<div class="section" id="clear-self">
+<h4><code class="docutils literal notranslate"><span class="pre">clear(self)</span></code><a class="headerlink" href="#clear-self" title="Permalink to this headline">¶</a></h4>
+<p>Clears the current subtitle.</p>
+</div>
+<div class="section" id="action-self">
+<h4><code class="docutils literal notranslate"><span class="pre">action(self)</span></code><a class="headerlink" href="#action-self" title="Permalink to this headline">¶</a></h4>
+<p>Same as <code class="docutils literal notranslate"><span class="pre">clear</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="building-blocks">
+<h2>Building Blocks<a class="headerlink" href="#building-blocks" title="Permalink to this headline">¶</a></h2>
+<p>The visualisation of data structures is built on top of the following building blocks. Feel free to reuse them if you wish to add your own data structure visualisation!</p>
+<div class="section" id="initial-structure">
+<h3>Initial Structure<a class="headerlink" href="#initial-structure" title="Permalink to this headline">¶</a></h3>
+<p>An initial structure represents the empty state for a data structure, such as for a <code class="docutils literal notranslate"><span class="pre">Stack</span></code>.</p>
+<p>It consists of a line, which can be horizontal or vertical, and a text label indicating the variable name under the line.</p>
+<div class="section" id="id18">
+<h4>Constructor<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<p>The constructor of Initial Structure takes in the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> - text that is labelled under the line</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code> - angle of rotation (<code class="docutils literal notranslate"><span class="pre">0</span></code> for horizontal line, <code class="docutils literal notranslate"><span class="pre">TAU/4</span></code> for vertical line)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">length</span></code> - length for the line <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">1.5</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> - color of the line <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_color</span></code> - color of the text label <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_weight</span></code> - weight of the text label <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">NORMAL</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">font</span></code> - font of the text label <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">&quot;Times</span> <span class="pre">New</span> <span class="pre">Roman&quot;</span></code> <em>]</em></p></li>
+</ul>
+<p>To add an additional element, create it, and group it with the <code class="docutils literal notranslate"><span class="pre">VGroup</span></code>.
+To change the default position of the label and the distance between the label and the line, change <code class="docutils literal notranslate"><span class="pre">DOWN</span></code> and <code class="docutils literal notranslate"><span class="pre">SMALL_BUFF</span></code> respectively.</p>
+</div>
+</div>
+<div class="section" id="rectangle-block">
+<h3>Rectangle Block<a class="headerlink" href="#rectangle-block" title="Permalink to this headline">¶</a></h3>
+<p>A Rectangle Block represents a rectangle shape with text inside it.</p>
+<div class="section" id="id19">
+<h4>Constructor<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<p>The constructor of Rectangle Block takes in the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> - text placed inside the rectangle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">target</span></code> - a target that the rectangle block would be scaled to match <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">None</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code> - width of the rectangle <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">1.5</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code> - height of the rectangle <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">0.75</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">color</span></code> - color of the rectangle outline <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">BLUE</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_color</span></code> - color of the text inside the rectangle <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_weight</span></code> - weight of the text inside the rectangle <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">NORMAL</span></code> <em>]</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">font</span></code> - font of the text inside the rectangle <em>[Optional - defaults to</em> <code class="docutils literal notranslate"><span class="pre">&quot;Times</span> <span class="pre">New</span> <span class="pre">Roman&quot;</span></code> <em>]</em></p></li>
+</ul>
+<p>To add an additional element, create it, and group it with the <code class="docutils literal notranslate"><span class="pre">VGroup</span></code>.</p>
+</div>
+<div class="section" id="id20">
+<h4>Inbuilt Functions<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="replace-text-self-new-text-color-none">
+<h5><code class="docutils literal notranslate"><span class="pre">replace_text(self,</span> <span class="pre">new_text,</span> <span class="pre">color=None)</span></code><a class="headerlink" href="#replace-text-self-new-text-color-none" title="Permalink to this headline">¶</a></h5>
+<p>Animates replacement of the text lablel to <code class="docutils literal notranslate"><span class="pre">new_text</span></code> inside the rectangle. The optional argument <code class="docutils literal notranslate"><span class="pre">color</span></code> represents to the new color of the text (defaults to the same as the original <code class="docutils literal notranslate"><span class="pre">text_color</span></code>).</p>
+</div>
+<div class="section" id="id21">
+<h5><code class="docutils literal notranslate"><span class="pre">clean_up(self)</span></code><a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
+<p>Cleans up the current Rectangle Block visualisation.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="utility-functions">
+<h2>Utility Functions<a class="headerlink" href="#utility-functions" title="Permalink to this headline">¶</a></h2>
+<p>The following is a list of all the utility functions implemented so far, which help to create repeated animation. Feel free to use them if you wish to generate your own animation or contribute!</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">place_at(self,</span> <span class="pre">group,</span> <span class="pre">x,</span> <span class="pre">y)</span></code> - places <code class="docutils literal notranslate"><span class="pre">group</span></code> at the coordinate specified by <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">0)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">move_relative_to_edge(self,</span> <span class="pre">group,</span> <span class="pre">x,</span> <span class="pre">y)</span></code> - moves <code class="docutils literal notranslate"><span class="pre">group</span></code> relative to the edge specified by <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">0)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">move_relative_to_obj(self,</span> <span class="pre">group,</span> <span class="pre">target,</span> <span class="pre">x,</span> <span class="pre">y)</span></code> - moves <code class="docutils literal notranslate"><span class="pre">group</span></code> relative to the object <code class="docutils literal notranslate"><span class="pre">target</span></code> specified by <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">0)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">place_relative_to_obj(self,</span> <span class="pre">group,</span> <span class="pre">target,</span> <span class="pre">x,</span> <span class="pre">y)</span></code> - places <code class="docutils literal notranslate"><span class="pre">group</span></code> relative to the object <code class="docutils literal notranslate"><span class="pre">target</span></code> with the offset specified by <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">0)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fade_out_if_needed(self,</span> <span class="pre">mobject)</span></code> - fades out <code class="docutils literal notranslate"><span class="pre">mobject</span></code> if it is already on the Scene.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">play_animation(self,</span> <span class="pre">*args,</span> <span class="pre">run_time=1.0)</span></code> - plays the animation(s) passed in as <code class="docutils literal notranslate"><span class="pre">*args</span></code> with optional <code class="docutils literal notranslate"><span class="pre">run_time</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>). This is particularly useful as it accounts for all the <code class="docutils literal notranslate"><span class="pre">time_object</span></code> that have a duration of time they should appear for, such as <code class="docutils literal notranslate"><span class="pre">Subtitle</span> <span class="pre">Block</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">move_arrow_to_line(self,</span> <span class="pre">line_number,</span> <span class="pre">pointer,</span> <span class="pre">code_block,</span> <span class="pre">code_text)</span></code> - moves the <code class="docutils literal notranslate"><span class="pre">pointer</span></code> next to the line of code specified by <code class="docutils literal notranslate"><span class="pre">line_number</span></code>. Scrolling is also handled here if needed by calling the corresponding <code class="docutils literal notranslate"><span class="pre">scroll_down</span></code> and <code class="docutils literal notranslate"><span class="pre">scroll_up</span></code> functions.</p></li>
+</ul>
+<p>The following utility functions are inspired from <a class="reference external" href="https://www.reddit.com/r/manim/comments/bubyj2/scrolling_mobjects/">https://www.reddit.com/r/manim/comments/bubyj2/scrolling_mobjects/</a></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scroll_down(self,</span> <span class="pre">group,</span> <span class="pre">scrolls)</span></code> - scrolls the <code class="docutils literal notranslate"><span class="pre">group</span></code> (<code class="docutils literal notranslate"><span class="pre">code_text</span></code> in the interpreter) down by <code class="docutils literal notranslate"><span class="pre">scrolls</span></code> number of times.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scroll_up(self,</span> <span class="pre">group,</span> <span class="pre">scrolls)</span></code> - scrolls the <code class="docutils literal notranslate"><span class="pre">group</span></code> (<code class="docutils literal notranslate"><span class="pre">code_text</span></code> in the interpreter) up by <code class="docutils literal notranslate"><span class="pre">scrolls</span></code> number of times.</p></li>
+</ul>
 </div>
 </div>
 

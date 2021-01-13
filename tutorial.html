@@ -103,7 +103,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#controlling-your-animation">Controlling your animation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#structuring-your-program">Structuring Your Program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#controlling-your-animation">Controlling Your Animation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#sleep">Sleep</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-tracking">Code Tracking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#subtitles">Subtitles</a></li>
@@ -327,9 +328,9 @@ of joining the <code class="docutils literal notranslate"><span class="pre">stri
 </div>
 <div class="section" id="constructors">
 <h3>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h3>
-<p>Data structures baked into the language have constructors. These can be invoked using the <code class="docutils literal notranslate"><span class="pre">new</span></code> keyword.</p>
+<p>Data structures baked into the language have constructors. These can be invoked by directly instantiating an instance of the data structure.</p>
 <p>Note that if a data structure (as below) takes generic type arguments in their constructor they must not be omitted.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Stack</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">stack</span> <span class="o">=</span> <span class="nx">Stack</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -432,26 +433,30 @@ will then execute the section of code corresponding to the second <code class="d
 </div>
 <div class="section" id="functions">
 <h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
-<p>In order to compile a program with functions, please define all the functions at the top of the file before the statements.</p>
 <p>The ways to define functions and make function calls are similar as they are in other languages.</p>
 <p>Note that the return type must be defined if you intend to return anything from the function. If the return type is not specified, the function is assumed to be of type <code class="docutils literal notranslate"><span class="pre">void</span></code>, so no <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is allowed inside the function.</p>
 <p>Also note that the arguments passed into any function are passed by reference, meaning that the changes made to the parameters inside the function will affect the original variables passed in.</p>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">fun</span> <span class="nf">func1</span><span class="p">(</span><span class="n">number</span> <span class="n">x</span><span class="p">):</span> <span class="n">number</span> <span class="p">{</span>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">fun</span> <span class="nf">func1</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">number</span><span class="p">):</span> <span class="n">number</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">x</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">fun</span> <span class="nf">func2</span><span class="p">(</span><span class="n">Stack</span><span class="p">&lt;</span><span class="n">number</span><span class="p">&gt;</span> <span class="n">stack</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// function assumed to be void as no return type is specified</span>
+<span class="k">fun</span> <span class="nf">func2</span><span class="p">(</span><span class="n">stack</span><span class="p">:</span> <span class="n">Stack</span><span class="p">&lt;</span><span class="n">number</span><span class="p">&gt;)</span> <span class="p">{</span>  <span class="c1">// function assumed to be void as no return type is specified</span>
     <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span> <span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="nx">func1</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">x</span><span class="o">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="nx">func1</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="section" id="structuring-your-program">
+<h2>Structuring Your Program<a class="headerlink" href="#structuring-your-program" title="Permalink to this headline">¶</a></h2>
+<p>VAlgoLang has no specific requirement for the structure of the main body of the program. Like many of the other programming languages, watch out for syntax and semantic errors such as accessing an undeclared identifier, incompatible type assignments and so on.</p>
+<p>The only thing to note is that if you wish to compile a program with functions, those functions need to be declared at the top of the file. The main body of the code (statements) should then follow these function definitions.</p>
+</div>
 <div class="section" id="controlling-your-animation">
-<h2>Controlling your animation<a class="headerlink" href="#controlling-your-animation" title="Permalink to this headline">¶</a></h2>
+<h2>Controlling Your Animation<a class="headerlink" href="#controlling-your-animation" title="Permalink to this headline">¶</a></h2>
 <p>To make dynamic changes to the end animation, you can insert special commands which won’t show up in the code visualisation.</p>
 <p>Customisations to things such as colours, fonts and other attributes can be made through an external stylesheet described <a class="reference internal" href="customisation.html#stylesheet"><span class="std std-ref">over here</span></a>.</p>
 <div class="section" id="sleep">
@@ -479,7 +484,7 @@ will then execute the section of code corresponding to the second <code class="d
 </div>
 </div>
 <div class="section" id="subtitles">
-<h3>Subtitles<a class="headerlink" href="#subtitles" title="Permalink to this headline">¶</a></h3>
+<span id="subtitlesannotation"></span><h3>Subtitles<a class="headerlink" href="#subtitles" title="Permalink to this headline">¶</a></h3>
 <p>A subtitle annotation allows you to add descriptive text to your animation. There are two types of subtitles:</p>
 <p><code class="docutils literal notranslate"><span class="pre">&#64;subtitle</span></code> - Whenever code execution reaches this annotation it will evaluate it.</p>
 <p><code class="docutils literal notranslate"><span class="pre">&#64;subtitleOnce</span></code> - This subtitle will only show once.</p>

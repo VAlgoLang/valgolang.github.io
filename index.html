@@ -184,7 +184,8 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorial.html#functions">Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial.html#controlling-your-animation">Controlling your animation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#structuring-your-program">Structuring Your Program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#controlling-your-animation">Controlling Your Animation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorial.html#sleep">Sleep</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial.html#code-tracking">Code Tracking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial.html#subtitles">Subtitles</a></li>
@@ -240,7 +241,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#contribution-case-study-adding-lists">Contribution case study: Adding Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contribution-case-study-adding-lists">Contribution Case Study: Adding Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing.html#technical-documentation">Technical documentation</a></li>
 </ul>
 </li>
@@ -269,10 +270,137 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_library.html">Python Library</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python_library.html#initial-structure">Initial Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_library.html#rectangle">Rectangle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_library.html#text-box">Text Box</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python_library.html#code-block">Code Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_library.html#data-structure">Data Structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#constructor">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#inbuilt-functions">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#shrink-self-new-width-new-height"><code class="docutils literal notranslate"><span class="pre">shrink(self,</span> <span class="pre">new_width,</span> <span class="pre">new_height)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#will-cross-boundary-self-object-dim-boundary-name"><code class="docutils literal notranslate"><span class="pre">will_cross_boundary(self,</span> <span class="pre">object_dim,</span> <span class="pre">boundary_name)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#add-self-obj"><code class="docutils literal notranslate"><span class="pre">add(self,</span> <span class="pre">obj)</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#abstract-methods">Abstract Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#create-init-self-ident"><code class="docutils literal notranslate"><span class="pre">create_init(self,</span> <span class="pre">ident)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#shrink-if-cross-boundary-self-obj"><code class="docutils literal notranslate"><span class="pre">shrink_if_cross_boundary(self,</span> <span class="pre">obj)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#clean-up-self"><code class="docutils literal notranslate"><span class="pre">clean_up(self)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_library.html#stack">Stack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id1">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id2">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#push-self-obj-creation-style-none"><code class="docutils literal notranslate"><span class="pre">push(self,</span> <span class="pre">obj,</span> <span class="pre">creation_style=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#push-existing-self-obj"><code class="docutils literal notranslate"><span class="pre">push_existing(self,</span> <span class="pre">obj)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#pop-self-obj-fade-out-true"><code class="docutils literal notranslate"><span class="pre">pop(self,</span> <span class="pre">obj,</span> <span class="pre">fade_out=True)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_library.html#array">Array</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id3">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id4">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#build-self-coord-none"><code class="docutils literal notranslate"><span class="pre">build(self,</span> <span class="pre">coord=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#swap-mobjects-self-i1-i2"><code class="docutils literal notranslate"><span class="pre">swap_mobjects(self,</span> <span class="pre">i1,</span> <span class="pre">i2)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#clone-and-swap-self-i1-i2"><code class="docutils literal notranslate"><span class="pre">clone_and_swap(self,</span> <span class="pre">i1,</span> <span class="pre">i2)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#update-element-self-idx-v-color-none"><code class="docutils literal notranslate"><span class="pre">update_element(self,</span> <span class="pre">idx,</span> <span class="pre">v,</span> <span class="pre">color=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#update-array-elements-self"><code class="docutils literal notranslate"><span class="pre">update_array_elements(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#append-self-v"><code class="docutils literal notranslate"><span class="pre">append(self,</span> <span class="pre">v)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_library.html#array-2d">Array 2D</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id5">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id6">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#build-self-creation-style-none"><code class="docutils literal notranslate"><span class="pre">build(self,</span> <span class="pre">creation_style=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#replace-row-self-row-index-new-values"><code class="docutils literal notranslate"><span class="pre">replace_row(self,</span> <span class="pre">row_index,</span> <span class="pre">new_values)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#swap-mobjects-self-i1-j1-i2-j2"><code class="docutils literal notranslate"><span class="pre">swap_mobjects(self,</span> <span class="pre">i1,</span> <span class="pre">j1,</span> <span class="pre">i2,</span> <span class="pre">j2)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_library.html#tree">Tree</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id7">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id8">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#update-root-self-node"><code class="docutils literal notranslate"><span class="pre">update_root(self,</span> <span class="pre">node)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#check-if-child-will-cross-boundary-self-parent-child-is-left"><code class="docutils literal notranslate"><span class="pre">check_if_child_will_cross_boundary(self,</span> <span class="pre">parent,</span> <span class="pre">child,</span> <span class="pre">is_left)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#set-right-self-parent-child"><code class="docutils literal notranslate"><span class="pre">set_right(self,</span> <span class="pre">parent,</span> <span class="pre">child)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#set-left-self-parent-child"><code class="docutils literal notranslate"><span class="pre">set_left(self,</span> <span class="pre">parent,</span> <span class="pre">child)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#delete-right-self-parent"><code class="docutils literal notranslate"><span class="pre">delete_right(self,</span> <span class="pre">parent)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#delete-left-self-parent"><code class="docutils literal notranslate"><span class="pre">delete_left(self,</span> <span class="pre">parent)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#edit-node-value-self-node-text"><code class="docutils literal notranslate"><span class="pre">edit_node_value(self,</span> <span class="pre">node,</span> <span class="pre">text)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#set-reference-right-self-parent-tree"><code class="docutils literal notranslate"><span class="pre">set_reference_right(self,</span> <span class="pre">parent,</span> <span class="pre">tree)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#set-reference-left-self-parent-tree"><code class="docutils literal notranslate"><span class="pre">set_reference_left(self,</span> <span class="pre">parent,</span> <span class="pre">tree)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#resize-after-modification-self-animations"><code class="docutils literal notranslate"><span class="pre">_resize_after_modification(self,</span> <span class="pre">animations)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#check-positioning-self"><code class="docutils literal notranslate"><span class="pre">check_positioning(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#crossing-bottom-border-self"><code class="docutils literal notranslate"><span class="pre">crossing_bottom_border(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#crossing-left-right-border-self-offset-x-scale-10e9"><code class="docutils literal notranslate"><span class="pre">crossing_left_right_border(self,</span> <span class="pre">offset_x,</span> <span class="pre">scale=10e9)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#grow-if-small-self"><code class="docutils literal notranslate"><span class="pre">grow_if_small(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#check-overlapping-children-self-node"><code class="docutils literal notranslate"><span class="pre">check_overlapping_children(self,</span> <span class="pre">node)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_library.html#node">Node</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id9">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id10">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#set-left-self-node-scale"><code class="docutils literal notranslate"><span class="pre">set_left(self,</span> <span class="pre">node,</span> <span class="pre">scale)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#set-left-mobject-self-shape-vgroup-scale"><code class="docutils literal notranslate"><span class="pre">set_left_mobject(self,</span> <span class="pre">shape,</span> <span class="pre">vgroup,</span> <span class="pre">scale)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#set-right-self-node-scale"><code class="docutils literal notranslate"><span class="pre">set_right(self,</span> <span class="pre">node,</span> <span class="pre">scale)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#set-right-mobject-self-shape-vgroup-scale"><code class="docutils literal notranslate"><span class="pre">set_right_mobject(self,</span> <span class="pre">shape,</span> <span class="pre">vgroup,</span> <span class="pre">scale)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#set-reference-self-tree-scale-left"><code class="docutils literal notranslate"><span class="pre">set_reference(self,</span> <span class="pre">tree,</span> <span class="pre">scale,</span> <span class="pre">left)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#edit-node-value-self-text"><code class="docutils literal notranslate"><span class="pre">edit_node_value(self,</span> <span class="pre">text)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#highlight-self-color"><code class="docutils literal notranslate"><span class="pre">highlight(self,</span> <span class="pre">color)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#unhighlight-self"><code class="docutils literal notranslate"><span class="pre">unhighlight(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#set-radius-self-new-radius"><code class="docutils literal notranslate"><span class="pre">set_radius(self,</span> <span class="pre">new_radius)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#delete-left-self"><code class="docutils literal notranslate"><span class="pre">delete_left(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#delete-right-self"><code class="docutils literal notranslate"><span class="pre">delete_right(self)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_library.html#code-block">Code Block</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id11">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id12">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#build-self"><code class="docutils literal notranslate"><span class="pre">build(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#get-line-at-self-line-number"><code class="docutils literal notranslate"><span class="pre">get_line_at(self,</span> <span class="pre">line_number)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_library.html#variable-block">Variable Block</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id13">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id14">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#id15"><code class="docutils literal notranslate"><span class="pre">build(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#update-variable-self-variables"><code class="docutils literal notranslate"><span class="pre">update_variable(self,</span> <span class="pre">variables)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_library.html#subtitle-block">Subtitle Block</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id16">Constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#id17">Inbuilt Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#change-text-self-text"><code class="docutils literal notranslate"><span class="pre">change_text(self,</span> <span class="pre">text)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#display-self-text-end-time"><code class="docutils literal notranslate"><span class="pre">display(self,</span> <span class="pre">text,</span> <span class="pre">end_time)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#clear-self"><code class="docutils literal notranslate"><span class="pre">clear(self)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#action-self"><code class="docutils literal notranslate"><span class="pre">action(self)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_library.html#building-blocks">Building Blocks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#initial-structure">Initial Structure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#id18">Constructor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="python_library.html#rectangle-block">Rectangle Block</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#id19">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_library.html#id20">Inbuilt Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_library.html#utility-functions">Utility Functions</a></li>
 </ul>
 </li>
 </ul>
